@@ -59,7 +59,8 @@ local function write_event(name, str)
     counter = counter + 1
     local f = io.open(path, 'ab')
     if not f then return end
-    f:write(string.format('[%s] #%d %s\n%s\n-----\n', os.date('%H:%M:%S'), counter, name, str))
+    -- с датой: по ней терминал считает заработок в час и историю капитала
+    f:write(string.format('[%s] #%d %s\n%s\n-----\n', os.date('%Y-%m-%d %H:%M:%S'), counter, name, str))
     f:close()
 end
 

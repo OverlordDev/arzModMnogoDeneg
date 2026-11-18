@@ -14,7 +14,7 @@
   var URL = "/api/player";
   var STREAM = "/api/player/stream";
   var POLL_MS = 10000;
-  var S = { data: null, err: null, loaded: false, sig: "", es: null, live: false, refreshTimer: null };
+  var S = { data: null, err: null, loaded: false, sig: "", es: null, live: false, refreshTimer: null, range: "24h" };
 
   function U() { return window.ARZ && window.ARZ.ui; }
   function esc(v) { return U().esc(v); }
@@ -45,11 +45,22 @@
     });
   }, 5000);
 
+  function perHour(x) { return x == null ? "—" : full(x) + "/ч"; }
+  function signed(x) { return (x > 0 ? "+" : "") + full(x); }
+  function dur(sec) {
+    var m = Math.floor(Math.max(0, Math.round(sec)) / 60);
+    return m < 60 ? m + " мин" : Math.floor(m / 60) + " ч " + String(m % 60).padStart(2, "0") + " мин";
+  }
+  function clock(iso) {
+    var d = new Date(iso);
+    return d.toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  }
+
   /* ---------- получение данных ---------- */
 
   function apply(body) {
     // age/parsed* меняются на каждый запрос — в подпись не включаем
-    var sig = body ? JSON.stringify([body.fileUpdated, body.summary, body.valuation, body.tips]) : "none";
+    var sig = body ? JSON.stringify([body.fileUpdated, body.summary, body.valuation, body.tips, body.earnings, (body.history || []).slice(-1)]) : "none";
     var changed = sig !== S.sig || S.err !== null;
     S.data = body;
     S.err = null;
@@ -147,6 +158,18 @@
       "</div>";
   }
 
+  /** Три плитки на главном экране: приход/чистыми в час за последний час и длина сессии. */
+  function earnMini(e) {
+    if (!e) return "";
+    var w = e.windows.h1;
+    var warn = w.oneOff ? '<div class="tiny dim mt-8">⚠ В окне доминирует одно крупное поступление (' + full(w.maxIncome) + ") — «$/ч» здесь не ставка заработка.</div>" : "";
+    return '<div class="kpi-mini">' +
+      "<div><small>Приход за час, $/ч</small><strong>" + perHour(w.incomePerHour) + "</strong></div>" +
+      "<div><small>Чистыми, $/ч</small><strong>" + perHour(w.netPerHour) + "</strong></div>" +
+      "<div><small>Сессия " + (e.active ? "идёт" : "закончилась") + "</small><strong>" + dur(e.windows.session.elapsedSec) + "</strong></div>" +
+      "</div>" + warn;
+  }
+
   function liveBadge() {
     return S.live
       ? '<span class="live-dot"></span>live'
@@ -165,6 +188,7 @@
       '<div class="card-sub">Из игры · ' + liveBadge() + " · последнее изменение " + ageSpan(d.fileUpdated) + " назад" + (stale ? " · игра не активна" : "") + "</div></div>" +
       '<a class="card-link" href="#" data-nav="player">Инвентарь ' + U().icon("arrow", 12) + "</a></div>" +
       stats(d) +
+      earnMini(d.earnings) +
       '<div class="mt-12">' + tipsHtml(d.tips, 3) + "</div>" +
       "</div>";
   };
@@ -210,6 +234,56 @@
       (rows || '<tr><td colspan="6"><div class="empty">Инвентарь пуст</div></td></tr>') + "</tbody></table></div></div>";
   }
 
+  function earningsCard(d) {
+    var e = d.earnings;
+    if (!e) return '<div class="card"><div class="card-title">Заработок</div><div class="empty">Пока нет событий денег с датой.</div></div>';
+    var rows = [["15 минут", e.windows.m15], ["1 час", e.windows.h1], ["Сессия · " + dur(e.windows.session.elapsedSec), e.windows.session]].map(function (r) {
+      var w = r[1];
+      var warn = w.oneOff ? ' <span class="badge badge-mid" title="Больше 60% прихода — одно поступление">разово</span>' : "";
+      return "<tr><td>" + esc(r[0]) + "</td>" +
+        '<td class="num pos">' + (w.income ? "+" + full(w.income) : "—") + warn + "</td>" +
+        '<td class="num neg">' + (w.spend ? full(w.spend) : "—") + "</td>" +
+        '<td class="num ' + (w.net < 0 ? "neg" : "") + '">' + signed(w.net) + "</td>" +
+        '<td class="num">' + perHour(w.incomePerHour) + "</td>" +
+        '<td class="num">' + perHour(w.netPerHour) + "</td></tr>";
+    }).join("");
+    var recent = e.recent.length
+      ? e.recent.map(function (x) {
+          return '<div class="flex between tiny" style="padding:3px 0"><span class="dim">' + clock(x.at) + '</span><span class="num ' + (x.delta > 0 ? "pos" : "neg") + '">' + signed(x.delta) + "</span></div>";
+        }).join("")
+      : '<div class="tiny dim">Изменений денег в этой сессии ещё не было.</div>';
+    return '<div class="card table-card"><div class="table-head"><div><div class="card-title">Заработок</div>' +
+      '<div class="card-sub">По изменениям денег · сессия ' + (e.active ? "идёт" : "закончилась") + " · " + e.samples + " изм.</div></div></div>" +
+      '<div class="table-scroll"><table><thead><tr><th>Окно</th><th>Приход</th><th>Расход</th><th>Чистыми</th><th>Приход, $/ч</th><th>Чистыми, $/ч</th></tr></thead><tbody>' + rows + "</tbody></table></div>" +
+      '<div style="padding:12px 16px"><div class="tiny dim" style="margin-bottom:6px">Последние изменения денег</div>' + recent +
+      '<div class="tiny dim mt-12">Приход — любые поступления (зарплата, продажа, перевод), расход — покупки, налоги, аренда. Работу от продажи предмета по одним событиям денег не отделить. «$/ч» не считается, пока набралось меньше 3 минут.</div></div></div>';
+  }
+
+  var RANGES = { "1h": ["1Ч", 3600000], "24h": ["24Ч", 86400000], "7d": ["7Д", 7 * 86400000] };
+
+  function capitalCard(d) {
+    var tabs = Object.keys(RANGES).map(function (k) {
+      return '<button class="chart-tab ' + (S.range === k ? "active" : "") + '" data-prange="' + k + '">' + RANGES[k][0] + "</button>";
+    }).join("");
+    var since = Date.now() - RANGES[S.range][1];
+    var pts = (d.history || []).filter(function (p) { return p[0] >= since; });
+    var body;
+    if (pts.length < 2) {
+      body = '<div class="empty">' + (d.summary.baseline === false
+        ? "История не пишется, пока нет полной загрузки инвентаря — перезайди на сервер."
+        : "История копится: точка пишется раз в минуту при изменениях (и минимум раз в 5 мин). График появится через пару минут.") + "</div>";
+    } else {
+      var vals = pts.map(function (p) { return p[1]; });
+      var first = vals[0], last = vals[vals.length - 1];
+      var diff = last - first;
+      body = U().lineChart(vals) +
+        '<div class="chart-legend mt-8"><span class="legend-dot"></span><span>Капитал (деньги + инвентарь) · с ' + clock(pts[0][0]) + '</span>' +
+        '<span style="margin-left:auto" class="mono ' + (diff >= 0 ? "pos" : "neg") + '">' + signed(diff) + "</span></div>" +
+        '<div class="tiny dim mt-8">Мин. ' + full(Math.min.apply(null, vals)) + " · макс. " + full(Math.max.apply(null, vals)) + " · точек: " + pts.length + "</div>";
+    }
+    return '<div class="card"><div class="card-head"><div><div class="card-title">Капитал</div><div class="card-sub">Только полные данные · хранится локально</div></div><div class="chart-tabs">' + tabs + "</div></div>" + body + "</div>";
+  }
+
   window.ARZ.renderPlayer = function () {
     var ui = U();
     var head = ui.pageHead("Игрок и инвентарь",
@@ -230,8 +304,17 @@
         tipsHtml(d.tips) +
         '<div class="divider mt-16"></div><div class="tiny dim mt-12">' + meta.join("<br>") + "</div>" +
         '<div class="tiny dim mt-12">Оценка приблизительная: цены дневные, большие стопки на деле продаются дешевле, а предметы без рыночной цены в сумму не входят.</div>' +
-      "</div></div>";
+      "</div></div>" +
+      '<div class="mt-16">' + earningsCard(d) + "</div>" +
+      '<div class="mt-16">' + capitalCard(d) + "</div>";
   };
+
+  document.addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("[data-prange]") : null;
+    if (!b) return;
+    S.range = b.getAttribute("data-prange");
+    refresh();
+  });
 
   poll();
   setInterval(poll, POLL_MS);

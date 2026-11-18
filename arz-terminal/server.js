@@ -55,6 +55,11 @@ const PLAYER_FILE = process.env.ARZ_EVENTS_FILE ||
     ? path.join(process.env.LOCALAPPDATA, "Programs", "Arizona Games Launcher", "bin", "arizona", "moonloader", "arz_player_events.log")
     : "");
 const PLAYER_ALLOW_REMOTE = process.env.ARZ_PLAYER_ALLOW_REMOTE === "1";
+// История капитала — ЛИЧНЫЕ данные: только в local/ (в .gitignore), НЕ в data/ (её пушит планировщик).
+const HISTORY_FILE = process.env.ARZ_HISTORY_FILE || path.join(ROOT, "local", "player_history.jsonl");
+const statsMod = require("./game/arz_stats");
+const { createHistory } = require("./game/arz_history");
+let history = null; // создаётся при старте, только если настроен файл игрока
 // Как часто сервер сам перечитывает и разбирает файл игрока (по умолчанию 30 с).
 const PLAYER_PARSE_MS = Math.max(5000, Number(process.env.ARZ_PLAYER_PARSE_MS) || 30000);
 const jsonCache = new Map(); // file -> { mtimeMs, doc }
@@ -97,7 +102,9 @@ function buildPlayer() {
   const valuer = require("./game/arz_value");
   let names = {};
   try { names = readJsonCachedSync(path.join(ROOT, "data", "items_names.json")); } catch (_) {}
-  const summary = parser.summarize(parser.replay(fs.readFileSync(PLAYER_FILE, "utf8")), names);
+  const events = parser.parseLog(fs.readFileSync(PLAYER_FILE, "utf8"));
+  const summary = parser.summarize(parser.replayEvents(events), names);
+  const timeline = statsMod.timeline(events, st.mtimeMs);
   let market = null;
   const sk = valuer.serverKey(summary.server);
   if (sk) { try { market = readJsonCachedSync(path.join(ROOT, "data", "market_" + sk + ".json")); } catch (_) {} }
@@ -110,7 +117,7 @@ function buildPlayer() {
     capital: valuation.ok ? (summary.money || 0) + valuation.estimate : null,
     tips: valuer.advise(summary, valuation),
   };
-  playerCache = { key, body };
+  playerCache = { key, body, timeline };
   process.stdout.write("[player] разобрано: " + summary.inventory.length + " слотов с предметами, " +
     (valuation.ok ? "оценка ≈ " + Math.round(valuation.estimate) : "без оценки") + "\n");
   return body;
@@ -125,7 +132,18 @@ function playerPayload() {
     ageSec: Math.round((now - Date.parse(body.fileUpdated)) / 1000),
     parsedAgoSec: Math.round((now - playerCheckedAt) / 1000),
     parseEverySec: Math.round(PLAYER_PARSE_MS / 1000),
+    // зависят от «сейчас», поэтому считаются при каждой отдаче, а не кэшируются
+    earnings: statsMod.earnings(playerCache.timeline, now),
+    history: history ? history.series(300, 7 * 86400000) : [],
   });
+}
+
+/** Точка истории капитала — только при полной загрузке инвентаря (иначе капитал занижен). */
+function recordHistory() {
+  if (!history || !playerCache) return;
+  const b = playerCache.body;
+  if (!b.summary.baseline || b.capital == null) return;
+  history.record(Date.now(), Math.round(b.capital), b.summary.money || 0, Math.round(b.valuation.estimate));
 }
 
 // --- live-поток (Server-Sent Events): сайт получает новое состояние сразу ---
@@ -140,7 +158,7 @@ function broadcastPlayer() {
 }
 
 /** Перечитать файл игрока. Если разбор изменился — сразу пушим клиентам. */
-function parsePlayerCycle() {
+function parsePlayerCycle(force) {
   const before = playerCache;
   try {
     if (PLAYER_FILE && fs.existsSync(PLAYER_FILE)) buildPlayer();
@@ -149,7 +167,9 @@ function parsePlayerCycle() {
     process.stderr.write("[player] ошибка разбора: " + e.message + "\n");
   }
   playerCheckedAt = Date.now();
-  if (playerCache !== before) broadcastPlayer();
+  recordHistory();
+  // force: плановый тик — ставки заработка «в час» зависят от времени, шлём свежие и без новых событий
+  if (force === true || playerCache !== before) broadcastPlayer();
 }
 
 /** Событие из игры дописало файл -> разбираем почти сразу (не ждём таймера). */
@@ -359,10 +379,12 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, HOST, () => {
   process.stdout.write(`ARZ Terminal on http://${HOST === "0.0.0.0" ? "localhost" : HOST}:${PORT}/\n`);
   if (PLAYER_FILE) {
+    history = createHistory(HISTORY_FILE);
     parsePlayerCycle();
     const watching = watchPlayerFile();
-    // Страховочный разбор по таймеру: подхватит рыночные цены и случай, когда fs.watch промолчал.
-    setInterval(parsePlayerCycle, PLAYER_PARSE_MS).unref();
+    // Страховочный разбор по таймеру: подхватит рыночные цены, случай, когда fs.watch промолчал,
+    // и обновит ставки заработка «в час» (они меняются со временем).
+    setInterval(() => parsePlayerCycle(true), PLAYER_PARSE_MS).unref();
     // Пульс для SSE: без него браузер/прокси могут закрыть «молчащее» соединение.
     setInterval(() => { for (const r of sseClients) { try { r.write(": ping\n\n"); } catch (_) { sseClients.delete(r); } } }, 15000).unref();
     process.stdout.write(`[player] live: ${watching ? "слежение за файлом + " : ""}страховочный разбор каждые ${Math.round(PLAYER_PARSE_MS / 1000)} с: ${PLAYER_FILE}\n`);

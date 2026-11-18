@@ -121,8 +121,9 @@ function parseLog(text) {
     if (!WATCH.has(name)) continue; // секреты и мусор отсекаем до JSON.parse
     let args;
     try { args = JSON.parse(m[2]); } catch (_) { continue; }
-    const ts = /^\[(\d\d:\d\d:\d\d)\]/.exec(head);
-    events.push({ name, args, ts: ts ? ts[1] : null });
+    // [hh:mm:ss] (старый формат лога) или [YYYY-MM-DD hh:mm:ss]
+    const ts = /^\[(?:(\d{4}-\d\d-\d\d) )?(\d\d:\d\d:\d\d)\]/.exec(head);
+    events.push({ name, args, ts: ts ? ts[2] : null, date: ts && ts[1] ? ts[1] : null });
   }
   return events;
 }
@@ -161,13 +162,17 @@ function summarize(state, names) {
   };
 }
 
-function replay(text) {
+function replayEvents(events) {
   const state = createState();
-  for (const e of parseLog(text)) applyEvent(state, e.name, e.args, e.ts);
+  for (const e of events) applyEvent(state, e.name, e.args, e.ts);
   return state;
 }
 
-module.exports = { createState, applyEvent, parseLog, replay, summarize, nameOf };
+function replay(text) {
+  return replayEvents(parseLog(text));
+}
+
+module.exports = { createState, applyEvent, parseLog, replay, replayEvents, summarize, nameOf };
 
 if (require.main === module) {
   const logPath = process.argv[2];

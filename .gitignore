@@ -5,3 +5,6 @@ __pycache__/
 Thumbs.db
 *.tmp
 *.log
+
+# Личные данные игрока (история капитала) — только локально, не в git
+arz-terminal/local/
