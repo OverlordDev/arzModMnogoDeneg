@@ -1,0 +1,16 @@
+[Unit]
+Description=ARZ Terminal (Node, Yuma + VC)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/arz-terminal
+Environment=PORT=3000
+Environment=HOST=0.0.0.0
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

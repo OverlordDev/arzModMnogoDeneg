@@ -1,0 +1,16 @@
+{
+  "name": "arz-terminal",
+  "version": "1.0.0",
+  "description": "ARZ Terminal — рынок Arizona RP (Yuma + Vice City). Node-статика + API для VPS на 2 пользователей.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "snapshot": "python scripts/snapshot.py --server yuma vc --window 14"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

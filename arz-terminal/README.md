@@ -15,6 +15,16 @@ python -m http.server 8080
 
 Открыть: `http://localhost:8080/`
 
+Вариант 3 — Node-сервер (для VPS, ноль зависимостей):
+
+```bash
+node server.js          # PORT=3000 по умолчанию
+```
+
+Проверка: `http://localhost:3000/api/health` → `{"ok":true,...}`.
+Деплой на VPS для двоих — см. `deploy/DEPLOY-VPS.md`
+(systemd-сервис + cron дампов каждые 30 минут, `deploy/vps-setup.sh`).
+
 Для мобильного вида: `http://localhost:8080/preview-mobile.html` — страница с iframe 390×844.
 
 ## Что внутри
