@@ -36,14 +36,14 @@ python scripts/import_arzmarket.py --server phoenix tucson --window 14
 
 ## История цен (дампы каждые 30 минут)
 
-`scripts/snapshot.py`, а запускает его **GitHub Actions**
-(workflow `ARZTerminalSnapshots`: расписание каждые 30 минут + ручной запуск),
+Дампы делает **планировщик Windows** (задача `ARZTerminalSnapshots`,
+каждые 30 минут, `scripts/run_snapshot.bat`): свежие агрегаты →
+очередной дамп (каждые 30 минут, даже если цифры не изменились) →
+обновлённый `data/market_<server>.json` → автокоммит и пуш в main →
+Render сам передеплоит сайт. ПК должен быть включён.
+(GitHub Actions не используется: аккаунт заблокирован GitHub
+из-за проблемы с оплатой, workflow-запуски отклоняются.)
 
-- проверяет свежие агрегаты и пишет очередной дамп (каждые 30 минут,
-  даже если цифры не изменились — так видна и динамика, и простои источника);
-  каждый запуск коммитится и пушится обратно в main — Render сам передеплоит сайт.
-  Локальный `run_snapshot.bat` и задача планировщика Windows больше не используются
-  (остались как запасной ручной вариант).
 - обновляет `data/market_<server>.json` для терминала;
 - пишет компактный снапшот в `data/history/<server>/YYYYMMDD-HHMM.json`
   (`[name, buy, sell, qtyBuy, qtySell, lastDate]`) — это и есть история цен;
