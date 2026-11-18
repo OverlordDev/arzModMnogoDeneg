@@ -1,0 +1,4414 @@
+{
+ "updated": "2026-11-18",
+ "jobs": [
+  {
+   "id": "afk",
+   "name": "АФК-фарм",
+   "measurements": 8,
+   "net_median": 195000000,
+   "net_min": 10000000,
+   "net_max": 300000000,
+   "gross_max": 300000000,
+   "reliability": "medium",
+   "requirements": [
+    "2 устройства (ПК+ноутбук/телефон, п.2.5); бизнесы на твинке запрещены (п.7.9)",
+    "2 устройства, скрипты, банда",
+    "банда/точка Гурама",
+    "капитал ~100 млрд",
+    "капитал ~100 млрд на 1000 шт.",
+    "капитал десятки млрд, слоты (36+ ячеек)",
+    "капитал на кейсы, слоты инвентаря",
+    "точка АФК, депозит (113 млн, докачивает)"
+   ],
+   "costs": [
+    {
+     "name": "скупка договоров (~100 млн/шт)",
+     "per_hour": 0,
+     "note": "",
+     "from": "lJ5My6GzmoY"
+    },
+    {
+     "name": "скупка ~100 млн/шт (~90+ млрд за 912, разово)",
+     "per_hour": 0,
+     "note": "",
+     "from": "orJJaiVmfj4"
+    }
+   ],
+   "entries": [
+    {
+     "job": "afk",
+     "job_ru": "Дивидендные договора (АФК)",
+     "video_id": "lJ5My6GzmoY",
+     "video_date": "2026-08-19",
+     "income_per_hour": 10000000,
+     "income_gross": true,
+     "measured": "пассивно каждый час при 1000 вечных договоров (= 240 млн/сутки); у автора 600 шт.",
+     "skill_level": "—",
+     "bonuses": [
+      "вечные договора"
+     ],
+     "costs": [
+      {
+       "name": "скупка договоров (~100 млн/шт)",
+       "amount_per_hour": 0
+      }
+     ],
+     "net_per_hour": 10000000,
+     "requirements": "капитал ~100 млрд на 1000 шт.",
+     "reliability": "medium",
+     "note": "Механика известна; окупаемость вложений не посчитана. Автор докупил 13 шт. за 1+ млрд.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "afk",
+     "job_ru": "АФК-скин Верка Сердючка (твинк)",
+     "video_id": "orJJaiVmfj4",
+     "video_date": "2026-10-28",
+     "income_per_hour": 150000000,
+     "income_gross": true,
+     "measured": "В СУТКИ АФК: осколок тайника ~50 млн (10%/payday, ~1/сутки) + вечный див. договор ~100 млн (5%/payday)",
+     "skill_level": "твинк 8-21 уровень",
+     "bonuses": [
+      "Верка Сердючка + перенос Хэнка",
+      "сет друида (снижение КД тайников)",
+      "золотая гангстерская цепь (автооткрытие)",
+      "X2-дом",
+      "x4-талон payday с промокода"
+     ],
+     "costs": [],
+     "net_per_hour": 150000000,
+     "requirements": "2 устройства (ПК+ноутбук/телефон, п.2.5); бизнесы на твинке запрещены (п.7.9)",
+     "reliability": "low",
+     "note": "Шансовая механика в среднем, без выборки. Вложения (разово): 13$ доната, 5 млрд передано, випки, Sparus 87 млн, лавка; комиссия трейда без премиум-випки 11% (550 млн с 5 млрд). Окупаемость не посчитана.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "afk",
+     "job_ru": "Дивидендные договора (АФК-цель)",
+     "video_id": "orJJaiVmfj4",
+     "video_date": "2026-10-28",
+     "income_per_hour": 240000000,
+     "income_gross": true,
+     "measured": "В СУТКИ при 1000 вечных договоров (10 млн/ч); x2 аккаунта = 480 млн (автор перекинул 912 шт. на твинк)",
+     "skill_level": "—",
+     "bonuses": [
+      "вечные договора"
+     ],
+     "costs": [
+      {
+       "name": "скупка ~100 млн/шт (~90+ млрд за 912, разово)",
+       "amount_per_hour": 0
+      }
+     ],
+     "net_per_hour": 240000000,
+     "requirements": "капитал ~100 млрд",
+     "reliability": "medium",
+     "note": "Механика; окупаемость ~1+ год не посчитана автором.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "afk",
+     "job_ru": "Монеты новой мафии (АФК)",
+     "video_id": "orJJaiVmfj4",
+     "video_date": "2026-10-28",
+     "income_per_hour": null,
+     "income_gross": true,
+     "measured": "100 монет = 100 AZ/payday = 4800 AZ/сутки; x2 аккаунта = ~10000 AZ/день (доход в AZ, не виртах)",
+     "skill_level": "—",
+     "bonuses": [
+      "аренда скина Shelby (заявлено +5%, реально ~1%)"
+     ],
+     "costs": [],
+     "net_per_hour": null,
+     "requirements": "капитал на кейсы, слоты инвентаря",
+     "reliability": "medium",
+     "note": "Сбор стоил миллиарды на кейсах (95 за 1,4 млрд + 269 своих + ~200; ~10000 кейсов на 100 монет при ~1% шансе). Виртов не даёт.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "afk",
+     "job_ru": "АФК-фарм твинка (база)",
+     "video_id": "ux75ePx9obg",
+     "video_date": "2026-11-03",
+     "income_per_hour": 300000000,
+     "income_gross": true,
+     "measured": "В СУТКИ: зарплата банды + выплаты дивидендов (111 часов АФК, 28 уровень)",
+     "skill_level": "28",
+     "bonuses": [
+      "сет друида",
+      "Верка Сердючка (эликсиры ~4 млн/шт x5, осколки)",
+      "премиум-випка 5 уровней"
+     ],
+     "costs": [],
+     "net_per_hour": 300000000,
+     "requirements": "2 устройства, скрипты, банда",
+     "reliability": "medium",
+     "note": "Факт 111 часов, но состав дохода не разделён. Вложения 50-60+ млрд кейсами не учтены. Флаг семьи слетел (11 бонусов не работают).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "afk",
+     "job_ru": "Монеты новой мафии (АФК)",
+     "video_id": "ux75ePx9obg",
+     "video_date": "2026-11-03",
+     "income_per_hour": null,
+     "income_gross": true,
+     "measured": "100 монет/акк → ~10000 AZ/день с двух = ~300 тыс./мес ≈ 20+ млрд виртов/мес (доход в AZ)",
+     "skill_level": "—",
+     "bonuses": [
+      "скины Shelby/Томас (шанс монеты)"
+     ],
+     "costs": [],
+     "net_per_hour": null,
+     "requirements": "капитал десятки млрд, слоты (36+ ячеек)",
+     "reliability": "medium",
+     "note": "Механика подтверждена счётчиком (4→40→52→100; 105-я+ бесполезны — лимит 100). Конвертация 300 тыс. AZ → 20+ млрд зависит от курса (скидки, Чёрная пятница −50%). Рамка Diamond Silver 304/320 (~2+ млрд) придержана.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "afk",
+     "job_ru": "АФК-питон (разное)",
+     "video_id": "SjzIYK3ofvQ",
+     "video_date": "2026-10-06",
+     "income_per_hour": null,
+     "income_gross": true,
+     "measured": "выходные АФК: 2 див. договора + 693 AZ + 85 AZ (БП) + кейс фрейм + G-регистратор + медаль (продана в VC); ставки нет",
+     "skill_level": "—",
+     "bonuses": [
+      "календарь",
+      "БП"
+     ],
+     "costs": [],
+     "net_per_hour": null,
+     "requirements": "точка АФК, депозит (113 млн, докачивает)",
+     "reliability": "medium",
+     "note": "Продажа запасов в VC: 2,8 млн VC + 268 млн виртов (минус ошибка −100 млн: перепутал покупку/скупку).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "сет Devil Company 1300-1400 (зарплата + кейсы каптуры + фрейм)"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": null,
+     "job": "afk",
+     "job_ru": "АФК Гурам",
+     "measured": "не замерено; наблюдение: вечные договора 60-100 млн (цена просела)",
+     "net_per_hour": null,
+     "note": "Оценка автора ~1 млрд/ДЕНЬ в ФК, не в час. Без лога.",
+     "reliability": "low",
+     "requirements": "банда/точка Гурама",
+     "skill_level": "неизвестен",
+     "video_date": "2026-09-29",
+     "video_id": "YnVPhfsztE8",
+     "_file": "batch_E2_bomzh.json"
+    }
+   ]
+  },
+  {
+   "id": "autougon",
+   "name": "Автоугон",
+   "measurements": 2,
+   "net_median": 15900000,
+   "net_min": 15900000,
+   "net_max": 15900000,
+   "gross_max": 300000000,
+   "reliability": "low",
+   "requirements": [
+    "банда обязательно, отмычки",
+    "банда, копы в сети, маска, отмычки, макс. навык"
+   ],
+   "costs": [
+    {
+     "name": "отмычки (~3-8 млн/шт)",
+     "per_hour": 5000000,
+     "note": "",
+     "from": "N0nXUCTkLtc"
+    },
+    {
+     "name": "отмычки 5-10 млн/шт",
+     "per_hour": 0,
+     "note": "",
+     "from": "pQL0N7XFn_w"
+    },
+    {
+     "name": "материалы на поиск 50 шт",
+     "per_hour": 0,
+     "note": "",
+     "from": "pQL0N7XFn_w"
+    }
+   ],
+   "entries": [
+    {
+     "job": "autougon",
+     "job_ru": "Автоугон",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 20900000,
+     "income_gross": true,
+     "measured": "за 1 автомобиль BMW E34 (взлом ~1 мин + доставка); частота угонов не замерена",
+     "skill_level": "не указан (совет: купить фулл за ~60000 AZ, самому качать по 0,1%)",
+     "bonuses": [
+      "нимб 5 звёзд (без розыска)"
+     ],
+     "costs": [
+      {
+       "name": "отмычки (~3-8 млн/шт)",
+       "amount_per_hour": 5000000
+      }
+     ],
+     "net_per_hour": 15900000,
+     "requirements": "банда обязательно, отмычки",
+     "reliability": "low",
+     "note": "Единственный личный замер автора; часовой доход неизвестен. Шанс 1% скопировать нелимитку (Bugatti ~2 млрд). + ящик джентльмена, заточка, редкий материал (~1-1,5 млн).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [],
+     "costs": [
+      "отмычки 5-10 млн/шт",
+      "материалы на поиск 50 шт"
+     ],
+     "income_gross": true,
+     "income_per_hour": 300000000,
+     "job": "autougon",
+     "job_ru": "Автоугон",
+     "measured": "1 угон (~15 мин поисков): 80 млн + 3.9 млн + заточка; экстраполяция 3-4/час",
+     "net_per_hour": null,
+     "note": "3 машины ~240 млн, 4 ~320 млн. Но: КД, лимит 10-15/день, нужны копы в сети, противоугонки 5 млн, риск взрыва/выхода владельца. Сироп не работает.",
+     "reliability": "low",
+     "requirements": "банда, копы в сети, маска, отмычки, макс. навык",
+     "skill_level": "максимальный",
+     "video_date": "2026-08-24",
+     "video_id": "pQL0N7XFn_w",
+     "_file": "batch_E2_bomzh.json"
+    }
+   ]
+  },
+  {
+   "id": "avtobus",
+   "name": "Автобусник",
+   "measurements": 1,
+   "net_median": 13000000,
+   "net_min": 13000000,
+   "net_max": 13000000,
+   "gross_max": 13000000,
+   "reliability": "medium",
+   "requirements": [
+    "1 уровень"
+   ],
+   "costs": [
+    {
+     "name": "аренда автобуса (не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "личный автобус Deadline Express и др. +60% (патч 25.11.2025; было +30%)",
+      "бонус тракториста x3",
+      "x2/x3 акции"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда автобуса (не подтверждена 2026)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 13000000,
+     "job": "avtobus",
+     "job_ru": "Водитель автобуса",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 13000000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. База поднята +20% патчем 25.11.2025. Макс. с бонусами +60% = 20.8 млн. Видеообзор 2026 (пересказ): на кастомной фуре до 22 млн/ч, реально 10-15 млн — https://300.ya.ru/v_18BrigID. Тариф: 5к с пассажира NPC x10 (патч 26.04.2026).",
+     "reliability": "medium",
+     "requirements": "1 уровень",
+     "skill_level": "1 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "bandi",
+   "name": "Банды / мафии",
+   "measurements": 4,
+   "net_median": 2850000,
+   "net_min": 700000,
+   "net_max": 5000000,
+   "gross_max": 120000000,
+   "reliability": "medium",
+   "requirements": [
+    "банда",
+    "банда, 7 ранг",
+    "банда, карта из раздевалки, чужие метки",
+    "медкарта (5 млн разово), инвайт"
+   ],
+   "costs": [
+    {
+     "name": "баллончик 100000",
+     "per_hour": 0,
+     "note": "",
+     "from": "YnVPhfsztE8"
+    },
+    {
+     "name": "1 BTC / 1 AZ за свёрток",
+     "per_hour": 0,
+     "note": "",
+     "from": "YnVPhfsztE8"
+    }
+   ],
+   "entries": [
+    {
+     "job": "bandi",
+     "job_ru": "Охрана территории гетто",
+     "video_id": "orJJaiVmfj4",
+     "video_date": "2026-10-28",
+     "income_per_hour": 5000000,
+     "income_gross": true,
+     "measured": "одна ночь АФК в точке (7 ранг банды Steki)",
+     "skill_level": "низкий (твинк)",
+     "bonuses": [
+      "випка + АД на 30 дней",
+      "точка спавна",
+      "скрипты (анти-АФК, автореконнект, автоспавн)"
+     ],
+     "costs": [],
+     "net_per_hour": 5000000,
+     "requirements": "банда, 7 ранг",
+     "reliability": "medium",
+     "note": "Одна ночь: ~5 млн + заточка, 2 редких материала, эликсиры, платиновые рулетки (~5 млн). Еда нужна (голод режет бег).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "bandi",
+     "job_ru": "Мафия (зарплата)",
+     "video_id": "cGAj_NGCx-U",
+     "video_date": "2026-08-16",
+     "income_per_hour": 700000,
+     "income_gross": true,
+     "measured": "первая зарплата за 1 payday (+опыт)",
+     "skill_level": "—",
+     "bonuses": [],
+     "costs": [],
+     "net_per_hour": 700000,
+     "requirements": "медкарта (5 млн разово), инвайт",
+     "reliability": "medium",
+     "note": "Одна выплата; пассив копеечный. Итог суток автора: 250 млн + 14 уровень (шахта + ящик + Mark II).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "скин Uzi Strike (ко всем меро)"
+     ],
+     "costs": [
+      "баллончик 100000"
+     ],
+     "income_gross": true,
+     "income_per_hour": 120000000,
+     "job": "bandi",
+     "job_ru": "Граффити",
+     "measured": "2 закраски по 3 млн (0.55+2.5) + 100 респектов + 10 AZ; карта 80 меток, реально ~40",
+     "net_per_hour": null,
+     "note": "120 млн — за КРУГ (40x3 млн), не в час! Респаун ~3 ч, метки заняты врагами. Расценка 3 млн показана дважды.",
+     "reliability": "medium",
+     "requirements": "банда, карта из раздевалки, чужие метки",
+     "skill_level": "член банды",
+     "video_date": "2026-09-29",
+     "video_id": "YnVPhfsztE8",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "Uzi (удвоение дропа)"
+     ],
+     "costs": [
+      "1 BTC / 1 AZ за свёрток"
+     ],
+     "income_gross": true,
+     "income_per_hour": null,
+     "job": "bandi",
+     "job_ru": "Тёмная удача",
+     "measured": "механика без проработки (20 шт не делал)",
+     "net_per_hour": null,
+     "note": "Единичный кейс: заточка ~15 млн (x2 с Uzi ~30 млн за ~5 мин). Автор ставит 5 место — мало прибыли.",
+     "reliability": "low",
+     "requirements": "банда",
+     "skill_level": "неизвестен",
+     "video_date": "2026-09-29",
+     "video_id": "YnVPhfsztE8",
+     "_file": "batch_E2_bomzh.json"
+    }
+   ]
+  },
+  {
+   "id": "battlepass",
+   "name": "Боевой пропуск",
+   "measurements": 1,
+   "net_median": null,
+   "net_min": null,
+   "net_max": null,
+   "gross_max": null,
+   "reliability": "low",
+   "requirements": [
+    "прокачка 90 уровней (2-3 дня усилий)"
+   ],
+   "costs": [
+    {
+     "name": "премиум-ветка 1200 доната",
+     "per_hour": 0,
+     "note": "",
+     "from": "lJ5My6GzmoY"
+    }
+   ],
+   "entries": [
+    {
+     "job": "battlepass",
+     "job_ru": "Боевой пропуск",
+     "video_id": "lJ5My6GzmoY",
+     "video_date": "2026-08-19",
+     "income_per_hour": null,
+     "income_gross": true,
+     "measured": "разовый доход за БП, не часовая ставка",
+     "skill_level": "—",
+     "bonuses": [],
+     "costs": [
+      {
+       "name": "премиум-ветка 1200 доната",
+       "amount_per_hour": 0
+      }
+     ],
+     "net_per_hour": null,
+     "requirements": "прокачка 90 уровней (2-3 дня усилий)",
+     "reliability": "low",
+     "note": "Со слов автора: 2-3 млрд со всех наград (кейсы 440+280+82 млн, 2 вечных договора ~200 млн, остальное 1,5 млрд), 1300 GG-коинов, 631 рубль доната с кейсов.",
+     "_file": "batch_E1_tops.json"
+    }
+   ]
+  },
+  {
+   "id": "dalnoboy",
+   "name": "Дальнобойщик",
+   "measurements": 2,
+   "net_median": 94067500,
+   "net_min": 18135000,
+   "net_max": 170000000,
+   "gross_max": 200000000,
+   "reliability": "medium",
+   "requirements": [
+    "12 уровень",
+    "длинный список сетов (см. bonuses)"
+   ],
+   "costs": [
+    {
+     "name": "аренда фулл-сета",
+     "per_hour": 30000000,
+     "note": "",
+     "from": "N0nXUCTkLtc"
+    },
+    {
+     "name": "аренда фуры (не подтверждена 2026, обычно символическая)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "job": "dalnoboy",
+     "job_ru": "Дальнобойщик",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 200000000,
+     "income_gross": true,
+     "measured": "заявлено автором, не замерено: 15-20 млн/рейс x ~15 рейсов",
+     "skill_level": "навык из доната",
+     "bonuses": [
+      "фура зверь с тюнингом (див. договора +10 тыс./payday, ~50 млн)",
+      "семья с флагом",
+      "грамота",
+      "шляпа в винпикселях",
+      "скин байкера",
+      "эликсир дальнобойщика",
+      "охранник +26%",
+      "госка",
+      "слот 10:00-20:00 (+20%)",
+      "отель",
+      "эликсир вечности +30%",
+      "группа 4 чел (+20-35%)",
+      "эликсир тракториста"
+     ],
+     "costs": [
+      {
+       "name": "аренда фулл-сета",
+       "amount_per_hour": 30000000
+      }
+     ],
+     "net_per_hour": 170000000,
+     "requirements": "длинный список сетов (см. bonuses)",
+     "reliability": "low",
+     "note": "Шанс выбить див. договор мизерный (от 3+ часов на фуре), на него не рассчитывать.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "личная фура Зверь Tier1 +40% / Tier2 +55% / Tier3 x2",
+      "эликсир дальнобоя +20%",
+      "шапка винпикселя +11%",
+      "грамота ветерана +5%",
+      "охрана +N% к зп на работе",
+      "бонус тракториста x3 (2 часа)",
+      "x2/x3 зарплата в дни акций"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда фуры (не подтверждена 2026, обычно символическая)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 18135000,
+     "job": "dalnoboy",
+     "job_ru": "Дальнобойщик",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki, 19 работ)",
+     "net_per_hour": 18135000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/ (снимок 01.11.2026, обновлено 16.11.2026). База поднята +100% патчем 25.11.2025 (https://chatwoot.arizona-rp.com/hc/arizona-rp/articles/1764054405-patchnotes_25112025). Макс. с бонусами +70% = 30.83 млн. Аренда/топливо в виртах 2026 не подтверждены цифрой — чистыми = номинал минус расходы. Не смешивать с цифрами 2022-2024 (30-60к/рейс — устарело).",
+     "reliability": "medium",
+     "requirements": "12 уровень",
+     "skill_level": "12 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "ferma",
+   "name": "Ферма льна и хлопка",
+   "measurements": 5,
+   "net_median": 90000000,
+   "net_min": 10000000,
+   "net_max": 137500000,
+   "gross_max": 150000000,
+   "reliability": "high",
+   "requirements": [
+    "3 уровень",
+    "лицензия на день",
+    "разрешение 125000/день",
+    "фулл сет в аренду",
+    "—"
+   ],
+   "costs": [
+    {
+     "name": "аренда сета",
+     "per_hour": 6000000,
+     "note": "",
+     "from": "m5TFnwglwNg"
+    },
+    {
+     "name": "аренда охранника",
+     "per_hour": 4000000,
+     "note": "",
+     "from": "m5TFnwglwNg"
+    },
+    {
+     "name": "лицензия на день (цена не названа)",
+     "per_hour": 0,
+     "note": "",
+     "from": "m5TFnwglwNg"
+    },
+    {
+     "name": "аренда сета (11.3 млн / 2 ч)",
+     "per_hour": 5650000,
+     "note": "",
+     "from": "DPXoY4nlmuI"
+    },
+    {
+     "name": "разрешение 125000/день (мелочь)",
+     "per_hour": 0,
+     "note": "",
+     "from": "DPXoY4nlmuI"
+    },
+    {
+     "name": "аренда сета (10-15 млн/ч)",
+     "per_hour": 12500000,
+     "note": "",
+     "from": "N0nXUCTkLtc"
+    },
+    {
+     "name": "расходы не подтверждены",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "арендный сет (+7 льна за сбор)",
+      "охранник +2 ресурса"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 6000000,
+       "name": "аренда сета"
+      },
+      {
+       "amount_per_hour": 4000000,
+       "name": "аренда охранника"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "лицензия на день (цена не названа)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 100000000,
+     "job": "ferma",
+     "job_ru": "Ферма",
+     "measured": "полный час (20:16 -> +1ч), промежуточно 30 мин: 1400 льна + 2000 хлопка + 22 угля + ~100 ткани",
+     "net_per_hour": 90000000,
+     "reliability": "medium",
+     "requirements": "лицензия на день",
+     "skill_level": "арендный сет + охранник",
+     "video_date": "2026-10-12",
+     "video_id": "m5TFnwglwNg",
+     "note": "Круглый итог 'плюс-минус' без разбивки цен. Net = 100 - ~10 (автор не вычитал). Шанс ткани 2%/грабли/полив не упоминаются.",
+     "_file": "batch_D_mine_wood_farm_fish.json"
+    },
+    {
+     "bonuses": [
+      "сет: 'репа' +8% ткань/2% уголь; меч ВК 2% уголь/+1 ресурс; грабли Аризоны (база 3, ткань ~12%, сбор 4 сек); скин +1 ресурс/+1 шанс ткани (названия на слух)"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 5650000,
+       "name": "аренда сета (11.3 млн / 2 ч)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "разрешение 125000/день (мелочь)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 98950000,
+     "job": "ferma",
+     "job_ru": "Ферма",
+     "measured": "полный час 15:10 -> +1ч с оверлеем; 30 мин ~40 млн; 40 мин 58 млн; итог 2995 хлопка + 1255 льна + 201 ткани + 52 красителя + 30 угля",
+     "net_per_hour": 93000000,
+     "note": "Без охранника, средняя конкуренция. Цены - отредактированные автором, вслух не названы. Факт ткани (~4%+) выше базовых 2% за счет бонусов. Вода выкидывалась как бесплатная. Net = 98.95 - ~5.8 (автор не вычитал).",
+     "reliability": "high",
+     "requirements": "разрешение 125000/день",
+     "skill_level": "арендный сет, без охранника, по 5 льна со сбор",
+     "video_date": "2026-10-08",
+     "video_id": "DPXoY4nlmuI",
+     "_file": "batch_D_mine_wood_farm_fish.json"
+    },
+    {
+     "job": "ferma",
+     "job_ru": "Ферма льна и хлопка",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 150000000,
+     "income_gross": true,
+     "measured": "заявлено автором, не замерено: со всеми баффами",
+     "skill_level": "—",
+     "bonuses": [
+      "грабли Аризоны",
+      "наследник дома/скин",
+      "пугало репка (8% уголь)",
+      "охранник Т-60 Black Ops / Red Rocket",
+      "трейлеры",
+      "сироп фермера"
+     ],
+     "costs": [
+      {
+       "name": "аренда сета (10-15 млн/ч)",
+       "amount_per_hour": 12500000
+      }
+     ],
+     "net_per_hour": 137500000,
+     "requirements": "фулл сет в аренду",
+     "reliability": "low",
+     "note": "Автор ждёт сезон крафтов (+3-4 тыс. к ценам).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "ferma",
+     "job_ru": "Ферма льна и хлопка",
+     "video_id": "cGAj_NGCx-U",
+     "video_date": "2026-08-16",
+     "income_per_hour": 10000000,
+     "income_gross": true,
+     "measured": "2 часа → 20 млн (без сета)",
+     "skill_level": "низкий",
+     "bonuses": [],
+     "costs": [],
+     "net_per_hour": 10000000,
+     "requirements": "—",
+     "reliability": "medium",
+     "note": "Замер есть, но без сета — не потолок (ср. 150 млн с сетом у N0nXUCTkLtc). Автор к ферме не вернётся.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "расходы не подтверждены"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 13000000,
+     "job": "ferma",
+     "job_ru": "Ферма льна и хлопка",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 13000000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Бонусов нет. Подработка.",
+     "reliability": "medium",
+     "requirements": "3 уровень",
+     "skill_level": "3 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "hotdogi",
+   "name": "Хот-доги",
+   "measurements": 1,
+   "net_median": 5100000,
+   "net_min": 5100000,
+   "net_max": 5100000,
+   "gross_max": 5100000,
+   "reliability": "medium",
+   "requirements": [
+    "5 уровень"
+   ],
+   "costs": [
+    {
+     "name": "расходы не подтверждены",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "расходы не подтверждены"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 5100000,
+     "job": "hotdogi",
+     "job_ru": "Продавец хот-догов",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 5100000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Бонусов нет (0). Точки в SF.",
+     "reliability": "medium",
+     "requirements": "5 уровень",
+     "skill_level": "5 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "incassator",
+   "name": "Инкассатор",
+   "measurements": 11,
+   "net_median": 304500000,
+   "net_min": 16029000,
+   "net_max": 800000000,
+   "gross_max": 1000000000,
+   "reliability": "high",
+   "requirements": [
+    "10 уровень",
+    "Devil Guard 1800+, сет или аренда, группа, 3 дома",
+    "Devil Guard 1800-2000, топ-сет, группа",
+    "инкассаторка качества 1800-2000 (критично); уровень не назван",
+    "кастомная инкассаторка из БП, детали тюнинга, легендарное качество",
+    "машина с рейтингом 2000; уровень не назван",
+    "неизвестны",
+    "нет",
+    "сет + ивент-бонус на сервере",
+    "устраиваться не нужно (со слов автора); уровень не назван"
+   ],
+   "costs": [
+    {
+     "name": "сироп тракториста 320 млн / 2 ч",
+     "per_hour": 160000000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "аренда топ-сета",
+     "per_hour": 34000000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "охранник",
+     "per_hour": 5000000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "машина",
+     "per_hour": 30000000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "аренды суммарно ~738 млн / 4 ч",
+     "per_hour": 184500000,
+     "note": "",
+     "from": "sumf-Y59TS4"
+    },
+    {
+     "name": "сироп тракториста (200 млн / 2 часа)",
+     "per_hour": 100000000,
+     "note": "",
+     "from": "hmnB6blpbZw"
+    },
+    {
+     "name": "аренда Devil Guard (40 млн / 2 часа)",
+     "per_hour": 20000000,
+     "note": "",
+     "from": "hmnB6blpbZw"
+    },
+    {
+     "name": "аренда аксессуаров (20 млн / 2 часа)",
+     "per_hour": 10000000,
+     "note": "",
+     "from": "hmnB6blpbZw"
+    },
+    {
+     "name": "аренда сета",
+     "per_hour": 0,
+     "note": "",
+     "from": "bxHTDuKvaE4"
+    },
+    {
+     "name": "сироп тракториста/2",
+     "per_hour": 0,
+     "note": "",
+     "from": "R12KqH3UdYw"
+    },
+    {
+     "name": "аренда инкассатора (не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "сироп тракториста",
+      "топ-сет 34 млн/час",
+      "Devil's Guard",
+      "группа (неполная)"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 160000000,
+       "name": "сироп тракториста 320 млн / 2 ч"
+      },
+      {
+       "amount_per_hour": 34000000,
+       "name": "аренда топ-сета"
+      },
+      {
+       "amount_per_hour": 5000000,
+       "name": "охранник"
+      },
+      {
+       "amount_per_hour": 30000000,
+       "name": "машина"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 400000000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "замер за 2 часа (800 млн)",
+     "net_per_hour": null,
+     "note": "2ч: 800 млн (8 млн/банкомат соло, 9 млн с группой); расходы ~457 млн (сироп 320 + сет 67 + охранник 10 + авто 60); net автором не посчитан.",
+     "reliability": "medium",
+     "requirements": "нет",
+     "skill_level": null,
+     "video_date": "2026-11-14",
+     "video_id": "ODNddgoDtvw",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "топ-сет",
+      "сироп тракториста",
+      "без охранника и группы"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 184500000,
+       "name": "аренды суммарно ~738 млн / 4 ч"
+      }
+     ],
+     "income_gross": false,
+     "income_per_hour": 165500000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "замер за 4 часа (562 млн чистыми + 100 млн акции)",
+     "net_per_hour": 165500000,
+     "note": "4ч: 562 млн чистыми + 100 млн акции; авторское почти 1.5 млрд не сходится с 562+100; без охранника (ошибка аренды), без группы.",
+     "reliability": "medium",
+     "requirements": "нет",
+     "skill_level": "прокачанный аккаунт",
+     "video_date": "2026-11-15",
+     "video_id": "sumf-Y59TS4",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "топ-1 сет: Mine-скелет +40%, чемодан Бомж Gang +20%, хенк-арбалет +35%, молния роллера +40%",
+      "эликсир вечности (1.8 млн -> 2.06 млн за банкомат)",
+      "без группы (-30% заработка)"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 400000000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "10 рейсов за ~15 мин, экстраполяция на ~60 рейсов/час",
+     "net_per_hour": 400000000,
+     "note": "Оценка автора 'минимум 400 млн' на плохой машине (~1000 качества вместо 1800-2000, множитель x2 вместо x4). Аренда не названа, поэтому net равен gross. Прогноз с фулл-качеством, сиропом и акцией ЦЗ: 5-6 млн за банкомат. Риск ограбления не упомянут. Арифметика автора по монеткам (+85 млн) не сходится, цифра под сомнением.",
+     "reliability": "medium",
+     "requirements": "инкассаторка качества 1800-2000 (критично); уровень не назван",
+     "skill_level": "первый раз на работе после обновы",
+     "video_date": "2026-10-30",
+     "video_id": "F-4br5jkBZA",
+     "_file": "batch_C_incas_oil_road.json"
+    },
+    {
+     "bonuses": [
+      "Devil Guard 2000 (x4.5, ~2200 акций, 2 ларца за банкомат)",
+      "хенд +35%, мумия роллера +40%, чемодан +20%, манекен +40%",
+      "охранник +34%",
+      "сироп тракториста (x3)",
+      "эликсир вечности",
+      "группа из 3 человек"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 100000000,
+       "name": "сироп тракториста (200 млн / 2 часа)"
+      },
+      {
+       "amount_per_hour": 20000000,
+       "name": "аренда Devil Guard (40 млн / 2 часа)"
+      },
+      {
+       "amount_per_hour": 10000000,
+       "name": "аренда аксессуаров (20 млн / 2 часа)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 880000000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "замер ~1 час (670 млн наличкой, темп ~10 банкоматов за 10 мин)",
+     "net_per_hour": 750000000,
+     "note": "Баланс после продажи акций 840 млн + 132 ларца (~300-470 тыс/шт). Расчёт автора: 1.76 млрд за 2 часа минус 260 млн расходов = ~750 млн/ч чистыми, без аренды охранника (цена неизвестна). Кусок продажи акций не записался. Риск ограбления не упомянут.",
+     "reliability": "high",
+     "requirements": "устраиваться не нужно (со слов автора); уровень не назван",
+     "skill_level": "не назван (максимальный сет)",
+     "video_date": "2026-10-03",
+     "video_id": "hmnB6blpbZw",
+     "_file": "batch_C_incas_oil_road.json"
+    },
+    {
+     "bonuses": [
+      "Devil Guard 2000 (x4.5, ~2200 акций, 2 ларца за банкомат)",
+      "сет +291%: манскелет +40%, хенд +35%, молния роллера +40%, чемодан +20%, эликсир инкассатора",
+      "тюнинг отбойник + боковая защита (+300 акций)",
+      "охранник +16%",
+      "без сиропа тракториста"
+     ],
+     "costs": [],
+     "income_gross": false,
+     "income_per_hour": 209000000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "замер ровно 1 час, ~50 банкоматов (134.5 млн наличкой + битки + стейблы + ларцы + акции)",
+     "net_per_hour": 209000000,
+     "note": "Названы 'чистыми', но аренда машины/сета не вычтена. Акции упёрлись в лимит базы (2 млрд шт каждого вида) — излишки продать сразу нельзя. До обновы было 100-120 млн/ч. Сдача такого сета приносит 200-300 млн/сутки. Разница с hmnB6blpbZw (750 млн/ч) объясняется отсутствием сиропа x3, группы и эликсира.",
+     "reliability": "high",
+     "requirements": "машина с рейтингом 2000; уровень не назван",
+     "skill_level": "не назван",
+     "video_date": "2026-08-18",
+     "video_id": "RSC9Mvzt3RI",
+     "_file": "batch_C_incas_oil_road.json"
+    },
+    {
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "video_id": "lJ5My6GzmoY",
+     "video_date": "2026-08-19",
+     "income_per_hour": 130000000,
+     "income_gross": true,
+     "measured": "1 разгрузка 5,86 млн (~10 мин); оценка 100-130 млн/ч с тюнингом (взят верх)",
+     "skill_level": "не указан (со скином Хэнка Арбалета, без фулл-сета)",
+     "bonuses": [
+      "скин Хэнка",
+      "план: отбойник+решётка+защита = 3500 акций/машину",
+      "легендарное качество x4.5",
+      "эликсир",
+      "группа (до 2 млн/банкомат)"
+     ],
+     "costs": [],
+     "net_per_hour": 130000000,
+     "requirements": "кастомная инкассаторка из БП, детали тюнинга, легендарное качество",
+     "reliability": "low",
+     "note": "Замер только одной разгрузки (586 тыс./банкомат + ~308 акций Apple); кейс фрейм с дейлика = 15 млн.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "video_id": "KfKhW_Gjb1k",
+     "video_date": "2026-10-20",
+     "income_per_hour": 800000000,
+     "income_gross": true,
+     "measured": "заявлен диапазон 400-800 млн грязными, взят верх (не замерено)",
+     "skill_level": "—",
+     "bonuses": [
+      "инкассаторка + бонус серверного ивента",
+      "охранник",
+      "сет (чемодан, молния роллера, руки сета)",
+      "бонус тракториста"
+     ],
+     "costs": [],
+     "net_per_hour": 800000000,
+     "requirements": "сет + ивент-бонус на сервере",
+     "reliability": "low",
+     "note": "Конкуренции нет (банкоматы безлимит). Чистыми — ниже.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "Devil Guard 1800+ (x4.2 ЗП, 2200 акций, 2 ларца)",
+      "молния роллера",
+      "майн скелет",
+      "чемодан бомжга",
+      "эликсир инкассатора",
+      "дома",
+      "группа"
+     ],
+     "costs": [
+      "аренда сета"
+     ],
+     "income_gross": true,
+     "income_per_hour": 200000000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "тест 1 час автора с Devil Guard 2000 рейтинга",
+     "net_per_hour": null,
+     "note": "Стабильно 200-220 млн в любое время, без конкуренции. Акции/BTC окупают аренду со слов автора, но нетто не посчитано.",
+     "reliability": "medium",
+     "requirements": "Devil Guard 1800-2000, топ-сет, группа",
+     "skill_level": "топ-сет",
+     "video_date": "2026-09-24",
+     "video_id": "bxHTDuKvaE4",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 450000000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "НЕ замер — одна фраза 'там действительно можно 400-500'",
+     "net_per_hour": null,
+     "note": "Без деталей сета. Только как ориентир слухов.",
+     "reliability": "low",
+     "requirements": "неизвестны",
+     "skill_level": "неизвестен",
+     "video_date": "2026-09-11",
+     "video_id": "ymKN4o5QC6M",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "Devil Guard 1800-2000 (x4.5, +2200 акций, ларцы)",
+      "молния роллера +40%",
+      "Хенк +35%",
+      "майн скелет +40%",
+      "чемодан +20%",
+      "охранник 18/22/28/34%",
+      "эликсиры +30%/+30%/x3",
+      "дома ~40-45%",
+      "группа +30%",
+      "Uzi +12 +24%"
+     ],
+     "costs": [
+      "аренда сета",
+      "сироп тракториста/2"
+     ],
+     "income_gross": true,
+     "income_per_hour": 1000000000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "10-часовой тест автора + расчёт 17 млн x 45-55 банкоматов",
+     "net_per_hour": 750000000,
+     "note": "765-935 наличкой + 100-200 акциями = ~1 млрд грязными; чистыми 700-800 (середина 750). Без конкуренции, в любое время. №1 по автору.",
+     "reliability": "medium",
+     "requirements": "Devil Guard 1800+, сет или аренда, группа, 3 дома",
+     "skill_level": "топ-сет",
+     "video_date": "2026-10-29",
+     "video_id": "R12KqH3UdYw",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "бонус тракториста x3"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда инкассатора (не подтверждена 2026)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 16029000,
+     "job": "incassator",
+     "job_ru": "Инкассатор",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 16029000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +1% = 16.19 млн. Видео 07.2025 про сет +158% (VC): https://rutube.ru/video/278fd39d90c1ad8a37706aebe97/ — устарело/не сверено с 2026.",
+     "reliability": "medium",
+     "requirements": "10 уровень",
+     "skill_level": "10 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "lesopilka",
+   "name": "Лесопилка",
+   "measurements": 5,
+   "net_median": 90700000,
+   "net_min": 14500000,
+   "net_max": 178500000,
+   "gross_max": 178500000,
+   "reliability": "medium",
+   "requirements": [
+    "1 уровень",
+    "8 уровень (лесопилка), 10 уровень + лицензия пилота (Vice City), привязка Telegram",
+    "не названы",
+    "нет",
+    "сет + группа (уровень не назван)"
+   ],
+   "costs": [
+    {
+     "name": "аренда слабого сета (цена не названа)",
+     "per_hour": 0,
+     "note": "",
+     "from": "Vwp-qTLkgwU"
+    },
+    {
+     "name": "аренда сета",
+     "per_hour": 22600000,
+     "note": "",
+     "from": "zfWysamxoT0"
+    },
+    {
+     "name": "перелёт Spacefly в Vice City",
+     "per_hour": 4000000,
+     "note": "",
+     "from": "zfWysamxoT0"
+    },
+    {
+     "name": "расходы не подтверждены",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "слабый арендный сет (цена не названа)"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 103000000,
+     "job": "lesopilka",
+     "job_ru": "Лесопилка",
+     "measured": "замер за ~1 час (10-20 мин простоев)",
+     "net_per_hour": null,
+     "note": "Продажа показана (~103 млн с комиссией), но в час было 10-20 мин простоев; аренда слабого сета не вычтена; цена обычной древесины по факту ~432, а не 700 — см. сомнения в md.",
+     "reliability": "medium",
+     "requirements": "нет",
+     "skill_level": null,
+     "video_date": "2026-11-14",
+     "video_id": "Vwp-qTLkgwU",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "слабый арендный сет",
+      "без эликсира, группа неполная"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда слабого сета (цена не названа)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 103000000,
+     "job": "lesopilka",
+     "job_ru": "Лесопилка",
+     "measured": "час с простоями 10-20 мин (кики/краши); факт продажи: 128 высш. класса -> 88 млн + 34694 дров -> ~15 млн, с комиссией",
+     "net_per_hour": 103000000,
+     "note": "Цифра занижена: простои + слабый сет + нет группы (ср. 178.5 млн/ч в Nc13AFIZHtE). Аренда не вычтена (не названа). Мини-игра бензопилой/2 точки/8 уровень не раскрыты.",
+     "reliability": "medium",
+     "requirements": "не названы",
+     "skill_level": "низкий (слабый сет, без эликсира)",
+     "video_date": "2026-11-14",
+     "video_id": "Vwp-qTLkgwU",
+     "_file": "batch_D_mine_wood_farm_fish.json"
+    },
+    {
+     "bonuses": [
+      "полный сет (каждая вещь +3%, ботинки +13% к зарплате/+4% к дровам, бензопила перенос, скин, сумка)",
+      "группа 3 чел.: +30% к деньгам и древесине, доплаты за сдачу каждого"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 178500000,
+     "job": "lesopilka",
+     "job_ru": "Лесопилка",
+     "measured": "20 мин (59.5 млн: дрова 36.74 + высш. класс 18.5 + 4.23 деньгами), экстраполяция x3",
+     "net_per_hour": 178500000,
+     "note": "Экстраполяция x3 + активная группа завышают цифру vs соло. Цены средние с рынка (дрова ~1600, высш. класс 180-200 тыс.). Ларцы не учтены. Сет свой, аренда не названа.",
+     "reliability": "medium",
+     "requirements": "сет + группа (уровень не назван)",
+     "skill_level": "полный сет, активная игра",
+     "video_date": "2026-10-02",
+     "video_id": "Nc13AFIZHtE",
+     "_file": "batch_D_mine_wood_farm_fish.json"
+    },
+    {
+     "job": "lesopilka",
+     "job_ru": "Лесопилка",
+     "video_id": "zfWysamxoT0",
+     "video_date": "2026-09-22",
+     "income_per_hour": 105000000,
+     "income_gross": true,
+     "measured": "~час: 64 603 дров + 262 HQ → 38,7 млн (ломбард 600/шт) + ~10 млн бонус + 56,5 млн (588 тыс. сити-коинов)",
+     "skill_level": "9-10",
+     "bonuses": [
+      "арендный сет 22,6 млн"
+     ],
+     "costs": [
+      {
+       "name": "аренда сета",
+       "amount_per_hour": 22600000
+      },
+      {
+       "name": "перелёт Spacefly в Vice City",
+       "amount_per_hour": 4000000
+      }
+     ],
+     "net_per_hour": 78400000,
+     "requirements": "8 уровень (лесопилка), 10 уровень + лицензия пилота (Vice City), привязка Telegram",
+     "reliability": "medium",
+     "note": "Ноль конкуренции ночью; днём автор сам ждёт меньше. Итог всей серии +114 млн за несколько часов.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "бонус тракториста x3"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "расходы не подтверждены"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 14500000,
+     "job": "lesopilka",
+     "job_ru": "Лесопилка",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 14500000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +95% = 28.28 млн. Подработка для новичков.",
+     "reliability": "medium",
+     "requirements": "1 уровень",
+     "skill_level": "1 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "mashinist",
+   "name": "Машинист электропоезда",
+   "measurements": 1,
+   "net_median": 13300000,
+   "net_min": 13300000,
+   "net_max": 13300000,
+   "gross_max": 13300000,
+   "reliability": "medium",
+   "requirements": [
+    "15 уровень"
+   ],
+   "costs": [
+    {
+     "name": "аренда локомотива (не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "бонус тракториста x3",
+      "x2/x3 акции"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда локомотива (не подтверждена 2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 13300000,
+     "job": "mashinist",
+     "job_ru": "Машинист электропоезда",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 13300000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +1% = 13.43 млн. Депо в LS.",
+     "reliability": "medium",
+     "requirements": "15 уровень",
+     "skill_level": "15 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "mehanik",
+   "name": "Механик",
+   "measurements": 1,
+   "net_median": 9380000,
+   "net_min": 9380000,
+   "net_max": 9380000,
+   "gross_max": 9380000,
+   "reliability": "medium",
+   "requirements": [
+    "3 уровень"
+   ],
+   "costs": [
+    {
+     "name": "аренда машины механика (2022: 500 вирт; 2026 не подтверждено)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "сотрудник СТО: 60% от цены услуги (бизнес 25%); не сотрудник: 45% (бизнес 5%) — патч 28.08.2026",
+      "бонус тракториста x3",
+      "x2/x3 акции"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда машины механика (2022: 500 вирт; 2026 не подтверждено)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 9380000,
+     "job": "mehanik",
+     "job_ru": "Механик",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 9380000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +20% = 11.26 млн. Доход зависит от потока клиентов и цен СТО (замена масла 2-35 млн, ремонт двигателя 0.75-15 млн и т.д. — патч 28.08.2026: https://chatwoot.arizona-rp.com/hc/arizona-rp/articles/1787767391-craft). Старые цифры 50-1000 вирт/ремонт (2022) устарели.",
+     "reliability": "medium",
+     "requirements": "3 уровень",
+     "skill_level": "3 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "metallovoz",
+   "name": "Металловозчик",
+   "measurements": 1,
+   "net_median": 12460000,
+   "net_min": 12460000,
+   "net_max": 12460000,
+   "gross_max": 12460000,
+   "reliability": "medium",
+   "requirements": [
+    "7 уровень"
+   ],
+   "costs": [
+    {
+     "name": "аренда металловоза (не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "бонус тракториста x3",
+      "x2/x3 акции"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда металловоза (не подтверждена 2026)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 12460000,
+     "job": "metallovoz",
+     "job_ru": "Металловозчик",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 12460000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +1% = 12.58 млн. Гайд BlastHack 05.2025: ~980к/рейс x8 рейсов = ~8 млн/ч — устарело (до баффов): https://www.blast.hk/threads/236863/.",
+     "reliability": "medium",
+     "requirements": "7 уровень",
+     "skill_level": "7 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "mirage_event",
+   "name": "Мираж (ивент)",
+   "measurements": 1,
+   "net_median": null,
+   "net_min": null,
+   "net_max": null,
+   "gross_max": null,
+   "reliability": "medium",
+   "requirements": [
+    "попасть на ивент"
+   ],
+   "costs": [],
+   "entries": [
+    {
+     "job": "mirage_event",
+     "job_ru": "Операция Мираж (ивент)",
+     "video_id": "SjzIYK3ofvQ",
+     "video_date": "2026-10-06",
+     "income_per_hour": null,
+     "income_gross": true,
+     "measured": "~5+ мин ивента: 10 млн за монстра + 18 монет миража (~54 млн в VC); не часовая ставка",
+     "skill_level": "—",
+     "bonuses": [],
+     "costs": [],
+     "net_per_hour": null,
+     "requirements": "попасть на ивент",
+     "reliability": "medium",
+     "note": "Разовый ивент (2 квеста, аирдроп пустой). Монета миража = 3 млн (VC).",
+     "_file": "batch_E1_tops.json"
+    }
+   ]
+  },
+  {
+   "id": "misc",
+   "name": "Разное",
+   "measurements": 3,
+   "net_median": null,
+   "net_min": null,
+   "net_max": null,
+   "gross_max": null,
+   "reliability": "low",
+   "requirements": [
+    "банда/притон",
+    "понимание меты",
+    "стартовый бюджет 100-200 млрд"
+   ],
+   "costs": [
+    {
+     "name": "семена ~500000/шт",
+     "per_hour": 0,
+     "note": "",
+     "from": "YnVPhfsztE8"
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": null,
+     "job": "misc",
+     "job_ru": "Советы новичку (аренда/сеты)",
+     "measured": "без замера",
+     "net_per_hour": null,
+     "note": "Замеров дохода нет; гайд по сетам/аренде: сет такси 15 млн/ч, лимитка 18 млн/ч, грамота 2.5 млрд, кейсы Анархии 50+ -> 15-20 млн.",
+     "reliability": "low",
+     "requirements": "понимание меты",
+     "skill_level": null,
+     "video_date": "2026-11-06",
+     "video_id": "vTFmlRCogII",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": null,
+     "job": "misc",
+     "job_ru": "Инвестиции (путь к триллиону)",
+     "measured": "без замера",
+     "net_per_hour": null,
+     "note": "Почасовых замеров нет; стратегия триллиона: 1 млрд/2ч -> 2000ч; тракторист x2 за ~3 нед (120-150 -> 300+ млн); майнер x8 (1.1 -> 8.8 City).",
+     "reliability": "low",
+     "requirements": "стартовый бюджет 100-200 млрд",
+     "skill_level": null,
+     "video_date": "2026-11-11",
+     "video_id": "r70w3lsDR6k",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "Uzi (+сбор)",
+      "лопата с АЗС"
+     ],
+     "costs": [
+      "семена ~500000/шт"
+     ],
+     "income_gross": true,
+     "income_per_hour": null,
+     "job": "misc",
+     "job_ru": "Ферма укропа",
+     "measured": "1 сбор: 1.2 млн на руки + 60 укропа (~150k) + 200k на баланс; всход ~2 мин",
+     "net_per_hour": null,
+     "note": "8 грядок = 4-5 млн чистыми за цикл. В час не пересчитано (зависит от грядок/вывоза). Нужна договорённость о вывозе с баланса.",
+     "reliability": "low",
+     "requirements": "банда/притон",
+     "skill_level": "неизвестен",
+     "video_date": "2026-09-29",
+     "video_id": "YnVPhfsztE8",
+     "_file": "batch_E2_bomzh.json"
+    }
+   ]
+  },
+  {
+   "id": "musor",
+   "name": "Мусорщик",
+   "measurements": 1,
+   "net_median": 12040000,
+   "net_min": 12040000,
+   "net_max": 12040000,
+   "gross_max": 12040000,
+   "reliability": "medium",
+   "requirements": [
+    "6 уровень"
+   ],
+   "costs": [
+    {
+     "name": "аренда мусоровоза (не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "бонус тракториста x3",
+      "x2/x3 акции"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда мусоровоза (не подтверждена 2026)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 12040000,
+     "job": "musor",
+     "job_ru": "Мусорщик",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 12040000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +1% = 12.16 млн. Старые цифры (400к/рейс, 2022-2024) устарели.",
+     "reliability": "medium",
+     "requirements": "6 уровень",
+     "skill_level": "6 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "neftevyshki",
+   "name": "Нефтевышки",
+   "measurements": 5,
+   "net_median": 996000000,
+   "net_min": 792000000,
+   "net_max": 1200000000,
+   "gross_max": 1200000000,
+   "reliability": "high",
+   "requirements": [
+    "группа, бонус тракториста, топ-охранник, 5-я декларация",
+    "дирижабль Жемчужина (аренда); распродажа на вышке",
+    "дирижабль Чёрная Жемчужина; распродажа на вышке; наличие нефти",
+    "дирижабль; уровень не назван",
+    "нефть в наличии, декларация 4-5 (лотерея на 24 ч), транспорт, скин; не для новичков"
+   ],
+   "costs": [
+    {
+     "name": "бонус тракториста (разовая покупка 250-400 млн)",
+     "per_hour": 0,
+     "note": "",
+     "from": "vJT3XOqRA00"
+    },
+    {
+     "name": "аренда сета (~100 млн / 10 часов)",
+     "per_hour": 10000000,
+     "note": "",
+     "from": "D2M3JcOutPg"
+    },
+    {
+     "name": "покупка бочек 450 000 $/шт (точное число бочек не названо, вычесть не из чего)",
+     "per_hour": 0,
+     "note": "",
+     "from": "OnnnxiVgfYc"
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "бонус тракториста",
+      "группа",
+      "топовый охранник",
+      "5-я декларация"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "бонус тракториста (разовая покупка 250-400 млн)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 1200000000,
+     "job": "neftevyshki",
+     "job_ru": "Водные нефтевышки",
+     "measured": "оценка без замера",
+     "net_per_hour": null,
+     "note": "Топ-6 работ без замеров; max оценка — вода 1.2 млрд чистыми (фраза противоречива: чистыми без бонуса с учетом покупки бонуса). Шахта 700 млн без тракториста, инкас 500+ млн, такси 0.5-1 млрд (50 lvl), наземка 500+ млн, ремонт 500+ (возможно пофиксили кейсы).",
+     "reliability": "low",
+     "requirements": "группа, бонус тракториста, топ-охранник, 5-я декларация",
+     "skill_level": null,
+     "video_date": "2026-11-05",
+     "video_id": "vJT3XOqRA00",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "Жемчужина, охранник, все аксессуары",
+      "оптовая декларация 3 уровня",
+      "подселение Masson Tower + Arizona Springs",
+      "эликсир вечности +30% (сработал ли — неизвестно, скрипт показал надбавку 0%)"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 10000000,
+       "name": "аренда сета (~100 млн / 10 часов)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 50000000,
+     "job": "neftevyshki",
+     "job_ru": "Нефтевышки",
+     "measured": "2 рейса за 25 мин (15.5 млн чистыми + 138 доната)",
+     "net_per_hour": null,
+     "note": "На коротком замере автор уходил в минус. Оценка ~50 млн/ч натянута автором; с сиропом x3 было бы ~160 млн/ч. Раньше без сиропа было 200-300 млн/ч. Парковка у вышки запрещена (старый способ с перезаходом пофикшен), 2 бочки пропали (баг). Противоречие транскрипта: скупка '40 000 за бочку' vs '800 205 за бочку' — что именно включает каждая цифра, неясно.",
+     "reliability": "low",
+     "requirements": "дирижабль Жемчужина (аренда); распродажа на вышке",
+     "skill_level": "неопытный пилот (сам признаёт, летает плохо)",
+     "video_date": "2026-10-14",
+     "video_id": "D2M3JcOutPg",
+     "_file": "batch_C_incas_oil_road.json"
+    },
+    {
+     "bonuses": [
+      "квартира Masson Tower (+20% водная, +1 AZ)",
+      "дом+квартира Arizona Springs (+30%, стакаемость неизвестна)",
+      "скин Ван Хельсинга +30%",
+      "оптовая декларация +5 (+35%/бочка, +5 AZ)",
+      "охранник Нефтесос +26% (со 2-го рейса)",
+      "акс +4%, скины на оружие +13%",
+      "сироп тракториста (x3)",
+      "группа из 2 человек на сдаче"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "покупка бочек 450 000 $/шт (точное число бочек не названо, вычесть не из чего)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 1050000000,
+     "job": "neftevyshki",
+     "job_ru": "Нефтевышки",
+     "measured": "замер ровно 1 час (водная нефть, сервер Holiday)",
+     "net_per_hour": null,
+     "note": "Водная нефть, оплата 4.0 млн/бочка (без охранника) -> 4.3 млн/бочка (с охранником). Плюс 1762 AZ за час. Ситуативна: обязательны распродажа и наличие нефти на водных вышках. Точные затраты на бочки не подсчитаны, поэтому net null.",
+     "reliability": "high",
+     "requirements": "дирижабль Чёрная Жемчужина; распродажа на вышке; наличие нефти",
+     "skill_level": "не назван",
+     "video_date": "2026-10-11",
+     "video_id": "OnnnxiVgfYc",
+     "_file": "batch_C_incas_oil_road.json"
+    },
+    {
+     "bonuses": [
+      "скин бот Джек +28%",
+      "охранник демон +69%",
+      "оптовая декларация +5",
+      "сдача частным электрокомпаниям (+1 AZ от Masson Tower)",
+      "сироп тракториста (x3)"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 792000000,
+     "job": "neftevyshki",
+     "job_ru": "Нефтевышки",
+     "measured": "замер ровно 1 час (наземная нефть, сервер Holiday)",
+     "net_per_hour": 792000000,
+     "note": "Наземная нефть: 3.2 млн + 9 AZ за бочку при сдаче частникам; бочки за AZ (12 -> 15), виртовых расходов нет. Плюс 2328 AZ за час. Наземной нефти хватает всегда минимум на 4 часа. В транскрипте противоречие по AZ ('12->15 плюс 2 плюс 1' vs '9 AZ за бочку') — взята цифра со сдачи.",
+     "reliability": "high",
+     "requirements": "дирижабль; уровень не назван",
+     "skill_level": "не назван",
+     "video_date": "2026-10-11",
+     "video_id": "OnnnxiVgfYc",
+     "_file": "batch_C_incas_oil_road.json"
+    },
+    {
+     "job": "neftevyshki",
+     "job_ru": "Нефтевышки (наземные+водные)",
+     "video_id": "KfKhW_Gjb1k",
+     "video_date": "2026-10-20",
+     "income_per_hour": 1200000000,
+     "income_gross": true,
+     "measured": "заявлен диапазон 750 млн-1,2 млрд грязными, взят верх (не замерено)",
+     "skill_level": "—",
+     "bonuses": [
+      "Peterbilt / Чёрная жемчужина",
+      "охрана",
+      "скин Bot Jack +12 / воинственная нежить",
+      "оптовая декларация 4-5 ур (топы держат 10 шт.)",
+      "тракторист обязателен"
+     ],
+     "costs": [],
+     "net_per_hour": 1200000000,
+     "requirements": "нефть в наличии, декларация 4-5 (лотерея на 24 ч), транспорт, скин; не для новичков",
+     "reliability": "low",
+     "note": "Ср. N0nXUCTkLtc 250-500 млн без x3 — разница за счёт сиропа.",
+     "_file": "batch_E1_tops.json"
+    }
+   ]
+  },
+  {
+   "id": "neftevyshki_land",
+   "name": "Нефтевышки (наземные)",
+   "measurements": 3,
+   "net_median": 134250000,
+   "net_min": 18500000,
+   "net_max": 250000000,
+   "gross_max": 250000000,
+   "reliability": "medium",
+   "requirements": [
+    "19 уровень",
+    "Peterbilt 359, декларация 5 ур, семья с флагом",
+    "сет, декларация"
+   ],
+   "costs": [
+    {
+     "name": "аренда Peterbilt + декларации 5 ур",
+     "per_hour": 0,
+     "note": "",
+     "from": "bxHTDuKvaE4"
+    },
+    {
+     "name": "расходы не подтверждены",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "job": "neftevyshki_land",
+     "job_ru": "Наземные нефтевышки",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 250000000,
+     "income_gross": true,
+     "measured": "заявлено автором, не замерено: ~30 млн + 90 AZ/рейс x ~10 рейсов",
+     "skill_level": "—",
+     "bonuses": [
+      "Peterbilt",
+      "скин бюджета",
+      "охранник до +26%",
+      "АПП/ТВ-робот",
+      "Mason Tower",
+      "оптовая декларация",
+      "эликсир"
+     ],
+     "costs": [],
+     "net_per_hour": 250000000,
+     "requirements": "сет, декларация",
+     "reliability": "low",
+     "note": "Плюс ~1000 AZ/час. Обнова: 15 AZ вместо 13 за бочку, +80 тыс. виртов.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "Peterbilt 359",
+      "семья с флагом +12%",
+      "Mason Tower",
+      "скин буджека",
+      "Апа/ТВ-робот +4%",
+      "оптовая декларация 5 ур",
+      "охранник 4 ур +69%"
+     ],
+     "costs": [
+      "аренда Peterbilt + декларации 5 ур"
+     ],
+     "income_gross": true,
+     "income_per_hour": 225000000,
+     "job": "neftevyshki_land",
+     "job_ru": "Наземные нефтевышки",
+     "measured": "оценка автора, БЕЗ эликсира тракториста",
+     "net_per_hour": null,
+     "note": "Середина вилки 200-250. Автор предупреждает: 500-700 из других видео — это С эликсиром. Реально без него 200-250.",
+     "reliability": "low",
+     "requirements": "Peterbilt 359, декларация 5 ур, семья с флагом",
+     "skill_level": "средний сет",
+     "video_date": "2026-09-24",
+     "video_id": "bxHTDuKvaE4",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "бонус тракториста x3"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "расходы не подтверждены"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 18500000,
+     "job": "neftevyshki_land",
+     "job_ru": "Доставка бочек с наземных нефтевышек",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 18500000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +35% = 24.98 млн. Видео 2026: 2.5 млн/рейс без охраны, 3 млн с охраной; ~10-13 млн за 30 мин: https://300.ya.ru/v_18BrigID. Подработка, не работа ЦЗ.",
+     "reliability": "medium",
+     "requirements": "19 уровень",
+     "skill_level": "19 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "neftevyshki_water",
+   "name": "Нефтевышки (водные)",
+   "measurements": 6,
+   "net_median": 259250000,
+   "net_min": 18500000,
+   "net_max": 500000000,
+   "gross_max": 650000000,
+   "reliability": "high",
+   "requirements": [
+    "19 уровень",
+    "T3 + безлимит + декларация 5 ур + охранник + распродажа",
+    "T3 + безлимит + декларация 5 ур + распродажа + скилл полётов",
+    "декларация 5 ур (рандом на сутки), группа (собрать трудновато)",
+    "дирижабль T3, декларация 5 ур, распродажа, топливо",
+    "доступ к вышкам, декларация (рандом), группа"
+   ],
+   "costs": [
+    {
+     "name": "аренда Жемчужины (20 млн/2ч)",
+     "per_hour": 10000000,
+     "note": "",
+     "from": "SjzIYK3ofvQ"
+    },
+    {
+     "name": "Mason Tower (10 млн/24ч)",
+     "per_hour": 416667,
+     "note": "",
+     "from": "SjzIYK3ofvQ"
+    },
+    {
+     "name": "аренда сета",
+     "per_hour": 0,
+     "note": "",
+     "from": "bxHTDuKvaE4"
+    },
+    {
+     "name": "аренда 8 млн/ч",
+     "per_hour": 0,
+     "note": "",
+     "from": "VPfIRjyhpg4"
+    },
+    {
+     "name": "сироп ~150 млн/2ч",
+     "per_hour": 0,
+     "note": "",
+     "from": "VPfIRjyhpg4"
+    },
+    {
+     "name": "свои (аренды нет); закупка бочек 10.5 млн/дирижабль; сироп НЕ вычтен",
+     "per_hour": 0,
+     "note": "",
+     "from": "3_Dmqs80jNg"
+    },
+    {
+     "name": "нужна лодка; расходы не подтверждены",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "job": "neftevyshki_water",
+     "job_ru": "Водные нефтевышки",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 500000000,
+     "income_gross": true,
+     "measured": "заявлено автором, не замерено: минимум, дальше от бонусов",
+     "skill_level": "—",
+     "bonuses": [
+      "скин воинственной нежити / Ван Хельсинга",
+      "дирижабль 3 уровня",
+      "скинапы / ТВ-робот",
+      "Mason Tower",
+      "группа от 4 чел (+40%)",
+      "оптовая декларация 5 ур (+35%/бочка, +5 AZ)",
+      "навык тракториста/жены"
+     ],
+     "costs": [],
+     "net_per_hour": 500000000,
+     "requirements": "декларация 5 ур (рандом на сутки), группа (собрать трудновато)",
+     "reliability": "low",
+     "note": "Самая высокая заявленная цифра видео.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "neftevyshki_water",
+     "job_ru": "Водные нефтевышки",
+     "video_id": "SjzIYK3ofvQ",
+     "video_date": "2026-10-06",
+     "income_per_hour": null,
+     "income_gross": true,
+     "measured": "сессия 300+ млн, время не зафиксировано (почасовка неизвестна)",
+     "skill_level": "низкий (скилл таксиста качается)",
+     "bonuses": [
+      "Mason Tower",
+      "охранник +21%",
+      "сет",
+      "декларация 3 ур (+3 AZ/бочка)",
+      "группа"
+     ],
+     "costs": [
+      {
+       "name": "аренда Жемчужины (20 млн/2ч)",
+       "amount_per_hour": 10000000
+      },
+      {
+       "name": "Mason Tower (10 млн/24ч)",
+       "amount_per_hour": 416667
+      }
+     ],
+     "net_per_hour": null,
+     "requirements": "доступ к вышкам, декларация (рандом), группа",
+     "reliability": "low",
+     "note": "Цены с экрана: 2,7-2,8 млн + 4 AZ/бочка (электрокомпания, с группой); 1,8-2 млн (нефтебаза, без охранника после смерти). Заголовок 700кк/ч замером не подтверждён.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "Чёрная жемчужина T3",
+      "флаг семьи",
+      "Mason Tower",
+      "скин Ван Хельсинг +30%",
+      "декларация 5 ур",
+      "Springs ~30%"
+     ],
+     "costs": [
+      "аренда сета"
+     ],
+     "income_gross": true,
+     "income_per_hour": 250000000,
+     "job": "neftevyshki_water",
+     "job_ru": "Водные нефтевышки",
+     "measured": "оценка автора, без тракториста, с распродажей",
+     "net_per_hour": null,
+     "note": "С распродажей 200-300; без распродажи 100-150 — возить смысла нет. Зависит от владельцев (включают ли распродажу) и топлива.",
+     "reliability": "low",
+     "requirements": "дирижабль T3, декларация 5 ур, распродажа, топливо",
+     "skill_level": "топ-сет",
+     "video_date": "2026-09-24",
+     "video_id": "bxHTDuKvaE4",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "Хельсинг/Нежить +30%",
+      "безлимит-сертификат",
+      "декларация 1 ур (+6%, +1 AZ)",
+      "Аппа +4%",
+      "Жемчужина T3 (23 бочки, +13%)",
+      "Mason +1 AZ",
+      "дирижабль + охранник +21%",
+      "распродажа +50%",
+      "сироп x3"
+     ],
+     "costs": [
+      "аренда 8 млн/ч",
+      "сироп ~150 млн/2ч"
+     ],
+     "income_gross": true,
+     "income_per_hour": 650000000,
+     "job": "neftevyshki_water",
+     "job_ru": "Водные нефтевышки",
+     "measured": "1ч40 (распродажа 1.5 ч): 1100 млн + 1000 AZ; 2.5 млн/бочка + 2 AZ; без группы",
+     "net_per_hour": null,
+     "note": "Антиящик: выпала декларация 1 ур. С 5-й (+35%, +5 AZ) было бы 1.5 млрд+. Грязными 600-700, минус сироп ~75/ч. Главный риск — нет распродажи/нефти.",
+     "reliability": "medium",
+     "requirements": "T3 + безлимит + декларация 5 ур + распродажа + скилл полётов",
+     "skill_level": "средний (аренда)",
+     "video_date": "2026-09-11",
+     "video_id": "VPfIRjyhpg4",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "Жемчужина T3 (23 бочки, ДТ2, VIN 1000)",
+      "Ван Хельсинг (сток)",
+      "наплечник + Аппа",
+      "декларация 5 ур (+35%, +5 AZ)",
+      "безлимит",
+      "охранник +26%",
+      "сироп x3",
+      "распродажа"
+     ],
+     "costs": [
+      "свои (аренды нет); закупка бочек 10.5 млн/дирижабль; сироп НЕ вычтен"
+     ],
+     "income_gross": true,
+     "income_per_hour": 515000000,
+     "job": "neftevyshki_water",
+     "job_ru": "Водные нефтевышки",
+     "measured": "ровно 1 час хелпером, соло, на чиле: 2.974 млн + 6 AZ/бочка; рейс 58 млн + 138 AZ",
+     "net_per_hour": null,
+     "note": "Лучший замер батча (нижняя граница для такого сета). Опытные в группе 700-800, топ до 1000. Без распродажи/группы кратно меньше. Усилитель дирижабля не брать.",
+     "reliability": "high",
+     "requirements": "T3 + безлимит + декларация 5 ур + охранник + распродажа",
+     "skill_level": "опытный",
+     "video_date": "2026-09-06",
+     "video_id": "3_Dmqs80jNg",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "бонус тракториста x3"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "нужна лодка; расходы не подтверждены"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 18500000,
+     "job": "neftevyshki_water",
+     "job_ru": "Доставка бочек с водных нефтевышек",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 18500000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +35% = 24.98 млн. Подработка.",
+     "reliability": "medium",
+     "requirements": "19 уровень",
+     "skill_level": "19 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "pilot",
+   "name": "Пилот",
+   "measurements": 5,
+   "net_median": 40000000,
+   "net_min": 1000000,
+   "net_max": 400000000,
+   "gross_max": 400000000,
+   "reliability": "medium",
+   "requirements": [
+    "19 уровень",
+    "миллиардный сет, редкий самолёт",
+    "обследование (~2-3 мин), свой/арендный самолёт",
+    "редкий самолёт (найти негде), сет, сироп",
+    "редчайший самолёт Gen 003 (найти очень трудно) и сет"
+   ],
+   "costs": [
+    {
+     "name": "аренда самолёта",
+     "per_hour": 9000000,
+     "note": "",
+     "from": "KFmXZs74xAc"
+    },
+    {
+     "name": "аренда самолёта от",
+     "per_hour": 10000000,
+     "note": "",
+     "from": "KFmXZs74xAc"
+    },
+    {
+     "name": "аренда сета от",
+     "per_hour": 10000000,
+     "note": "",
+     "from": "KFmXZs74xAc"
+    },
+    {
+     "name": "сироп тракториста (100-120 млн/2ч)",
+     "per_hour": 55000000,
+     "note": "",
+     "from": "KFmXZs74xAc"
+    },
+    {
+     "name": "аренда самолета (не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "job": "pilot",
+     "job_ru": "Пилот",
+     "video_id": "KFmXZs74xAc",
+     "video_date": "2026-09-05",
+     "income_per_hour": 10000000,
+     "income_gross": true,
+     "measured": "1 рейс 467 тыс.; ~1 млн за ~10 мин полётов; экстраполяция автора",
+     "skill_level": "1 (первый уровень на аккаунте)",
+     "bonuses": [
+      "документ премиум-пилот +25%",
+      "Twin Turbo 2 на арендном самолёте"
+     ],
+     "costs": [
+      {
+       "name": "аренда самолёта",
+       "amount_per_hour": 9000000
+      }
+     ],
+     "net_per_hour": 1000000,
+     "requirements": "обследование (~2-3 мин), свой/арендный самолёт",
+     "reliability": "low",
+     "note": "Своя оценка автора (1 рейс + прикидка в уме). Чужие данные из пересказа: 60 млн/ч макс-сет, 300 млн/ч с x300%. Вывод автора: пилот своих денег не стоит.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "pilot",
+     "job_ru": "Пилот",
+     "video_id": "KFmXZs74xAc",
+     "video_date": "2026-09-05",
+     "income_per_hour": 60000000,
+     "income_gross": true,
+     "measured": "пересказ чужого видео: ~2 млн/рейс (не замерено автором)",
+     "skill_level": "максимальный (чужой тест)",
+     "bonuses": [
+      "скин за несколько млрд +9%",
+      "аксессуары",
+      "редкий самолёт ~40 млрд"
+     ],
+     "costs": [
+      {
+       "name": "аренда самолёта от",
+       "amount_per_hour": 10000000
+      },
+      {
+       "name": "аренда сета от",
+       "amount_per_hour": 10000000
+      }
+     ],
+     "net_per_hour": 40000000,
+     "requirements": "миллиардный сет, редкий самолёт",
+     "reliability": "low",
+     "note": "Вторичная информация из пересказа, проверить нельзя.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "pilot",
+     "job_ru": "Пилот",
+     "video_id": "KFmXZs74xAc",
+     "video_date": "2026-09-05",
+     "income_per_hour": 300000000,
+     "income_gross": true,
+     "measured": "заявление по чужому видео (не замерено)",
+     "skill_level": "фулл (чужой)",
+     "bonuses": [
+      "бонус тракториста +300%",
+      "самолёт-крокодил",
+      "сет"
+     ],
+     "costs": [
+      {
+       "name": "сироп тракториста (100-120 млн/2ч)",
+       "amount_per_hour": 55000000
+      }
+     ],
+     "net_per_hour": 250000000,
+     "requirements": "редкий самолёт (найти негде), сет, сироп",
+     "reliability": "low",
+     "note": "Прикидка автора: +500 млн чистыми за 2 часа.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "pilot",
+     "job_ru": "Пилот",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 400000000,
+     "income_gross": true,
+     "measured": "заявлено автором, не замерено: со всеми баффами",
+     "skill_level": "—",
+     "bonuses": [
+      "грамота ветерана",
+      "охранник до +35%",
+      "самолёт Gen 003 (+65%)",
+      "руки сета",
+      "сноуборд протокола",
+      "скин байкера",
+      "эликсир вечности",
+      "Dark Village",
+      "документ пилота",
+      "группа 3-4 чел.",
+      "бафф x3"
+     ],
+     "costs": [],
+     "net_per_hour": 400000000,
+     "requirements": "редчайший самолёт Gen 003 (найти очень трудно) и сет",
+     "reliability": "low",
+     "note": "Противоречит замеру KFmXZs74xAc (10 млн соло, 60 млн макс-сет без x3); вероятно подразумевается сироп, но явно не сказано.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "личный самолет: улучшена информация о ЗП (патч 25.11.2025)",
+      "бонус тракториста x3"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда самолета (не подтверждена 2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 17200000,
+     "job": "pilot",
+     "job_ru": "Пилот гражданской авиации",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 17200000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. База поднята +100% патчем 25.11.2025. Макс. с бонусами +25% = 21.5 млн. Аэропорты LS, SF, LV.",
+     "reliability": "medium",
+     "requirements": "19 уровень",
+     "skill_level": "19 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "quests",
+   "name": "Квесты / ежедневки",
+   "measurements": 1,
+   "net_median": 32000000,
+   "net_min": 32000000,
+   "net_max": 32000000,
+   "gross_max": 32000000,
+   "reliability": "medium",
+   "requirements": [
+    "замки в бизнесах"
+   ],
+   "costs": [],
+   "entries": [
+    {
+     "job": "quests",
+     "job_ru": "Квесты бизнесов",
+     "video_id": "lJ5My6GzmoY",
+     "video_date": "2026-08-19",
+     "income_per_hour": 32000000,
+     "income_gross": true,
+     "measured": "СУММА ЗА ДЕНЬ, НЕ ЗА ЧАС: 8 заданий по ~4 млн = 32 млн/день; до 130 млн/день с 8 бизнесами",
+     "skill_level": "—",
+     "bonuses": [
+      "замки в бизнесах (занятость 200 пунктов)"
+     ],
+     "costs": [],
+     "net_per_hour": 32000000,
+     "requirements": "замки в бизнесах",
+     "reliability": "medium",
+     "note": "Поле income_per_hour здесь — дневной доход. Пример: реклама бизнеса 4,5 млн; такси-квест 3 клиента = 5-6 мин.",
+     "_file": "batch_E1_tops.json"
+    }
+   ]
+  },
+  {
+   "id": "razvozchik",
+   "name": "Развозчик продуктов",
+   "measurements": 1,
+   "net_median": 13455000,
+   "net_min": 13455000,
+   "net_max": 13455000,
+   "gross_max": 13455000,
+   "reliability": "medium",
+   "requirements": [
+    "9 уровень"
+   ],
+   "costs": [
+    {
+     "name": "аренда продуктовоза (не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "бонус тракториста x3",
+      "x2/x3 акции"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда продуктовоза (не подтверждена 2026)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 13455000,
+     "job": "razvozchik",
+     "job_ru": "Развозчик продуктов",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 13455000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +1% = 13.59 млн. Основа дохода — ларцы (BlastHack: https://www.blast.hk/threads/156527/ — 2022, устарело). Квест-норма снижена 50→20 доставок (патч 14.03.2026).",
+     "reliability": "medium",
+     "requirements": "9 уровень",
+     "skill_level": "9 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "remontdorog",
+   "name": "Ремонтник дорог",
+   "measurements": 16,
+   "net_median": 300000000,
+   "net_min": 14800000,
+   "net_max": 1000000000,
+   "gross_max": 1000000000,
+   "reliability": "high",
+   "requirements": [
+    "10 уровень",
+    "Raptor 1800+ в аренду, руки, фул-навык (5000 AZS / ~15 ч)",
+    "Raptor 1800+, сет, группа, дома",
+    "Raptor 1800+, сет, низкий онлайн",
+    "Raptor в аренде, руки, охранник, группа",
+    "Raptor с 75 ур БП (или аренда), руки, навык 5000 AZS",
+    "Venom Raptor 1800-2000 (~20 млн/ч аренды); низкий онлайн; уровень не назван",
+    "дорогой сет из БП/маркета",
+    "лавка для сбыта кейсов",
+    "навык 1000, редкий охранник +79%, руки Сета",
+    "неизвестны",
+    "нет",
+    "сироп",
+    "те же + сироп",
+    "устройство через биржу труда, форма бесплатно"
+   ],
+   "costs": [
+    {
+     "name": "сироп тракториста 320 млн / 2 ч",
+     "per_hour": 160000000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "охранник",
+     "per_hour": 10000000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "руки сета 10 млн / 4 ч",
+     "per_hour": 2500000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "машина 75 млн / 4 ч",
+     "per_hour": 18750000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "сиропы/эликсиры (5x200 млн / 10 часов)",
+     "per_hour": 100000000,
+     "note": "",
+     "from": "BAr0nSmmQlo"
+    },
+    {
+     "name": "аренда Raptor (20 млн/ч)",
+     "per_hour": 20000000,
+     "note": "",
+     "from": "BAr0nSmmQlo"
+    },
+    {
+     "name": "аренда охранника (20 млн/ч)",
+     "per_hour": 20000000,
+     "note": "",
+     "from": "BAr0nSmmQlo"
+    },
+    {
+     "name": "аренда сета (~10 млн/ч)",
+     "per_hour": 10000000,
+     "note": "",
+     "from": "BAr0nSmmQlo"
+    },
+    {
+     "name": "аренда машины",
+     "per_hour": 30000000,
+     "note": "",
+     "from": "QH7lHwUfS6Y"
+    },
+    {
+     "name": "сироп (~200 млн/2ч)",
+     "per_hour": 100000000,
+     "note": "",
+     "from": "QH7lHwUfS6Y"
+    },
+    {
+     "name": "аренда сета + Raptor",
+     "per_hour": 0,
+     "note": "",
+     "from": "bxHTDuKvaE4"
+    },
+    {
+     "name": "сироп тракториста (с ним +60 млн нетто/ч)",
+     "per_hour": 0,
+     "note": "",
+     "from": "pQL0N7XFn_w"
+    },
+    {
+     "name": "аренда сета + Raptor + охранник + эликсиры",
+     "per_hour": 0,
+     "note": "",
+     "from": "R12KqH3UdYw"
+    },
+    {
+     "name": "аренда ~40 млн/ч",
+     "per_hour": 0,
+     "note": "",
+     "from": "VPfIRjyhpg4"
+    },
+    {
+     "name": "сироп ~100-150 млн/2ч",
+     "per_hour": 0,
+     "note": "",
+     "from": "VPfIRjyhpg4"
+    },
+    {
+     "name": "аренда ~40 млн (руки 5 + охранник 5 + Raptor 30/2ч)",
+     "per_hour": 0,
+     "note": "",
+     "from": "lA0aes0hxzE"
+    },
+    {
+     "name": "канистра 5 млн",
+     "per_hour": 0,
+     "note": "",
+     "from": "lA0aes0hxzE"
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "2 сиропа тракториста",
+      "руки сета",
+      "Venom Raptor"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 160000000,
+       "name": "сироп тракториста 320 млн / 2 ч"
+      },
+      {
+       "amount_per_hour": 10000000,
+       "name": "охранник"
+      },
+      {
+       "amount_per_hour": 2500000,
+       "name": "руки сета 10 млн / 4 ч"
+      },
+      {
+       "amount_per_hour": 18750000,
+       "name": "машина 75 млн / 4 ч"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 436000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонт дорог",
+     "measured": "замер за 4 часа (700 млн нал + 72 кейса Фрейм)",
+     "net_per_hour": null,
+     "note": "4ч: 700 млн нал + 72 кейса Фрейм (~14.5 млн); расходы 745 млн (2 сиропа 640 + остальное); без группы; 10 мин АФК-простоя.",
+     "reliability": "medium",
+     "requirements": "нет",
+     "skill_level": null,
+     "video_date": "2026-11-14",
+     "video_id": "ODNddgoDtvw",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "бонус тракториста",
+      "эликсир ремонтника",
+      "эликсир вечности"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 465000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонт дорог",
+     "measured": "замер за 2 часа (300 млн нал + 45 кейсов)",
+     "net_per_hour": null,
+     "note": "2ч: 300 млн нал + 45 кейсов по 14 млн = ~930 млн; чистыми ~600 млн (грубая оценка автора).",
+     "reliability": "medium",
+     "requirements": "нет",
+     "skill_level": null,
+     "video_date": "2026-11-15",
+     "video_id": "sumf-Y59TS4",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "Venom Raptor 1800-2000 (+100%, +10% шанс кейса фрейма)",
+      "охранник 4 ур. +79%",
+      "скин Буджека +9%, грамота ветерана +5%, руки Сета +55%, эликсир +20% (итого +168% по ЦЗ)",
+      "сиропы тракториста (5 шт по 2 часа)",
+      "без заселений Arizona Springs / Cosmo Village"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 100000000,
+       "name": "сиропы/эликсиры (5x200 млн / 10 часов)"
+      },
+      {
+       "amount_per_hour": 20000000,
+       "name": "аренда Raptor (20 млн/ч)"
+      },
+      {
+       "amount_per_hour": 20000000,
+       "name": "аренда охранника (20 млн/ч)"
+      },
+      {
+       "amount_per_hour": 10000000,
+       "name": "аренда сета (~10 млн/ч)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 900000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "measured": "марафон 10 часов, 5 замеров по 2 часа (4395 млн налички + 290 кейсов + ларцы)",
+     "net_per_hour": 743600000,
+     "note": "Грязными 8936 млн (~900 млн/ч), из них кейсы 4455 млн (290 шт по ~15 млн) и ларцы 87 млн. Чистыми 7436 млн / 10 ч = 743.6 млн/ч, но автор озвучил '470 млн/ч' — расхождение, взята математика. Замер в непиковое время (с 05:36, без конкуренции); в пик автор прогнозирует 300-400 млн/ч. Половина дохода зависит от цены кейсов (15 млн). Типы происшествий (лёгкие/средние/тяжёлые) и этапы в видео не раскрыты, доход по навыку не дан.",
+     "reliability": "high",
+     "requirements": "Venom Raptor 1800-2000 (~20 млн/ч аренды); низкий онлайн; уровень не назван",
+     "skill_level": "не назван",
+     "video_date": "2026-10-21",
+     "video_id": "BAr0nSmmQlo",
+     "_file": "batch_C_incas_oil_road.json"
+    },
+    {
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "video_id": "iJjVuLKEPD8",
+     "video_date": "2026-10-16",
+     "income_per_hour": null,
+     "income_gross": true,
+     "measured": "почасовка не замерена: 100-200 тыс./действие; ~1 млн соло-сессия; 2 млн + кейс/происшествие в группе; итог сессии 8 млн",
+     "skill_level": "новичок на работе (не указан)",
+     "bonuses": [
+      "арендная машина (легендарная, ковш)",
+      "позже арендована рука сета",
+      "группа (бонус из интерфейса: 20% за 3 чел / 30% за 5)"
+     ],
+     "costs": [
+      {
+       "name": "аренда машины",
+       "amount_per_hour": 15000000
+      }
+     ],
+     "net_per_hour": null,
+     "requirements": "устройство через биржу труда, форма бесплатно",
+     "reliability": "low",
+     "note": "Разовые выплаты видны на экране; часовой доход неизвестен (сессия короче часа уже в минусе против аренды 15 млн).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 60000000,
+     "income_gross": true,
+     "measured": "заявлено автором, не замерено: без навыка, чисто с сиропа (новый сервер)",
+     "skill_level": "без навыка",
+     "bonuses": [
+      "сироп тракториста"
+     ],
+     "costs": [],
+     "net_per_hour": 60000000,
+     "requirements": "сироп",
+     "reliability": "low",
+     "note": "Заявление без замера.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 250000000,
+     "income_gross": true,
+     "measured": "заявлено автором, не замерено: со всеми баффами",
+     "skill_level": "максимальный (5000 AZ в донате)",
+     "bonuses": [
+      "машина легендарная от 1500+",
+      "номерная рамка",
+      "грамота ветерана +5%",
+      "космодеревня +10%",
+      "руки Сета +55%",
+      "заказы от 2 звёзд",
+      "группа (до +45%)",
+      "сироп тракториста"
+     ],
+     "costs": [],
+     "net_per_hour": 250000000,
+     "requirements": "дорогой сет из БП/маркета",
+     "reliability": "low",
+     "note": "Плюс кейсы фрейм по 15 млн (шанс до 10%).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "video_id": "KfKhW_Gjb1k",
+     "video_date": "2026-10-20",
+     "income_per_hour": 700000000,
+     "income_gross": true,
+     "measured": "заявлен диапазон 300-700 млн грязными, в основном кейсами, взят верх (не замерено)",
+     "skill_level": "—",
+     "bonuses": [
+      "сет",
+      "раптор",
+      "охранник",
+      "бонус тракториста"
+     ],
+     "costs": [],
+     "net_per_hour": 700000000,
+     "requirements": "лавка для сбыта кейсов",
+     "reliability": "low",
+     "note": "Ср. замер QH7lHwUfS6Y ~600 млн чистыми с x3 — верх диапазона реален с сетом. Новичкам не советует (соблазн открыть кейсы).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "video_id": "QH7lHwUfS6Y",
+     "video_date": "2026-10-05",
+     "income_per_hour": 300000000,
+     "income_gross": true,
+     "measured": "замер часа без сиропа: +90 млн вертами + 18 кейсов фрейм (~200-210 млн)",
+     "skill_level": "1000/1000",
+     "bonuses": [
+      "охранник +79% (максимум)",
+      "руки Сета +55%",
+      "заказы 2 звёздочки"
+     ],
+     "costs": [],
+     "net_per_hour": 300000000,
+     "requirements": "навык 1000, редкий охранник +79%, руки Сета",
+     "reliability": "high",
+     "note": "Почасовой замер со скринами баланса и хранилища. 232 тыс./действие без охранника → 350 тыс. с ним. Кейсы по ~13 млн не проданы в кадре.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "video_id": "QH7lHwUfS6Y",
+     "video_date": "2026-10-05",
+     "income_per_hour": 600000000,
+     "income_gross": false,
+     "measured": "замер часа с x3: +270 млн вертами (было 90 → стало 363 млн); 36 кейсов (~468 млн)",
+     "skill_level": "1000/1000",
+     "bonuses": [
+      "те же + бонус тракториста x3 (~190-200 млн)"
+     ],
+     "costs": [
+      {
+       "name": "сироп (~200 млн/2ч)",
+       "amount_per_hour": 100000000
+      },
+      {
+       "name": "аренда машины",
+       "amount_per_hour": 30000000
+      }
+     ],
+     "net_per_hour": 600000000,
+     "requirements": "те же + сироп",
+     "reliability": "high",
+     "note": "Подсчёт автора: 540 млн/2ч − 200 млн = 350 млн/2ч = 175 млн/ч вертами − 30 млн аренда + 468 млн кейсы ≈ 600 млн. Падения кейсов рандомны (4 за 18 мин vs 15 за 20 мин); гипотеза больше навык = больше кейсов не проверена.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "Venom Raptor 1800+",
+      "руки сета",
+      "скин буджека +10/+12",
+      "грамота ветерана",
+      "охранник 4 ур +79%",
+      "эликсир ремонтника",
+      "дома Cosmo+Springs",
+      "группа"
+     ],
+     "costs": [
+      "аренда сета + Raptor"
+     ],
+     "income_gross": true,
+     "income_per_hour": 300000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "measured": "оценка автора, топ-сет (без строгого лога часа)",
+     "net_per_hour": null,
+     "note": "Вилка 200-400 млн: наличка 100-200 млн + 10-20 фрейм-кейсов по ~10 млн. Утро/соло до 300-400, день 100-150. Главный минус — конкуренция.",
+     "reliability": "low",
+     "requirements": "Raptor 1800+, сет, группа, дома",
+     "skill_level": "макс",
+     "video_date": "2026-09-24",
+     "video_id": "bxHTDuKvaE4",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "Raptor 1590+рамка (6/10 шанс)",
+      "грамота +5%",
+      "Cosmo +10%",
+      "руки +55%",
+      "нищий скин +1%"
+     ],
+     "costs": [
+      "сироп тракториста (с ним +60 млн нетто/ч)"
+     ],
+     "income_gross": true,
+     "income_per_hour": 188000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "measured": "отработанный час БЕЗ сиропа: 65 млн наличка + 8 кейсов x15 млн",
+     "net_per_hour": 250000000,
+     "note": "net=оценка автора С сиропом (за вычетом его цены, 250-300). Кейс по 15 млн на дату 2026-08-24. Заказы с 2 звёздами, каток пропускать.",
+     "reliability": "medium",
+     "requirements": "Raptor с 75 ур БП (или аренда), руки, навык 5000 AZS",
+     "skill_level": "максимальный (5000 AZS)",
+     "video_date": "2026-08-24",
+     "video_id": "pQL0N7XFn_w",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 450000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "measured": "НЕ замер — одна фраза 'там действительно можно 400-500'",
+     "net_per_hour": null,
+     "note": "Без деталей сета. Только как ориентир слухов.",
+     "reliability": "low",
+     "requirements": "неизвестны",
+     "skill_level": "неизвестен",
+     "video_date": "2026-09-11",
+     "video_id": "ymKN4o5QC6M",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "Raptor 1800-2000 (+100%, 10% фрейм)",
+      "Буджек+байкеры 17%",
+      "руки +55%",
+      "грамота +5%",
+      "охранник 31/42/58/79%",
+      "эликсиры +20%/+30%",
+      "дома",
+      "тракторист x3"
+     ],
+     "costs": [
+      "аренда сета + Raptor + охранник + эликсиры"
+     ],
+     "income_gross": true,
+     "income_per_hour": 1000000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "measured": "10-часовой тест + расчёт 20-30 кейсов x15 млн + 550-650 наличкой (соло без онлайна)",
+     "net_per_hour": 1000000000,
+     "note": "Миллиард — в соло без конкуренции (утро/рестарт) и при своём сете. В пик 700-1000 онлайна 'ловить нечего'. №3 по автору.",
+     "reliability": "medium",
+     "requirements": "Raptor 1800+, сет, низкий онлайн",
+     "skill_level": "топ-сет",
+     "video_date": "2026-10-29",
+     "video_id": "R12KqH3UdYw",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "Raptor 1800+ (10%, +99%)",
+      "руки +55%",
+      "охранник 17-18%",
+      "эликсир ремонтника + тракторист",
+      "Cosmo +10%"
+     ],
+     "costs": [
+      "аренда ~40 млн/ч",
+      "сироп ~100-150 млн/2ч"
+     ],
+     "income_gross": true,
+     "income_per_hour": 800000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "measured": "2 часа ночью с сиропом, скрипт: 692 млн наличкой + 41 кейс x12 млн (серверное +28% вычтено)",
+     "net_per_hour": 800000000,
+     "note": "С серверным улучшением было бы ~1000 млн/ч. До обновы было 30-40 млн/ч (x10 буст от Raptor). Сложные ~100 млн/15 мин; каток не делать. Raptor 1800+ в дефиците.",
+     "reliability": "high",
+     "requirements": "Raptor 1800+ в аренду, руки, фул-навык (5000 AZS / ~15 ч)",
+     "skill_level": "фул",
+     "video_date": "2026-09-11",
+     "video_id": "VPfIRjyhpg4",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "руки +55%",
+      "охранник +28%",
+      "Raptor 1700 (8% фрейм)",
+      "группа 2 чел +10%"
+     ],
+     "costs": [
+      "аренда ~40 млн (руки 5 + охранник 5 + Raptor 30/2ч)",
+      "канистра 5 млн"
+     ],
+     "income_gross": true,
+     "income_per_hour": 168000000,
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "measured": "1 час днём в конкуренцию (3-5 чел/точка), БЕЗ сиропа: 8 кейсов x21 млн",
+     "net_per_hour": 128000000,
+     "note": "Нижняя граница: день + конкуренция + не-топ Raptor. Наличка мелкая (200k-1 млн/действие, свалка 2.5 млн) → округление 140-150 с ней. Кейс по 21 млн на дату (плавает 10-21).",
+     "reliability": "high",
+     "requirements": "Raptor в аренде, руки, охранник, группа",
+     "skill_level": "неизвестен (возможно не фул)",
+     "video_date": "2026-10-28",
+     "video_id": "lA0aes0hxzE",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "бонус тракториста x3"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 14800000,
+     "job": "remontdorog",
+     "job_ru": "Ремонтник дорог",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 14800000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +1% = 14.95 млн. Дорожная служба LV.",
+     "reliability": "medium",
+     "requirements": "10 уровень",
+     "skill_level": "10 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "ribalka",
+   "name": "Рыбалка",
+   "measurements": 5,
+   "net_median": 99500000,
+   "net_min": 13100000,
+   "net_max": 340000000,
+   "gross_max": 340000000,
+   "reliability": "high",
+   "requirements": [
+    "1 уровень",
+    "база рыболова",
+    "база рыболова, леска, наживка",
+    "лицензия рыболова, удочка 10 ур., эхолот/наживка",
+    "удочка 10 ур., лодка"
+   ],
+   "costs": [
+    {
+     "name": "крафт кейса Death West 5000000 (разово)",
+     "per_hour": 0,
+     "note": "",
+     "from": "0CDoZCXHsdU"
+    },
+    {
+     "name": "леска и наживка (сумма не названа)",
+     "per_hour": 0,
+     "note": "",
+     "from": "0CDoZCXHsdU"
+    },
+    {
+     "name": "леска 20 шт + наживка 600 шт (цены не названы)",
+     "per_hour": 0,
+     "note": "",
+     "from": "0CDoZCXHsdU"
+    },
+    {
+     "name": "крафт кейса Death West 5 млн разово + износ удочки/эхолота",
+     "per_hour": 0,
+     "note": "",
+     "from": "0CDoZCXHsdU"
+    },
+    {
+     "name": "аренда лодки (копейки) + мясо охраннику (цены не названы)",
+     "per_hour": 0,
+     "note": "",
+     "from": "1x3ZBFbFhAw"
+    },
+    {
+     "name": "наживка/лицензия (цены не названы)",
+     "per_hour": 0,
+     "note": "",
+     "from": "Nz0U2L9rtkk"
+    },
+    {
+     "name": "расходы не подтверждены",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "магическая шляпа +22%",
+      "корзина +40%",
+      "Хельсинг",
+      "эхолот 10/10"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "крафт кейса Death West 5000000 (разово)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "леска и наживка (сумма не названа)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 30396998,
+     "job": "ribalka",
+     "job_ru": "Рыбалка",
+     "measured": "замер за 4 часа (809 рыб, 121587993)",
+     "net_per_hour": null,
+     "note": "4ч: рыба 73.2 млн + предметы 48.4 млн (монеты по средней 300к) = 121.6 млн; 1 легендарная за 4ч -> кейс Death West (крафт 5 млн, дроп мусорный). Удочка/эхолот сломались; без охранника на кейсы.",
+     "reliability": "high",
+     "requirements": "база рыболова",
+     "skill_level": "нашивка Мастер рыболовства, эликсир Рыбный мастер",
+     "video_date": "2026-11-06",
+     "video_id": "0CDoZCXHsdU",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "шляпа +22% к продаже",
+      "корзина 40%",
+      "Хельсинг +1 рыба/50%",
+      "эликсир 20% двойной улов + сироп",
+      "охранника на кейсы не было"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "леска 20 шт + наживка 600 шт (цены не названы)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "крафт кейса Death West 5 млн разово + износ удочки/эхолота"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 30400000,
+     "job": "ribalka",
+     "job_ru": "Рыбалка",
+     "measured": "4 часа (05:58 -> +4ч): 809 рыб, продажа 73.17 млн + предметы 48.42 млн = 121.59 млн; 40 мин: 252 рыбы -> 12.76 млн + 33 монеты",
+     "net_per_hour": 29000000,
+     "note": "Легендарный Клыкарок: 1 шт за ~1-4 ч, ушел на крафт кейса (дроп: зеленая Тэк-9 и др. - 'не повезло'). Цены монет (300 тыс.), ларцов, заточек оценочные. Срок годности/сети/5 редкостей не упоминаются.",
+     "reliability": "medium",
+     "requirements": "база рыболова, леска, наживка",
+     "skill_level": "топ-сет (удочка 10/10, эхолот)",
+     "video_date": "2026-11-06",
+     "video_id": "0CDoZCXHsdU",
+     "_file": "batch_D_mine_wood_farm_fish.json"
+    },
+    {
+     "bonuses": [
+      "шляпа +22%",
+      "корзина 40% +1 AZ",
+      "охранник +5% кейс; щит 10% рыбная монета",
+      "лодка (50-60 рыб на точку)"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда лодки (копейки) + мясо охраннику (цены не названы)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 340000000,
+     "job": "ribalka",
+     "job_ru": "Рыбалка",
+     "measured": "5 часов ночью 23:59-05:00, нулевая конкуренция; наличка 75.5 млн + 970 AZ + кейсы ~1.6 млрд (2 фэнт., 2 особых, 3 сезона, 4 цил., 5 К-26, 4 фрейм, 2 каптур)",
+     "net_per_hour": 340000000,
+     "note": "Автор заявляет 347 млн/ч (1.7 млрд/5). Наличкой лишь ~15 млн/ч, остальное - неликвидные кейсы по рын. оценкам. Дроп случаен (пустой 2-й час). Охранник 2-5 млрд не окупается по мнению автора. Для планирования надежность низкая.",
+     "reliability": "low",
+     "requirements": "удочка 10 ур., лодка",
+     "skill_level": "максимум (топ-сет, лодка)",
+     "video_date": "2026-09-29",
+     "video_id": "1x3ZBFbFhAw",
+     "_file": "batch_D_mine_wood_farm_fish.json"
+    },
+    {
+     "bonuses": [
+      "шляпа +22%",
+      "корзина 40% +1 AZ",
+      "Хельсинг +1 рыба/50% +1 AZ",
+      "удочка 10/10 (23% артефакт, 28% удвоение, 5% ларец)",
+      "охранник 5% кейс; щит 10% монета"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "наживка/лицензия (цены не названы)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 170000000,
+     "job": "ribalka",
+     "job_ru": "Рыбалка",
+     "measured": "час 14:52 -> +1ч (~3 поклевки/мин): рыба 15 млн + 26 монет (~3 млн) + 2 К-26 (~64 млн) + 12-цилиндр (~42 млн); часы 2-4: ~300/~250-280/640 млн со слов",
+     "net_per_hour": 170000000,
+     "reliability": "low",
+     "requirements": "лицензия рыболова, удочка 10 ур., эхолот/наживка",
+     "skill_level": "топ-сет",
+     "video_date": "2026-09-28",
+     "video_id": "Nz0U2L9rtkk",
+     "note": "Заголовок '+700кк/ч' не подтверждается (макс. 640 млн в пиковый час с особым кейсом). Доход = кейсы, рандом ('4 кейса за 35 мин, 0 за 25 мин'). Цены кейсов внутри видео противоречивы (К-26: 40->32 млн; фэнтезийный 'сотка' vs 'миллион'; особый '4,7' без единиц).",
+     "_file": "batch_D_mine_wood_farm_fish.json"
+    },
+    {
+     "bonuses": [
+      "бонус тракториста x3"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "расходы не подтверждены"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 13100000,
+     "job": "ribalka",
+     "job_ru": "Продажа рыбы",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 13100000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +1% = 13.23 млн. Подработка.",
+     "reliability": "medium",
+     "requirements": "1 уровень",
+     "skill_level": "1 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "shahta",
+   "name": "Шахта",
+   "measurements": 10,
+   "net_median": 111050000,
+   "net_min": 16000000,
+   "net_max": 800000000,
+   "gross_max": 800000000,
+   "reliability": "high",
+   "requirements": [
+    "3 уровень",
+    "3 уровень, разрешение, деньги на банке для аренды (35 млн)",
+    "7-10 уровень для аренды, привязка почты",
+    "кирка в аренду, еда/пиво",
+    "малолюдный сервер, сет в аренду (цена не названа)",
+    "малый онлайн на шахте (не работать при 10+ копателях), свой трейлер (налог, слетает за 10 дней)",
+    "не названы",
+    "нет",
+    "разрешение, арендный сет, пиво",
+    "стартовые 4.5 млн на кирку"
+   ],
+   "costs": [
+    {
+     "name": "аренда сета на шахту",
+     "per_hour": 6000000,
+     "note": "",
+     "from": "ODNddgoDtvw"
+    },
+    {
+     "name": "аренда сета (19 млн / 2 ч)",
+     "per_hour": 9500000,
+     "note": "",
+     "from": "Yvd2Y2TukWg"
+    },
+    {
+     "name": "аренда Black Ops (18 млн / 2 ч)",
+     "per_hour": 9000000,
+     "note": "",
+     "from": "Yvd2Y2TukWg"
+    },
+    {
+     "name": "2 сиропа майнера (0.9 + 1.5 млн)",
+     "per_hour": 2400000,
+     "note": "",
+     "from": "Yvd2Y2TukWg"
+    },
+    {
+     "name": "кирка",
+     "per_hour": 1000000,
+     "note": "",
+     "from": "zfWysamxoT0"
+    },
+    {
+     "name": "аренда сета ~20 млн (сфера+кирка+скины 16-17 млн + охранник 3 млн)",
+     "per_hour": 0,
+     "note": "",
+     "from": "GKRMAsEvhTU"
+    },
+    {
+     "name": "аренда ~25 млн (спортик 15 млн — переплата; норма 25-35 млн)",
+     "per_hour": 0,
+     "note": "",
+     "from": "mbz0YGbLu0s"
+    },
+    {
+     "name": "разрешение",
+     "per_hour": 0,
+     "note": "",
+     "from": "mbz0YGbLu0s"
+    },
+    {
+     "name": "пиво 25 AZ",
+     "per_hour": 0,
+     "note": "",
+     "from": "mbz0YGbLu0s"
+    },
+    {
+     "name": "расходы не подтверждены",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "арендный сет 6000000/час",
+      "охранник Т-60 (x2 ресурсы)"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 6000000,
+       "name": "аренда сета на шахту"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 93000000,
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "measured": "замер за 2 часа (186 млн)",
+     "net_per_hour": null,
+     "note": "2ч: 500 камня + 257 металла -> 186 млн (камень ~242к, металл ~249к в ломбарде); сет 12 млн/2ч; цена Т-60 не названа.",
+     "reliability": "medium",
+     "requirements": "стартовые 4.5 млн на кирку",
+     "skill_level": "1-10 уровень",
+     "video_date": "2026-11-14",
+     "video_id": "ODNddgoDtvw",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 200000000,
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "measured": "замер за ~3 часа (~600 млн)",
+     "net_per_hour": null,
+     "note": "~3ч ночью: 1400 камня по 280к + 688 металла по 310к = ~600 млн; продажа в ломбарде показана.",
+     "reliability": "medium",
+     "requirements": "нет",
+     "skill_level": null,
+     "video_date": "2026-11-15",
+     "video_id": "sumf-Y59TS4",
+     "_file": "batch_A_fresh.json"
+    },
+    {
+     "bonuses": [
+      "Black Ops +3 ресурса, 20% на удвоение",
+      "сироп майнера +20% шанс доп. ресурса (куплены 2 шт.)"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 9500000,
+       "name": "аренда сета (19 млн / 2 ч)"
+      },
+      {
+       "amount_per_hour": 9000000,
+       "name": "аренда Black Ops (18 млн / 2 ч)"
+      },
+      {
+       "amount_per_hour": 2400000,
+       "name": "2 сиропа майнера (0.9 + 1.5 млн)"
+      }
+     ],
+     "income_gross": true,
+     "income_per_hour": 143000000,
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "measured": "полный час 13:53-14:52, 227 камня + 120 металла + 2 золота + 16 бронзы по ресурс-хелперу",
+     "net_per_hour": 122100000,
+     "note": "Высокая конкуренция (20-30 чел.) занижает цифру. Слухи про 300-400 млн/ч не подтвердились. Net = 143 - ~20.9 (автор расходы не вычитал). Тёмная материя/каменные люди не упоминаются.",
+     "reliability": "high",
+     "requirements": "не названы",
+     "skill_level": "топ-сет в аренду (нимб 5 звезд, огненная кирка, скин), точки не выучены",
+     "video_date": "2026-10-16",
+     "video_id": "Yvd2Y2TukWg",
+     "_file": "batch_D_mine_wood_farm_fish.json"
+    },
+    {
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "video_id": "N0nXUCTkLtc",
+     "video_date": "2026-08-27",
+     "income_per_hour": 150000000,
+     "income_gross": true,
+     "measured": "заявлено автором, не замерено: онлайн <500, без конкуренции",
+     "skill_level": "—",
+     "bonuses": [
+      "сферы инвокера (+20% ресурс, 5% уголь)",
+      "огненная кирка",
+      "Т-60",
+      "скин роллера/бег Сиджея или коллекционный сет",
+      "трейлер",
+      "сироп шахтёра"
+     ],
+     "costs": [],
+     "net_per_hour": 150000000,
+     "requirements": "малолюдный сервер, сет в аренду (цена не названа)",
+     "reliability": "low",
+     "note": "Заявление без замера.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "video_id": "zfWysamxoT0",
+     "video_date": "2026-09-22",
+     "income_per_hour": 20000000,
+     "income_gross": true,
+     "measured": "3-часовая смена: 95 камня + 73 металла + 6 углей + 2 серебра → 64 млн",
+     "skill_level": "7-10 (качался по ходу)",
+     "bonuses": [
+      "арендный сет (~1 млн)",
+      "сироп майнера",
+      "временные машинки из квестов",
+      "куплен трейлер"
+     ],
+     "costs": [
+      {
+       "name": "кирка",
+       "amount_per_hour": 1000000
+      }
+     ],
+     "net_per_hour": 19000000,
+     "requirements": "7-10 уровень для аренды, привязка почты",
+     "reliability": "medium",
+     "note": "Ночь, куча народу даже в 2:00; металл по 275, камень 150-200 тыс. Ранний отрезок: 7,2 млн за ~20 мин.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "video_id": "KfKhW_Gjb1k",
+     "video_date": "2026-10-20",
+     "income_per_hour": 800000000,
+     "income_gross": false,
+     "measured": "заявлен диапазон 200-800 млн чистыми, взят верх (не замерено)",
+     "skill_level": "—",
+     "bonuses": [
+      "кирка огненная/обычная",
+      "скин спортик",
+      "трейлер с модом (+1 ресурс)",
+      "дешёвые сиропы майнера"
+     ],
+     "costs": [],
+     "net_per_hour": 800000000,
+     "requirements": "малый онлайн на шахте (не работать при 10+ копателях), свой трейлер (налог, слетает за 10 дней)",
+     "reliability": "low",
+     "note": "Без замеров; верх требует идеальных условий. Автор — АФК-арендодатель сетов (конфликт интересов).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "video_id": "cGAj_NGCx-U",
+     "video_date": "2026-08-16",
+     "income_per_hour": 20000000,
+     "income_gross": true,
+     "measured": "3 часа: 300 камня + 116 металла + 6 бронзы → 64 млн",
+     "skill_level": "5-10 (по ходу: 6 ур = +3 млн)",
+     "bonuses": [
+      "временная випка",
+      "пиво (бесконечный бег)",
+      "подъёмка (старт под закрытие — куча свободных ресурсов)"
+     ],
+     "costs": [
+      {
+       "name": "кирка",
+       "amount_per_hour": 1000000
+      }
+     ],
+     "net_per_hour": 19000000,
+     "requirements": "кирка в аренду, еда/пиво",
+     "reliability": "medium",
+     "note": "3-часовой замер со скринами; перенос ограничен (подъёмка + випка + пустая шахта). Позже сет с охранником +2: 260 камня + 96 металла за 2 часа (не проданы в серии).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "сфера инвокера + перенос майнскелета (+20%, уголь)",
+      "огненная кирка",
+      "оборотень (бег)",
+      "охранник +2 реса"
+     ],
+     "costs": [
+      "аренда сета ~20 млн (сфера+кирка+скины 16-17 млн + охранник 3 млн)"
+     ],
+     "income_gross": true,
+     "income_per_hour": 121000000,
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "measured": "~50 мин твинком (10 мин потеря — смерть/больница), конкуренция ~4 чел: 348 камня + 156 металла",
+     "net_per_hour": 100000000,
+     "note": "Продажа: камень по 220k = 75 млн + металл = 121 млн. Топ-1 старт с 3 ур. Ловушки: забыл разрешение, смерть, конкуренция, сиропа/трейлера не было.",
+     "reliability": "medium",
+     "requirements": "3 уровень, разрешение, деньги на банке для аренды (35 млн)",
+     "skill_level": "3 уровень (твинк)",
+     "video_date": "2026-10-04",
+     "video_id": "GKRMAsEvhTU",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "сфера инвокера + майнскелет",
+      "огненная кирка",
+      "трейлер +15%",
+      "охранник +2 (топ +3)",
+      "сироп майнера +20% (3 мин)",
+      "пиво"
+     ],
+     "costs": [
+      "аренда ~25 млн (спортик 15 млн — переплата; норма 25-35 млн)",
+      "разрешение",
+      "пиво 25 AZ"
+     ],
+     "income_gross": true,
+     "income_per_hour": 293000000,
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "measured": "~53 мин: 683 камня + 247 металла + 40 серебра + 10 угля + 10 бронзы, 0 золота; камень 300k",
+     "net_per_hour": 270000000,
+     "note": "Проверка '700 млн Чикардо': автор-нешaхтёр сделал 293/270 при средней конкуренции. 400 реально вдумчиво, 600 — если соло. Скин спортик (+1 рес, но бег CJ — медленный).",
+     "reliability": "medium",
+     "requirements": "разрешение, арендный сет, пиво",
+     "skill_level": "средний (без маршрутов)",
+     "video_date": "2026-10-25",
+     "video_id": "mbz0YGbLu0s",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "расходы не подтверждены"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 16000000,
+     "job": "shahta",
+     "job_ru": "Шахта",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 16000000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Бонусов нет. Подработка.",
+     "reliability": "medium",
+     "requirements": "3 уровень",
+     "skill_level": "3 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "taxi",
+   "name": "Таксист",
+   "measurements": 22,
+   "net_median": 275000000,
+   "net_min": 30000,
+   "net_max": 1500000000,
+   "gross_max": 1500000000,
+   "reliability": "high",
+   "requirements": [
+    "1 уровень",
+    "1 уровень, 12 цилиндров, сет 3 акса, права",
+    "15 ур. аккаунта, ~100 млн стартовых, навык ~30-40 ур., C5 CEO для прокачки (x3 опыта)",
+    "50 ур. навыка, арендованный топ-сет",
+    "любое такси-авто; для денег — кач до 40-50+",
+    "макс. навык, кастомный транспорт",
+    "макс. ур. таксиста в донате (число не названо), фулл сет; бонусы проверять через центр занятости → 'мои бонусы'",
+    "навык 15-20+ (фул 50 ~50+ ч на C5 SEO)",
+    "навык 30-40 ур., топ-сет; тактика: накатать 4 млн на счётчике (~20 млн/клиент, 5 мин/заказ, 10-12 заказов/час)",
+    "навык 50 (кач 0→50 ~82 часа), топ-транспорт и сет",
+    "навык 50, аренда 2000 рейтинга + сет",
+    "навык ~38-40+, топ-сет (свой или аренда), тактика: накатать 2.8 млн на счётчике (~20 млн/заказ, 2-3 мин)",
+    "права + аренда сета",
+    "прокачанный навык (качается на C5 CEO), топ-сет в аренду; механика: катать ~4-5 мин до возмущения бота, потом сдавать",
+    "редчайшие аксессуары",
+    "рынок аренды (транспорт 1900-2000 рейтинга, сет)",
+    "самые высокие: навык + лимитка + коса 20 млрд",
+    "скилл 50 + фулсет",
+    "скилл 50, аренда 2000 рейтинга",
+    "топ-сет в аренду, прокачанный тариф",
+    "тот самый автомобиль (был 100-200 млн, стал ~500 млн)",
+    "—"
+   ],
+   "costs": [
+    {
+     "name": "аренда фулл-сета и тачки (Space, 36-40 млн/ч)",
+     "per_hour": 38000000,
+     "note": "",
+     "from": "g2Tbt37oC78"
+    },
+    {
+     "name": "бонус тракториста (250 млн за 2 часа)",
+     "per_hour": 125000000,
+     "note": "",
+     "from": "g2Tbt37oC78"
+    },
+    {
+     "name": "аренда сета и расходники (разница грязь/чисть 200 млн за 2 ч, состав не раскрыт)",
+     "per_hour": 100000000,
+     "note": "",
+     "from": "kAsXvfiLXv0"
+    },
+    {
+     "name": "бонус тракториста (200 млн/2ч)",
+     "per_hour": 100000000,
+     "note": "",
+     "from": "me2nQIKfkNY"
+    },
+    {
+     "name": "сироп (~200 млн/2ч)",
+     "per_hour": 100000000,
+     "note": "",
+     "from": "me2nQIKfkNY"
+    },
+    {
+     "name": "аренда транспорта",
+     "per_hour": 50000000,
+     "note": "",
+     "from": "me2nQIKfkNY"
+    },
+    {
+     "name": "аренда сета",
+     "per_hour": 25000000,
+     "note": "",
+     "from": "me2nQIKfkNY"
+    },
+    {
+     "name": "аренда тачки 1800-2000 + сета 1.5-2 млрд/нед",
+     "per_hour": 0,
+     "note": "",
+     "from": "bxHTDuKvaE4"
+    },
+    {
+     "name": "сироп тракториста",
+     "per_hour": 0,
+     "note": "",
+     "from": "bxHTDuKvaE4"
+    },
+    {
+     "name": "сироп 50 млн/ч",
+     "per_hour": 0,
+     "note": "",
+     "from": "pQL0N7XFn_w"
+    },
+    {
+     "name": "заправка ~1.2 млн",
+     "per_hour": 0,
+     "note": "",
+     "from": "pQL0N7XFn_w"
+    },
+    {
+     "name": "домкраты",
+     "per_hour": 0,
+     "note": "",
+     "from": "pQL0N7XFn_w"
+    },
+    {
+     "name": "аренда сета под макс. бафы (сумма не названа)",
+     "per_hour": 0,
+     "note": "",
+     "from": "GKRMAsEvhTU"
+    },
+    {
+     "name": "аренда сета/тачки (сумма не названа)",
+     "per_hour": 0,
+     "note": "",
+     "from": "mRKVIUQlx0c"
+    },
+    {
+     "name": "аренда сета + тачки + сироп/2 (включены в 600 со слов автора, без разбивки)",
+     "per_hour": 0,
+     "note": "",
+     "from": "R12KqH3UdYw"
+    },
+    {
+     "name": "аренда 30 млн/ч",
+     "per_hour": 0,
+     "note": "",
+     "from": "VPfIRjyhpg4"
+    },
+    {
+     "name": "сироп",
+     "per_hour": 0,
+     "note": "",
+     "from": "VPfIRjyhpg4"
+    },
+    {
+     "name": "аренда такси (Рено/Форд/Ескалейд/Мерседес по уровню навыка; не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    },
+    {
+     "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "машина 400%+",
+      "скин Дракулы",
+      "лягушка",
+      "коса",
+      "бонус тракториста (250 млн/2ч)",
+      "группа 4+ (+40-45% к скорости набора тарифа)"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 38000000,
+       "name": "аренда фулл-сета и тачки (Space, 36-40 млн/ч)"
+      },
+      {
+       "amount_per_hour": 125000000,
+       "name": "бонус тракториста (250 млн за 2 часа)"
+      }
+     ],
+     "income_gross": false,
+     "income_per_hour": 275000000,
+     "job": "taxi",
+     "job_ru": "Таксист",
+     "measured": "замер ~2 часа: 1-й час отбить аренду и тракториста, 2-й час +250-300 млн чистыми без ларцов",
+     "net_per_hour": 275000000,
+     "reliability": "medium",
+     "requirements": "15 ур. аккаунта, ~100 млн стартовых, навык ~30-40 ур., C5 CEO для прокачки (x3 опыта)",
+     "skill_level": "~30-40 ур. навыка + фулл сет",
+     "video_date": "2026-10-31",
+     "video_id": "g2Tbt37oC78",
+     "_file": "batch_B_taxi.json"
+    },
+    {
+     "bonuses": [
+      "12 цилиндров 2000 качества (+463%)",
+      "арендованный сетинг",
+      "эликсир тракториста",
+      "эликсир вечности",
+      "подселение Arizona Springs + Космовилледж"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 100000000,
+       "name": "аренда сета и расходники (разница грязь/чисть 200 млн за 2 ч, состав не раскрыт)"
+      }
+     ],
+     "income_gross": false,
+     "income_per_hour": 641000000,
+     "job": "taxi",
+     "job_ru": "Таксист",
+     "measured": "замер ровно 2 часа минута в минуту: грязными 1483 млн, чистыми 1283 млн",
+     "net_per_hour": 641000000,
+     "reliability": "high",
+     "requirements": "50 ур. навыка, арендованный топ-сет",
+     "skill_level": "50 ур. навыка, тариф 33776",
+     "video_date": "2026-10-22",
+     "video_id": "kAsXvfiLXv0",
+     "_file": "batch_B_taxi.json"
+    },
+    {
+     "bonuses": [
+      "12 цилиндров +300% (ТТ2, лимитка, бак 160л)",
+      "номера Разор +28% (40% ларец/5км, 5% frame или GG/10км)",
+      "жабка рыбака +15%",
+      "коса Куба Страба +40%",
+      "скин Влада Дракулы (итого +375%)"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 416000000,
+     "job": "taxi",
+     "job_ru": "Таксист",
+     "measured": "замер 10 часов с почасовыми отсечками: наличка 3667 млн + ларцы/кейсы ~493 млн = 4160 млн",
+     "net_per_hour": 416000000,
+     "reliability": "high",
+     "requirements": "навык ~38-40+, топ-сет (свой или аренда), тактика: накатать 2.8 млн на счётчике (~20 млн/заказ, 2-3 мин)",
+     "skill_level": "39 ур. (тариф 58500) → 41 ур., ~186 ботов, x2 опыта с 12 цилиндров",
+     "video_date": "2026-08-28",
+     "video_id": "20_VRMbBNbc",
+     "_file": "batch_B_taxi.json"
+    },
+    {
+     "bonuses": [
+      "12 цилиндров +300% (куплена за 3 млрд, качество 1364)",
+      "рамки Razor +28%",
+      "жабка +15%",
+      "коса Куба Страба +40%",
+      "скин Дракулы +20% (итого +375%)"
+     ],
+     "costs": [],
+     "income_gross": false,
+     "income_per_hour": 277500000,
+     "job": "taxi",
+     "job_ru": "Таксист",
+     "measured": "замер 2 часа: 1ч — 240 млн наличкой (12 заказов), итого 499-500 млн наличкой + 25 млн ларцы + ~30 млн кейсы = 555 млн",
+     "net_per_hour": 277500000,
+     "reliability": "high",
+     "requirements": "навык 30-40 ур., топ-сет; тактика: накатать 4 млн на счётчике (~20 млн/клиент, 5 мин/заказ, 10-12 заказов/час)",
+     "skill_level": "39 ур. навыка, до 7 ларцов с пассажира",
+     "video_date": "2026-08-20",
+     "video_id": "wqglB8r-t7o",
+     "_file": "batch_B_taxi.json"
+    },
+    {
+     "bonuses": [
+      "своя машина с макс. бонусами",
+      "бонус тракториста +300% (2 часа)"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 293000000,
+     "job": "taxi",
+     "job_ru": "Таксист",
+     "measured": "замер ~1 час с трактористом: первый клиент без бонуса 1.2 млн, с бонусом 2-8 млн/заказ, итого 293 млн",
+     "net_per_hour": null,
+     "reliability": "medium",
+     "requirements": "прокачанный навык (качается на C5 CEO), топ-сет в аренду; механика: катать ~4-5 мин до возмущения бота, потом сдавать",
+     "skill_level": "11 ур. навыка, тариф 8000/км",
+     "video_date": "2026-09-15",
+     "video_id": "oqoJOFGVqHw",
+     "note": "Без топ-сета и с малым навыком; сам автор признаёт ошибки и недозаработок. Расходы (топливо 7.2 млн, ремки) не вычтены — чистыми чуть меньше. Название 'C5 SEO' и 'кубоскраба/боджек' — артефакты авто-субтитров.",
+     "_file": "batch_B_taxi.json"
+    },
+    {
+     "bonuses": [
+      "12 цилиндров",
+      "рамка +31%",
+      "коса Куба Страба",
+      "тракторист из баттлпасса (x3, 2 часа)",
+      "подселение Космодом + Аризона Спрингс"
+     ],
+     "costs": [],
+     "income_gross": null,
+     "income_per_hour": null,
+     "job": "taxi",
+     "job_ru": "Таксист",
+     "measured": "почасового замера нет (часть 1); только разовые рейсы по 10-20 млн",
+     "net_per_hour": null,
+     "reliability": "low",
+     "requirements": "макс. ур. таксиста в донате (число не названо), фулл сет; бонусы проверять через центр занятости → 'мои бонусы'",
+     "skill_level": "макс. уровень в донате (число не названо) + опыт баттлпасса",
+     "video_date": "2026-09-01",
+     "video_id": "n8TdYQzwXJ8",
+     "note": "Часть 1 без замера; '600кк за 2 часа' только в заголовке — в цифры не вносится. 12 цилиндров куплены за ~15 млн VC; коса выросла со 100 млн до ~7 млрд. Вышло обновление с 3 лимитными авто под такси — сет может устареть, окупаемость во 2-й части.",
+     "_file": "batch_B_taxi.json"
+    },
+    {
+     "job": "taxi",
+     "job_ru": "Такси",
+     "video_id": "lJ5My6GzmoY",
+     "video_date": "2026-08-19",
+     "income_per_hour": 108000000,
+     "income_gross": true,
+     "measured": "1 поездка 108 млн за 5-6 мин (скриншот); баг x30 — пофикшен",
+     "skill_level": "максимальный",
+     "bonuses": [
+      "авто 12 цилиндри (баг: x30 вместо x3)"
+     ],
+     "costs": [],
+     "net_per_hour": 108000000,
+     "requirements": "тот самый автомобиль (был 100-200 млн, стал ~500 млн)",
+     "reliability": "medium",
+     "note": "В час выходило ~1 млрд, но это баг; воспроизвести нельзя.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "taxi",
+     "job_ru": "Такси",
+     "video_id": "lJ5My6GzmoY",
+     "video_date": "2026-08-19",
+     "income_per_hour": 60000000,
+     "income_gross": true,
+     "measured": "1 поездка: 1,35 млн по таксометру → ~5 млн с бонусом кастома + 2 бокса; оценка автора",
+     "skill_level": "максимальный",
+     "bonuses": [
+      "кастомный Corvette",
+      "скин Влад Дракула +20%"
+     ],
+     "costs": [],
+     "net_per_hour": 60000000,
+     "requirements": "макс. навык, кастомный транспорт",
+     "reliability": "low",
+     "note": "Оценка, не часовой замер.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "taxi",
+     "job_ru": "Такси",
+     "video_id": "lJ5My6GzmoY",
+     "video_date": "2026-08-19",
+     "income_per_hour": 150000000,
+     "income_gross": true,
+     "measured": "прогноз автора: 100-150 млн/ч, до 20 млн/заказ (взят верх)",
+     "skill_level": "максимальный",
+     "bonuses": [
+      "косуха Бастраба",
+      "шапка рыбака (суммарно +55%)",
+      "эликсир вечности +30%"
+     ],
+     "costs": [],
+     "net_per_hour": 150000000,
+     "requirements": "редчайшие аксессуары",
+     "reliability": "low",
+     "note": "Прогноз; аксессуары со слов автора практически нереально найти.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "taxi",
+     "job_ru": "Такси",
+     "video_id": "zfWysamxoT0",
+     "video_date": "2026-09-22",
+     "income_per_hour": 30000,
+     "income_gross": true,
+     "measured": "за 1 клиента по квесту (нужно 3)",
+     "skill_level": "0",
+     "bonuses": [
+      "X3-прокачка 18 часов (ускорение опыта, не зарплаты)"
+     ],
+     "costs": [],
+     "net_per_hour": 30000,
+     "requirements": "—",
+     "reliability": "medium",
+     "note": "Квест, не фарм; машина ломалась (ремкомплекты).",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "taxi",
+     "job_ru": "Такси",
+     "video_id": "me2nQIKfkNY",
+     "video_date": "2026-09-27",
+     "income_per_hour": 750000000,
+     "income_gross": true,
+     "measured": "замер 2 часов по таймеру сиропа: 25 ботов/ч по ~30 млн = 1,5 млрд + дроп 111,56 млн",
+     "skill_level": "50 (тариф 68256 — старый, до обновы; у новых 50-х тариф 22-30 тыс.)",
+     "bonuses": [
+      "C5 SEO 2000 (+250% +200% за рейтинг, монета 15%+35%)",
+      "коса +40%",
+      "жабка +15%",
+      "Дракула +20%",
+      "рамки +28%",
+      "шашка +10%",
+      "сироп x3 (+488% в чате)"
+     ],
+     "costs": [
+      {
+       "name": "бонус тракториста (200 млн/2ч)",
+       "amount_per_hour": 100000000
+      }
+     ],
+     "net_per_hour": 705780000,
+     "requirements": "навык 50 (кач 0→50 ~82 часа), топ-транспорт и сет",
+     "reliability": "high",
+     "note": "Самый детальный замер батча. Дроп: кейсы фрейм, ларцы (5/бота + за 5 км), 30 монет таксиста (30 AZ/payday 12 ч), 20 чаевых (200 тыс./payday 12 ч). Окупаемость аренды сета ~4 часа.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "taxi",
+     "job_ru": "Такси (аренда сета)",
+     "video_id": "me2nQIKfkNY",
+     "video_date": "2026-09-27",
+     "income_per_hour": 750000000,
+     "income_gross": true,
+     "measured": "тот же замер, пересчёт автора на аренду",
+     "skill_level": "50",
+     "bonuses": [
+      "тот же топ-сет (в аренду)"
+     ],
+     "costs": [
+      {
+       "name": "сироп (~200 млн/2ч)",
+       "amount_per_hour": 100000000
+      },
+      {
+       "name": "аренда транспорта",
+       "amount_per_hour": 50000000
+      },
+      {
+       "name": "аренда сета",
+       "amount_per_hour": 25000000
+      }
+     ],
+     "net_per_hour": 630780000,
+     "requirements": "рынок аренды (транспорт 1900-2000 рейтинга, сет)",
+     "reliability": "medium",
+     "note": "(1611560000 − 350000000) / 2 = ~630,8 млн/ч чистыми. Ставки аренды — средние по рынку со слов автора.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "job": "taxi",
+     "job_ru": "Такси",
+     "video_id": "KfKhW_Gjb1k",
+     "video_date": "2026-10-20",
+     "income_per_hour": 1500000000,
+     "income_gross": true,
+     "measured": "заявлен диапазон 500 млн-1,5 млрд грязными, взят верх (не замерено)",
+     "skill_level": "50 (старый тариф выше нового)",
+     "bonuses": [
+      "лимитки Ferrari SK40 / XSR / GSD или Ceo C5",
+      "тракторист",
+      "коса кубастраба (20 млрд)",
+      "группа из 5"
+     ],
+     "costs": [],
+     "net_per_hour": 1500000000,
+     "requirements": "самые высокие: навык + лимитка + коса 20 млрд",
+     "reliability": "low",
+     "note": "Ср. замер me2nQIKfkNY 705 млн чистыми своим сетом — середина; 1,5 млрд только со старым тарифом + идеалом.",
+     "_file": "batch_E1_tops.json"
+    },
+    {
+     "bonuses": [
+      "12 цилиндров ~2000 (+225% ЗП)",
+      "коса Кубастраба +40%",
+      "Влад Дракула +20%",
+      "жабка +15%",
+      "рамки +25%",
+      "дома ~30%",
+      "сироп тракториста"
+     ],
+     "costs": [
+      "аренда тачки 1800-2000 + сета 1.5-2 млрд/нед",
+      "сироп тракториста"
+     ],
+     "income_gross": true,
+     "income_per_hour": 600000000,
+     "job": "taxi",
+     "job_ru": "Такси",
+     "measured": "расчёт: 20 клиентов/ч до лимита 30 млн/бот",
+     "net_per_hour": null,
+     "note": "Потолок для фул-прокачки. Путь: арендовать C5 SEO → кач 0-50 ~82 ч → арендовать топ → 500-600 млн/ч. 3 ч/день = 1.5 млрд/день.",
+     "reliability": "medium",
+     "requirements": "навык 50, аренда 2000 рейтинга + сет",
+     "skill_level": "50 уровень",
+     "video_date": "2026-09-24",
+     "video_id": "bxHTDuKvaE4",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "12 цилиндров +300%",
+      "жабка +15%",
+      "коса +40%",
+      "Влад Дракула +20%",
+      "Cosmo +10%",
+      "сироп тракториста x3"
+     ],
+     "costs": [
+      "сироп 50 млн/ч",
+      "заправка ~1.2 млн",
+      "домкраты"
+     ],
+     "income_gross": true,
+     "income_per_hour": 220000000,
+     "job": "taxi",
+     "job_ru": "Такси",
+     "measured": "показ 2 рейсов (8.8 млн без сиропа; 20 млн с сиропом) + экстраполяция 11 клиентов/ч",
+     "net_per_hour": 160000000,
+     "note": "Кап 20 млн/клиент подтверждён (накат 1.7 млн → 20 млн). 11x20-50=160 чистыми. Доступно с 1 ур. Твин-турбо 2, бак 160л.",
+     "reliability": "medium",
+     "requirements": "1 уровень, 12 цилиндров, сет 3 акса, права",
+     "skill_level": "12 уровень (макс покупки)",
+     "video_date": "2026-08-24",
+     "video_id": "pQL0N7XFn_w",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "общий бонус +491%",
+      "монеты таксиста",
+      "ларцы"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": null,
+     "job": "taxi",
+     "job_ru": "Такси",
+     "measured": "несколько коротких рейсов без сиропа (391k и ~1.2 млн), час не отработан",
+     "net_per_hour": null,
+     "note": "Свой замер — копейки: накат ~1 млн → сдача (кап 20 млн). Скилл низкий, сироп не активен. Ценность — механика, не доход.",
+     "reliability": "low",
+     "requirements": "любое такси-авто; для денег — кач до 40-50+",
+     "skill_level": "~15 (низкий; автор путается 15 vs 5)",
+     "video_date": "2026-09-11",
+     "video_id": "ymKN4o5QC6M",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "фулсет (состав не раскрыт)"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 450000000,
+     "job": "taxi",
+     "job_ru": "Такси",
+     "measured": "НЕ замер автора — пересказ чужих видео (20 млн/рейс за 2 мин)",
+     "net_per_hour": null,
+     "note": "Вилка 400-500 из чата/видосов. Автор сам ставит 'спорно'. Нужен 50 скилл.",
+     "reliability": "low",
+     "requirements": "скилл 50 + фулсет",
+     "skill_level": "50 (чужой)",
+     "video_date": "2026-09-11",
+     "video_id": "ymKN4o5QC6M",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "бесплатные машины семьи Дамон (без сетовых бафов)"
+     ],
+     "costs": [
+      "аренда сета под макс. бафы (сумма не названа)"
+     ],
+     "income_gross": true,
+     "income_per_hour": null,
+     "job": "taxi",
+     "job_ru": "Такси",
+     "measured": "осмотр после получения прав, без замера",
+     "net_per_hour": null,
+     "note": "Вывод важен для маршрута: такси НЕ стартовая работа без денег на аренду сета. Вернуться после прокачки. Маршрут: промокод → квесты → семья → права → шахта.",
+     "reliability": "low",
+     "requirements": "права + аренда сета",
+     "skill_level": "0 (твинк)",
+     "video_date": "2026-10-04",
+     "video_id": "GKRMAsEvhTU",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "коса Кубастраба +40%",
+      "жабка +15%",
+      "лимитка",
+      "группа"
+     ],
+     "costs": [
+      "аренда сета/тачки (сумма не названа)"
+     ],
+     "income_gross": true,
+     "income_per_hour": 1250000000,
+     "job": "taxi",
+     "job_ru": "Такси",
+     "measured": "заявка 2-2.5 млрд/2 ч; в кадре 60 млн за пару минут, 120 млн за ~5 мин, лимит 30 млн/рейс",
+     "net_per_hour": null,
+     "note": "Период неверных бонусов ('работали неправильно'), возможен фикс. Баланс 29.4 млрд — накопления, НЕ доход часа. Верхняя граница имбы, не план новичку.",
+     "reliability": "low",
+     "requirements": "топ-сет в аренду, прокачанный тариф",
+     "skill_level": "высокий",
+     "video_date": "2026-10-18",
+     "video_id": "mRKVIUQlx0c",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "лимитки или 12 цилиндров 2000 (+225%)",
+      "коса +40%",
+      "Дракула +20%",
+      "жабка +15%",
+      "тракторист x3",
+      "дома",
+      "рамки/шашка"
+     ],
+     "costs": [
+      "аренда сета + тачки + сироп/2 (включены в 600 со слов автора, без разбивки)"
+     ],
+     "income_gross": true,
+     "income_per_hour": 600000000,
+     "job": "taxi",
+     "job_ru": "Такси",
+     "measured": "расчёт 20+ заказов x 30 млн (накат ~2 млн/бот)",
+     "net_per_hour": null,
+     "note": "Тариф рандом 250-1500/ур, итог 25-35k (у автора 68k legacy). Кач 0-50 ~83 ч на C5 SEO (x3 опыт). Покупка скилла только до 12 ур.",
+     "reliability": "medium",
+     "requirements": "скилл 50, аренда 2000 рейтинга",
+     "skill_level": "50 уровень",
+     "video_date": "2026-10-29",
+     "video_id": "R12KqH3UdYw",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "12 цилиндров 1672 (+245% +128%)",
+      "коса +40%",
+      "жабка +15% (Дракула +20% — часть времени без него)",
+      "рамка (фреймы/ларцы)",
+      "общий бонус 411%",
+      "сироп x3"
+     ],
+     "costs": [
+      "аренда 30 млн/ч",
+      "сироп"
+     ],
+     "income_gross": true,
+     "income_per_hour": 385000000,
+     "job": "taxi",
+     "job_ru": "Такси",
+     "measured": "2 часа с сиропом, скрипт: 20 поездок/ч, 2-3 мин/рейс; порог 800k = 20 млн кап; 764 млн/2ч грязью",
+     "net_per_hour": 275000000,
+     "note": "700/2ч после аренды, 550/2ч после сиропа → ~275/ч (автор: '300 реально, полмиллиарда невозможно'). Замер занижен отсутствием Дракулы (~час без +20%).",
+     "reliability": "medium",
+     "requirements": "навык 15-20+ (фул 50 ~50+ ч на C5 SEO)",
+     "skill_level": "21 уровень",
+     "video_date": "2026-09-11",
+     "video_id": "VPfIRjyhpg4",
+     "_file": "batch_E2_bomzh.json"
+    },
+    {
+     "bonuses": [
+      "шашка такси: +10% к премии, -10% расход топлива, +1 ларец/заказ",
+      "качество авто 1000+: премия +качество/20..10, шансы GG-регистратора и монеты",
+      "лимитки HSR-II +209/+265%, GTD +159%, SC40 +99% (патч 17.09.2026)",
+      "Чаевые Таксиста (12ч): +10к вирт/час игры, лимит 15 млн",
+      "бонус тракториста x3",
+      "x2/x3 акции"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда такси (Рено/Форд/Ескалейд/Мерседес по уровню навыка; не подтверждена 2026)"
+      },
+      {
+       "amount_per_hour": 0,
+       "name": "топливо: скидка 50% на рабочем ТС (патч 28.08.2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 6500000,
+     "job": "taxi",
+     "job_ru": "Водитель такси",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 6500000,
+     "note": "источник номинала: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +30% = 8.45 млн. Ребаланс: 11.08.2026 (https://chatwoot.arizona-rp.com/hc/arizona-rp/articles/1786428603-double_gang2), Сезон Крафта 28.08.2026 (https://chatwoot.arizona-rp.com/hc/arizona-rp/articles/1787767391-craft), 17.09.2026 — лимит 30 млн/бот, ступени таксометра от 150 (https://chatwoot.arizona-rp.com/hc/arizona-rp/articles/1789589417-patchnotes_).",
+     "reliability": "medium",
+     "requirements": "1 уровень",
+     "skill_level": "1 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "tramvay",
+   "name": "Трамвай",
+   "measurements": 1,
+   "net_median": 10200000,
+   "net_min": 10200000,
+   "net_max": 10200000,
+   "gross_max": 10200000,
+   "reliability": "medium",
+   "requirements": [
+    "8 уровень"
+   ],
+   "costs": [
+    {
+     "name": "аренда трамвая (не подтверждена 2026)",
+     "per_hour": 0,
+     "note": "",
+     "from": null
+    }
+   ],
+   "entries": [
+    {
+     "bonuses": [
+      "бонус тракториста x3",
+      "x2/x3 акции"
+     ],
+     "costs": [
+      {
+       "amount_per_hour": 0,
+       "name": "аренда трамвая (не подтверждена 2026)"
+      }
+     ],
+     "gross_per_hour_note": null,
+     "income_gross": true,
+     "income_per_hour": 10200000,
+     "job": "tramvay",
+     "job_ru": "Водитель трамвая",
+     "measured": "номинал центра занятости, снимок 01.11.2026 (arz-wiki)",
+     "net_per_hour": 10200000,
+     "note": "источник: https://arz-wiki.com/arz-rp/articles/jobs/. Макс. с бонусами +1% = 10.3 млн. Депо в SF.",
+     "reliability": "medium",
+     "requirements": "8 уровень",
+     "skill_level": "8 уровень",
+     "video_date": null,
+     "video_id": null,
+     "_file": "batch_F_wiki.json"
+    }
+   ]
+  },
+  {
+   "id": "zavod",
+   "name": "Завод",
+   "measurements": 1,
+   "net_median": null,
+   "net_min": null,
+   "net_max": null,
+   "gross_max": 200000000,
+   "reliability": "low",
+   "requirements": [
+    "банда"
+   ],
+   "costs": [],
+   "entries": [
+    {
+     "bonuses": [
+      "Uzi"
+     ],
+     "costs": [],
+     "income_gross": true,
+     "income_per_hour": 200000000,
+     "job": "zavod",
+     "job_ru": "Завод",
+     "measured": "заявление: 5 млн/ящик, мероприятие 20 мин",
+     "net_per_hour": null,
+     "note": "200+ млн за 20-МИНУТНОЕ мероприятие, не в час. Экстраполировать на час некорректно (меро не нон-стоп). Без замера.",
+     "reliability": "low",
+     "requirements": "банда",
+     "skill_level": "неизвестен",
+     "video_date": "2026-09-29",
+     "video_id": "YnVPhfsztE8",
+     "_file": "batch_E2_bomzh.json"
+    }
+   ]
+  }
+ ],
+ "vc_jobs_excluded": [
+  {
+   "job": "shahta",
+   "video_id": "XD8TUKWkrwI",
+   "note": "Сервер Vice City: цены ресурсов ~3000/шт, несопоставимо с классикой (ср. 143 млн/ч в Yvd2Y2TukWg). Аренда сета не названа. Потолок с Black Ops автор оценивает ~3 млн/ч. Тёмная материя/алмазный камень/каменные люди не упоминаются."
+  }
+ ]
+}

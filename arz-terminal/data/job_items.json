@@ -1,0 +1,1063 @@
+{
+ "updated": "2026-11-18",
+ "source": "Замеры YouTube 08-11.2026 (batch_*.json) + arz-wiki. Цены — типичные из видео, проверяй рынок: они плавают.",
+ "items": [
+  {
+   "id": "rent_taxi_set",
+   "name": "Аренда топ-сета такси",
+   "jobs": [
+    "taxi"
+   ],
+   "kind": "rent",
+   "price": 38000000,
+   "price_note": "36–40 млн/ч (Space)",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Без сета на 11 ур. работа уходит в минус. Сет + тачка в аренду — стандартная схема замеров 250–700 млн/ч.",
+   "reliability": "high"
+  },
+  {
+   "id": "rent_c5",
+   "name": "Аренда C5 CEO",
+   "jobs": [
+    "taxi"
+   ],
+   "kind": "rent",
+   "price": 25000000,
+   "price_note": "20–30 млн/ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Альтернатива фулл-сету: кач навыка на C5 CEO, затем переход на топ-сет.",
+   "reliability": "medium"
+  },
+  {
+   "id": "syrup_taxi",
+   "name": "Сироп тракториста (такси)",
+   "jobs": [
+    "taxi"
+   ],
+   "kind": "consumable",
+   "price": 112500000,
+   "price_note": "200–250 млн / 2 ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "ВНИМАНИЕ: по замерам августа 2026 на такси бонус тракториста ОТКЛЮЧЁН (раньше давал до 600 млн/ч). Проверь текущий статус, прежде чем покупать.",
+   "reliability": "low"
+  },
+  {
+   "id": "fuel_taxi",
+   "name": "Топливо",
+   "jobs": [
+    "taxi"
+   ],
+   "kind": "consumable",
+   "price": 1200000,
+   "price_note": "~1.2 млн/ч; в одном замере 7.2 млн за сессию",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Мелочь на фоне аренды, но на длинных сменах считай. Заправляйся заранее.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_zhabka",
+   "name": "Жабка +15%",
+   "jobs": [
+    "taxi"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши сам",
+   "effect": {
+    "mode": "mult",
+    "value": 1.15
+   },
+   "hint": "Самый частый баф в замерах такси (6 упоминаний). Надевается как аксессуар.",
+   "reliability": "high"
+  },
+  {
+   "id": "buff_kosa",
+   "name": "Коса +40%",
+   "jobs": [
+    "taxi"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши сам",
+   "effect": {
+    "mode": "mult",
+    "value": 1.4
+   },
+   "hint": "Встречается как 'коса', 'коса Куба Страба'. Сильнейший баф такси.",
+   "reliability": "high"
+  },
+  {
+   "id": "buff_drakula",
+   "name": "Дракула +20%",
+   "jobs": [
+    "taxi"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши сам",
+   "effect": {
+    "mode": "mult",
+    "value": 1.2
+   },
+   "hint": "Скин/аксессуар, часто в паре с косой.",
+   "reliability": "high"
+  },
+  {
+   "id": "rent_incas_set",
+   "name": "Аренда топ-сета инкассатора",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "rent",
+   "price": 34000000,
+   "price_note": "34 млн/ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Топ-сет: Mine-скелет +40%, чемодан Бомж Gang +20%, хенк-арбалет +35%, молния роллера +40%.",
+   "reliability": "high"
+  },
+  {
+   "id": "rent_devilguard",
+   "name": "Аренда Devil Guard",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "rent",
+   "price": 20000000,
+   "price_note": "40 млн / 2 часа; даёт x4.5, ~2200 акций, 2 ларца за банкомат",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Бюджетная замена топ-сету. До обновы давал 100–120 млн/ч, сейчас до ~200 млн/ч.",
+   "reliability": "high"
+  },
+  {
+   "id": "rent_incas_acc",
+   "name": "Аренда аксессуаров",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "rent",
+   "price": 10000000,
+   "price_note": "20 млн / 2 часа",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Добор недостающих слотов под фулл-бафы.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_incas_guard",
+   "name": "Охранник",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "rent",
+   "price": 5000000,
+   "price_note": "5 млн/ч; +34% к выплате",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Охранник +34% упоминается в high-замере 750 млн/ч.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_incas_car",
+   "name": "Машина инкассатора",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "rent",
+   "price": 30000000,
+   "price_note": "30 млн/ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Нужна новая машина после переработки (до неё было 100–120 млн/ч).",
+   "reliability": "medium"
+  },
+  {
+   "id": "syrup_incas",
+   "name": "Сироп тракториста (инкас)",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "consumable",
+   "price": 130000000,
+   "price_note": "200 млн / 2 ч; в другом замере 320 млн / 2 ч",
+   "effect": {
+    "mode": "mult",
+    "value": 3.0
+   },
+   "hint": "Ключевой множитель: 3.7 млн → 11–13.4 млн за банкомат. Без него цифры в разы ниже.",
+   "reliability": "high"
+  },
+  {
+   "id": "elixir_eternity",
+   "name": "Эликсир вечности",
+   "jobs": [
+    "incassator",
+    "remontdorog",
+    "neftevyshki"
+   ],
+   "kind": "consumable",
+   "price": 0,
+   "price_note": "цена не названа — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Мелкий прирост (пример: 1.8 → 2.06 млн за банкомат). На вышках скрипт показывал надбавку 0% — проверь.",
+   "reliability": "low"
+  },
+  {
+   "id": "syrup_remont",
+   "name": "Сироп тракториста (дороги)",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "consumable",
+   "price": 130000000,
+   "price_note": "~100–160 млн/ч; 320 млн / 2 ч; берут по 5 шт на 10 ч",
+   "effect": {
+    "mode": "mult",
+    "value": 3.0
+   },
+   "hint": "Без сиропа 300 млн/ч, с x3 — около 600 млн/ч чистыми. Главный расход статьи.",
+   "reliability": "high"
+  },
+  {
+   "id": "rent_hands",
+   "name": "Аренда рук сета",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "rent",
+   "price": 2500000,
+   "price_note": "10 млн / 4 ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Руки сета +55% — мастхэв слот.",
+   "reliability": "high"
+  },
+  {
+   "id": "rent_raptor",
+   "name": "Аренда Venom Raptor",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "rent",
+   "price": 20000000,
+   "price_note": "20 млн/ч; 1800–2000 даёт +100% и +10% шанс кейса",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Легендарная машина от 1500+. Номерная рамка добавляет шанс кейса.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_remont_guard",
+   "name": "Аренда охранника 4 ур.",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "rent",
+   "price": 15000000,
+   "price_note": "10–20 млн/ч; +79%",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Охранник 4 уровня +79% к выплате за происшествие.",
+   "reliability": "medium"
+  },
+  {
+   "id": "elixir_remont",
+   "name": "Эликсиры ремонтника",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "consumable",
+   "price": 100000000,
+   "price_note": "5×200 млн / 10 ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Эликсир ремонтника + эликсир вечности пачкой на смену.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_remont_car",
+   "name": "Аренда машины (дороги)",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "rent",
+   "price": 18750000,
+   "price_note": "75 млн / 4 ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Рабочая машина под ямы; свои колёса дешевле, если есть.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_hands55",
+   "name": "Руки сета +55%",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "аренда выше; своя цена — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.55
+   },
+   "hint": "Упоминается в 4+ замерах — базовый баф дорожника.",
+   "reliability": "high"
+  },
+  {
+   "id": "buff_raptor100",
+   "name": "Venom Raptor 1800+ (+100%)",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "аренда выше; свой — впиши цену",
+   "effect": {
+    "mode": "mult",
+    "value": 2.0
+   },
+   "hint": "Даёт x2 к выплате + шанс кейса Frame.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_budjek",
+   "name": "Скин Буджека +9%, грамота +5%",
+   "jobs": [
+    "remontdorog",
+    "pilot",
+    "dalnoboy"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свои цены — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.14
+   },
+   "hint": "Мелкие стакающиеся бафы (+9% и +5%). Грамота ветерана упоминалась ценой 2.5 млрд.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_shahta_set",
+   "name": "Аренда сета на шахту",
+   "jobs": [
+    "shahta"
+   ],
+   "kind": "rent",
+   "price": 7750000,
+   "price_note": "6–9.5 млн/ч (сфера+кирка+скины+охранник)",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Спортик за 15 млн — переплата; норма 25–35 млн за полный сет.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_blackops",
+   "name": "Аренда Black Ops",
+   "jobs": [
+    "shahta"
+   ],
+   "kind": "rent",
+   "price": 9000000,
+   "price_note": "18 млн / 2 ч; +3 ресурса, 20% на удвоение",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Охранник Black Ops — основной прирост шахты.",
+   "reliability": "high"
+  },
+  {
+   "id": "syrup_miner",
+   "name": "Сироп майнера",
+   "jobs": [
+    "shahta"
+   ],
+   "kind": "consumable",
+   "price": 1200000,
+   "price_note": "0.9 + 1.5 млн за 2 шт",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "+20% шанс доп. ресурса. Сироп фермера на шахте эффекта не дал — не путай.",
+   "reliability": "medium"
+  },
+  {
+   "id": "pickaxe",
+   "name": "Кирка",
+   "jobs": [
+    "shahta"
+   ],
+   "kind": "consumable",
+   "price": 1000000,
+   "price_note": "~1 млн/ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Расходник. Огненная кирка — отдельный баф.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_firepick",
+   "name": "Огненная кирка / сферы / Т-60",
+   "jobs": [
+    "shahta"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свои цены — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Огненная кирка, сферы инвокера (+20% ресурс, 5% уголь), Т-60 (x2), Red Rocket (+2), спортик (+1). Включай то, что реально надето — множитель впиши в 'Свои бафы'.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_les_set",
+   "name": "Аренда сета лесоруба",
+   "jobs": [
+    "lesopilka"
+   ],
+   "kind": "rent",
+   "price": 22600000,
+   "price_note": "22.6 млн/ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Слабый арендный сет + простои 10–20 мин режут итог вдвое.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_les_full",
+   "name": "Полный сет + бензопила",
+   "jobs": [
+    "lesopilka"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свой — впиши цену",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Каждая вещь +3%, ботинки +13% к зарплате / +4% к дровам. Переносная бензопила обязательна.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_ferma_set",
+   "name": "Аренда сета фермера",
+   "jobs": [
+    "ferma"
+   ],
+   "kind": "rent",
+   "price": 5825000,
+   "price_note": "5.65–6 млн/ч; 11.3 млн / 2 ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Арендный сет +7 льна за сбор.",
+   "reliability": "high"
+  },
+  {
+   "id": "rent_ferma_guard",
+   "name": "Аренда охранника (ферма)",
+   "jobs": [
+    "ferma"
+   ],
+   "kind": "rent",
+   "price": 4000000,
+   "price_note": "4 млн/ч; +2 ресурса",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Охранник +2 ресурса со сбора.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_rake",
+   "name": "Грабли Аризоны и сеты",
+   "jobs": [
+    "ferma"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свой — впиши цену",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Грабли: база 3%, факт с бонусами ~12% ткани. Сет 'репа' +8% ткань / 2% уголь, меч ВК 2% уголь / +1 ресурс, наследник дома.",
+   "reliability": "medium"
+  },
+  {
+   "id": "service_case_dw",
+   "name": "Крафт кейса Death West",
+   "jobs": [
+    "ribalka"
+   ],
+   "kind": "service",
+   "price": 5000000,
+   "price_note": "5 млн разово",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Кейс крафтится из легендарной рыбы (~1 ч фарма). Дроп с кейса мусорный — считай как лотерею, не доход.",
+   "reliability": "medium"
+  },
+  {
+   "id": "bait",
+   "name": "Наживка и леска",
+   "jobs": [
+    "ribalka"
+   ],
+   "kind": "consumable",
+   "price": 0,
+   "price_note": "цены не названы — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Леска 20 шт + наживка 600 шт на сессию; лицензия/разрешение — мелочь.",
+   "reliability": "low"
+  },
+  {
+   "id": "buff_hat22",
+   "name": "Шляпа +22%",
+   "jobs": [
+    "ribalka"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.22
+   },
+   "hint": "Магическая шляпа +22% к продаже рыбы — в каждом high-замере.",
+   "reliability": "high"
+  },
+  {
+   "id": "buff_basket40",
+   "name": "Корзина +40%",
+   "jobs": [
+    "ribalka"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.4
+   },
+   "hint": "Корзина +40% и +1 AZ. Пара шляпа+корзина — стандарт.",
+   "reliability": "high"
+  },
+  {
+   "id": "buff_fish_misc",
+   "name": "Эхолот, Хельсинг, эликсир",
+   "jobs": [
+    "ribalka"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свои цены — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Эхолот 10/10, Хельсинг (+1 рыба / +50%), эликсир 20% двойного улова + сироп. Охранник +5% на кейс за 2–5 млрд НЕ окупается.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_boat",
+   "name": "Аренда лодки",
+   "jobs": [
+    "ribalka"
+   ],
+   "kind": "rent",
+   "price": 0,
+   "price_note": "копейки + мясо охраннику",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Лодка имба: 50–60 рыб с точки. Аренда символическая.",
+   "reliability": "medium"
+  },
+  {
+   "id": "syrup_oil",
+   "name": "Сироп x3 (вышки)",
+   "jobs": [
+    "neftevyshki",
+    "neftevyshki_water",
+    "neftevyshki_land"
+   ],
+   "kind": "consumable",
+   "price": 75000000,
+   "price_note": "~150 млн / 2 ч",
+   "effect": {
+    "mode": "mult",
+    "value": 3.0
+   },
+   "hint": "Главный множитель вышек. Без сиропа водные дают 100–150 млн/ч, с ним — 500–700+.",
+   "reliability": "high"
+  },
+  {
+   "id": "rent_zhemchug",
+   "name": "Аренда Жемчужины",
+   "jobs": [
+    "neftevyshki_water"
+   ],
+   "kind": "rent",
+   "price": 10000000,
+   "price_note": "20 млн / 2 ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Рабочий транспорт для водных вышек.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_mason",
+   "name": "Mason Tower",
+   "jobs": [
+    "neftevyshki",
+    "neftevyshki_water",
+    "neftevyshki_land"
+   ],
+   "kind": "rent",
+   "price": 416667,
+   "price_note": "10 млн / 24 ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Подселение: +20% водная, +1 AZ. Arizona Springs даёт +30% (стакаемость неизвестна).",
+   "reliability": "medium"
+  },
+  {
+   "id": "barrels",
+   "name": "Бочки 450k/шт",
+   "jobs": [
+    "neftevyshki",
+    "neftevyshki_water",
+    "neftevyshki_land"
+   ],
+   "kind": "consumable",
+   "price": 0,
+   "price_note": "450 тыс./шт — впиши расход в час",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Бочки — скрытый расход водных вышек. Посчитай свой темп и впиши сумму в час.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_oil_misc",
+   "name": "Декларации, Peterbilt, охрана",
+   "jobs": [
+    "neftevyshki",
+    "neftevyshki_water",
+    "neftevyshki_land"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свои цены — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Оптовая декларация 5 ур (+35%/бочка, +5 AZ), Peterbilt 359, охранник до +69%, семья с флагом +12%, скин Ван Хельсинга +30%. Тракторист обязателен.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_plane",
+   "name": "Аренда самолёта",
+   "jobs": [
+    "pilot"
+   ],
+   "kind": "rent",
+   "price": 9500000,
+   "price_note": "9–10 млн/ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Арендный самолёт; Twin Turbo 2 ставится и на арендный.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_pilot_set",
+   "name": "Аренда сета пилота",
+   "jobs": [
+    "pilot"
+   ],
+   "kind": "rent",
+   "price": 10000000,
+   "price_note": "от 10 млн/ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Сет под +65% Gen 003 и руки сета.",
+   "reliability": "medium"
+  },
+  {
+   "id": "syrup_pilot",
+   "name": "Сироп тракториста (пилот)",
+   "jobs": [
+    "pilot"
+   ],
+   "kind": "consumable",
+   "price": 55000000,
+   "price_note": "100–120 млн / 2 ч",
+   "effect": {
+    "mode": "mult",
+    "value": 3.0
+   },
+   "hint": "Тракторист +300% — но проверь актуальность на пилоте, механика резалась.",
+   "reliability": "low"
+  },
+  {
+   "id": "buff_pilot_doc",
+   "name": "Документ премиум-пилот +25%",
+   "jobs": [
+    "pilot"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.25
+   },
+   "hint": "Плюс грамота ветерана, охранник до +35%, редкий самолёт ~40 млрд.",
+   "reliability": "medium"
+  },
+  {
+   "id": "rent_daln_set",
+   "name": "Аренда фулл-сета (дальнобой)",
+   "jobs": [
+    "dalnoboy"
+   ],
+   "kind": "rent",
+   "price": 30000000,
+   "price_note": "30 млн/ч",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "По вики номинал 18 млн/ч; сеты и слот 10:00–20:00 (+20%) разгоняют до 170 млн/ч в замере.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_daln_misc",
+   "name": "Фура зверь, семья, грамота",
+   "jobs": [
+    "dalnoboy"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свои цены — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Фура зверя с тюнингом (дивиденды ~50 млн), семья с флагом, грамота, шляпа, скин байкера, эликсир +30%, охранник +26%, отель.",
+   "reliability": "low"
+  },
+  {
+   "id": "buff_devilguard",
+   "name": "Devil Guard 2000 (x4.5)",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "своя цена / аренда — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 4.5
+   },
+   "hint": "~2200 акций и 2 ларца за банкомат. По замерам даёт x4.5 к выплате — проверь на текущей обнове, цифра огромная.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_molniya",
+   "name": "Молния роллера +40%",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.4
+   },
+   "hint": "Отдельный слот, стакается с хендом/чемоданом/манекеном.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_hend",
+   "name": "Хенд +35%",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.35
+   },
+   "hint": "Отдельный слот сета инкассатора.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_chemodan",
+   "name": "Чемодан +20%",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.2
+   },
+   "hint": "Чемодан Бомж Gang / манекен +40% — разные слоты.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_guard34",
+   "name": "Охранник +34% (инкас)",
+   "jobs": [
+    "incassator"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свой — впиши цену",
+   "effect": {
+    "mode": "mult",
+    "value": 1.34
+   },
+   "hint": "Охранник с бонусом к инкассации.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_frog",
+   "name": "Лягушка (такси)",
+   "jobs": [
+    "taxi"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена рынка — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Упоминается в топ-замерах такси рядом с косой и жабкой. Точный % не назван — впиши свой в «Свои бафы».",
+   "reliability": "low"
+  },
+  {
+   "id": "buff_cosmo10",
+   "name": "Космодеревня +10%",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "недвижимость — впиши цену",
+   "effect": {
+    "mode": "mult",
+    "value": 1.1
+   },
+   "hint": "Дома Cosmo/Springs дают +10% к выплате дорожника.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_sportik",
+   "name": "Спортик +1 (шахта)",
+   "jobs": [
+    "shahta"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "+1 ресурс со сбора. Спортик за 15 млн считают переплатой.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_t60",
+   "name": "Т-60 x2 (шахта)",
+   "jobs": [
+    "shahta"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Удвоение ресурсов. Альтернатива: Red Rocket +2, Black Ops +3.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_helsing",
+   "name": "Хельсинг (рыбалка)",
+   "jobs": [
+    "ribalka"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "+1 рыба / +50% (по разным замерам). Стек с шляпой и корзиной.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_eholot",
+   "name": "Эхолот 10/10",
+   "jobs": [
+    "ribalka"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Показывает рыбу и сети; без него вслепую.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_gen3",
+   "name": "Самолёт Gen 003 (+65%)",
+   "jobs": [
+    "pilot"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "редкий самолёт ~40 млрд — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.65
+   },
+   "hint": "Сильнейший баф пилота из замеров.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_guard35",
+   "name": "Охранник +35% (пилот)",
+   "jobs": [
+    "pilot"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свой — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.35
+   },
+   "hint": "Охранник с бонусом к пилоту.",
+   "reliability": "low"
+  },
+  {
+   "id": "buff_guard26",
+   "name": "Охранник +26% (дальнобой)",
+   "jobs": [
+    "dalnoboy"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свой — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.26
+   },
+   "hint": "Охранник с бонусом к дальнобою.",
+   "reliability": "low"
+  },
+  {
+   "id": "buff_slot20",
+   "name": "Слот 10:00–20:00 (+20%)",
+   "jobs": [
+    "dalnoboy"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "бесплатно, по времени",
+   "effect": {
+    "mode": "mult",
+    "value": 1.2
+   },
+   "hint": "Вози в окно 10:00–20:00 — +20% к выплате.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_elixir30",
+   "name": "Эликсир +30% (дальнобой)",
+   "jobs": [
+    "dalnoboy"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "цена — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.3
+   },
+   "hint": "Эликсир дальнобойщика / вечности +30%.",
+   "reliability": "low"
+  },
+  {
+   "id": "buff_gusli",
+   "name": "Гусли и сет фермера",
+   "jobs": [
+    "ferma"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свои цены — впиши",
+   "effect": {
+    "mode": "none"
+   },
+   "hint": "Пугало репка +8% уголь, меч ВК 2% ткань/+1 ресурс, наследник дома. Смотри подсказки отдельных позиций.",
+   "reliability": "medium"
+  },
+  {
+   "id": "buff_guard79r",
+   "name": "Охранник 4 ур. +79% (дороги)",
+   "jobs": [
+    "remontdorog"
+   ],
+   "kind": "buff",
+   "price": 0,
+   "price_note": "свой/аренда — впиши",
+   "effect": {
+    "mode": "mult",
+    "value": 1.79
+   },
+   "hint": "Топ-слот дорожника в high-замерах.",
+   "reliability": "medium"
+  }
+ ]
+}

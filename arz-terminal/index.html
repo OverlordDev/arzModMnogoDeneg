@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0f11">
+  <meta name="description" content="ARZ Terminal — визуальный каркас системы фарма, перекупа и аналитики рынка Arizona RP.">
+  <title>ARZ Terminal — рынок Arizona RP</title>
+  <link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar" aria-label="Навигация"></aside>
+    <div class="main">
+      <header class="topbar" id="topbar"></header>
+      <main class="content" id="view-root" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div class="scrim" id="scrim" data-close="all"></div>
+
+  <aside class="drawer" id="drawer" aria-label="Карточка предмета"></aside>
+
+  <div class="modal-wrap" id="modal-wrap" aria-hidden="true">
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <div class="palette-wrap" id="palette-wrap" aria-hidden="true">
+    <div class="palette" id="palette" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/icons.js?v=10"></script>
+  <script src="js/data.js?v=10"></script>
+  <script src="js/app.js?v=19"></script>
+  <script src="js/realmarket.js?v=6"></script>
+  <script src="js/history.js?v=1"></script>
+  <script src="js/itemsdb.js?v=2"></script>
+  <script src="js/jobs.js?v=5"></script>
+  <script src="js/deposit.js?v=4"></script>
+</body>
+</html>
