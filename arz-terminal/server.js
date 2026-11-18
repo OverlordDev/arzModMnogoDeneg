@@ -60,6 +60,11 @@ const HISTORY_FILE = process.env.ARZ_HISTORY_FILE || path.join(ROOT, "local", "p
 const statsMod = require("./game/arz_stats");
 const { createHistory } = require("./game/arz_history");
 let history = null; // создаётся при старте, только если настроен файл игрока
+// Облако (Firebase/Firestore) — по желанию: включается, только если есть local/firebase.json
+// (apiKey + projectId). Реквизиты лежат в local/ (в .gitignore), в репозиторий не попадают.
+const FIREBASE_CONFIG_FILE = process.env.ARZ_FIREBASE_CONFIG || path.join(ROOT, "local", "firebase.json");
+const FIREBASE_AUTH_FILE = path.join(ROOT, "local", "firebase_auth.json");
+let cloud = null;
 // Как часто сервер сам перечитывает и разбирает файл игрока (по умолчанию 30 с).
 const PLAYER_PARSE_MS = Math.max(5000, Number(process.env.ARZ_PLAYER_PARSE_MS) || 30000);
 const jsonCache = new Map(); // file -> { mtimeMs, doc }
@@ -135,7 +140,53 @@ function playerPayload() {
     // зависят от «сейчас», поэтому считаются при каждой отдаче, а не кэшируются
     earnings: statsMod.earnings(playerCache.timeline, now),
     history: history ? history.series(300, 7 * 86400000) : [],
+    cloud: cloud ? cloud.status() : { enabled: false },
   });
+}
+
+/** Снимок игрока -> Firestore (не чаще раза в 30 с и только при изменениях). */
+function offerCloud() {
+  if (!cloud || !playerCache) return;
+  const b = playerCache.body;
+  if (!b.summary.baseline) return; // неполный инвентарь в облако не заливаем — перезапишет хорошие данные плохими
+  const s = b.summary;
+  const v = b.valuation;
+  const e = statsMod.earnings(playerCache.timeline, Date.now());
+  const win = (w) => w && {
+    income: w.income, spend: w.spend, net: w.net, elapsedSec: w.elapsedSec,
+    incomePerHour: w.incomePerHour, netPerHour: w.netPerHour, maxIncome: w.maxIncome, oneOff: w.oneOff,
+  };
+  // Предметы (сгруппированные) — с ценами, если есть рыночные данные сервера.
+  const items = (v.ok ? v.rows : s.totals.map((t) => Object.assign({ priced: false }, t))).map((r) => ({
+    item: r.item, name: r.name, amount: r.amount, priced: !!r.priced,
+    buy: r.buy || 0, sell: r.sell || 0, mid: r.mid || 0, total: r.total || 0,
+    liq: r.liq || null, spreadPct: r.spreadPct == null ? null : r.spreadPct,
+  }));
+  // Схема — deploy/FIREBASE.md («Схема для приложения»). Меняешь поля — подними schema.
+  cloud.offerSnapshot({
+    schema: 1,
+    server: s.server || null,
+    money: s.money, satiety: s.satiety, wanted: s.wanted, skinModel: s.skinModel,
+    capital: b.capital,
+    valuation: v.ok
+      ? { ok: true, quick: Math.round(v.quick), ask: Math.round(v.ask), estimate: Math.round(v.estimate),
+          pricedCount: v.pricedCount, unpricedCount: v.unpriced.length, pricesDate: v.pricesDate, pricesAgeDays: v.pricesAgeDays }
+      : { ok: false, reason: v.reason },
+    slotsUsed: s.slots.used, slotsTotal: s.slots.total,
+    slots: s.inventory.map((r) => ({ slot: r.slot, item: r.item, name: r.name, amount: r.amount })),
+    items,
+    worn: (s.worn || []).map((w) => ({ slot: w.slot, item: w.item, name: w.name })),
+    tips: b.tips.map((t) => ({ level: t.level, text: t.text })),
+    gameUpdatedAt: new Date(b.fileUpdated),
+    // зависит от времени, в «подпись изменений» не входит (см. arz_firebase.offerSnapshot)
+    earnings: e && {
+      active: e.active, sessionStart: new Date(e.sessionStart), lastEventAt: new Date(e.lastEventAt),
+      windows: { m15: win(e.windows.m15), h1: win(e.windows.h1), session: win(e.windows.session) },
+      recent: e.recent.map((x) => ({ at: new Date(x.at), delta: x.delta })),
+    },
+  });
+  // лента изменений денег по суткам (для графиков «заработок по дням» в приложении)
+  cloud.offerMoney(playerCache.timeline.money);
 }
 
 /** Точка истории капитала — только при полной загрузке инвентаря (иначе капитал занижен). */
@@ -143,7 +194,11 @@ function recordHistory() {
   if (!history || !playerCache) return;
   const b = playerCache.body;
   if (!b.summary.baseline || b.capital == null) return;
-  history.record(Date.now(), Math.round(b.capital), b.summary.money || 0, Math.round(b.valuation.estimate));
+  const t = Date.now();
+  const cap = Math.round(b.capital);
+  const money = b.summary.money || 0;
+  const est = Math.round(b.valuation.estimate);
+  if (history.record(t, cap, money, est) && cloud) cloud.queuePoint([t, cap, money, est]);
 }
 
 // --- live-поток (Server-Sent Events): сайт получает новое состояние сразу ---
@@ -168,6 +223,7 @@ function parsePlayerCycle(force) {
   }
   playerCheckedAt = Date.now();
   recordHistory();
+  offerCloud();
   // force: плановый тик — ставки заработка «в час» зависят от времени, шлём свежие и без новых событий
   if (force === true || playerCache !== before) broadcastPlayer();
 }
@@ -345,7 +401,8 @@ const server = http.createServer((req, res) => {
   }
   if (pathname === "/api/player") {
     handlePlayer(req, res);
-    finish(res.statusCode);
+    // успешные опросы раз в 10 с не пишем в лог (иначе он растёт на сотни КБ в сутки)
+    if (res.statusCode !== 200) finish(res.statusCode);
     return;
   }
   if (pathname === "/api/history-manifest") {
@@ -376,10 +433,36 @@ const server = http.createServer((req, res) => {
   serveStatic(req, res, pathname);
 });
 
+// Порт занят — вероятно, уже запущен другой экземпляр. Код 98 понимает scripts/run_server.bat
+// и не пытается перезапускаться в бесконечном цикле.
+server.on("error", (e) => {
+  if (e.code === "EADDRINUSE") {
+    process.stderr.write(`Порт ${PORT} уже занят (другой экземпляр ARZ Terminal?). Выход.\n`);
+    process.exit(98);
+  }
+  throw e;
+});
+
 server.listen(PORT, HOST, () => {
   process.stdout.write(`ARZ Terminal on http://${HOST === "0.0.0.0" ? "localhost" : HOST}:${PORT}/\n`);
   if (PLAYER_FILE) {
     history = createHistory(HISTORY_FILE);
+    if (process.env.ARZ_FIREBASE !== "0" && fs.existsSync(FIREBASE_CONFIG_FILE)) {
+      try {
+        const cfg = JSON.parse(fs.readFileSync(FIREBASE_CONFIG_FILE, "utf8"));
+        cloud = require("./game/arz_firebase").createFirebase({
+          config: cfg,
+          authFile: FIREBASE_AUTH_FILE,
+          log: (m) => process.stderr.write("[firebase] " + m + "\n"),
+        });
+        cloud.seedPoints(history.series(1e9, 3 * 3600 * 1000)); // не затереть начало часа после перезапуска
+        cloud.start();
+        process.stdout.write(`[firebase] сохранение включено: проект ${cfg.projectId}\n`);
+      } catch (e) {
+        cloud = null;
+        process.stderr.write("[firebase] выключено, конфиг не принят: " + e.message + "\n");
+      }
+    }
     parsePlayerCycle();
     const watching = watchPlayerFile();
     // Страховочный разбор по таймеру: подхватит рыночные цены, случай, когда fs.watch промолчал,

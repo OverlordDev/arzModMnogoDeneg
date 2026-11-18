@@ -1,0 +1,7 @@
+{
+  "apiKey": "<Firebase Console → Project settings → Your apps → apiKey>",
+  "authDomain": "<project>.firebaseapp.com",
+  "projectId": "<project>",
+  "email": "<по желанию: e-mail для входа ПК и мобильного приложения под одним uid>",
+  "password": "<по желанию: пароль, минимум 6 символов; хранится открытым текстом, не используй чужой>"
+}

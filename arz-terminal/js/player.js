@@ -60,7 +60,7 @@
 
   function apply(body) {
     // age/parsed* меняются на каждый запрос — в подпись не включаем
-    var sig = body ? JSON.stringify([body.fileUpdated, body.summary, body.valuation, body.tips, body.earnings, (body.history || []).slice(-1)]) : "none";
+    var sig = body ? JSON.stringify([body.fileUpdated, body.summary, body.valuation, body.tips, body.earnings, (body.history || []).slice(-1), body.cloud]) : "none";
     var changed = sig !== S.sig || S.err !== null;
     S.data = body;
     S.err = null;
@@ -298,6 +298,15 @@
     meta.push("Последнее изменение в игре " + ageSpan(d.fileUpdated) + " назад");
     if (v && v.ok) meta.push("Цены ArzMarket за " + esc(v.pricesDate || "—") + (v.pricesAgeDays != null ? " (" + v.pricesAgeDays + " дн. назад)" : ""));
     if (d.summary.worn && d.summary.worn.length) meta.push("Надет скин: " + esc(d.summary.worn[0].name));
+    if (d.cloud && d.cloud.enabled) {
+      if (d.cloud.lastError) {
+        meta.push('<span class="neg">Firebase: не сохраняется — ' + esc(d.cloud.hint || d.cloud.lastError) + "</span>");
+      } else if (d.cloud.lastOkAt) {
+        meta.push("Firebase: сохранено " + ageSpan(d.cloud.lastOkAt) + " назад (" + esc(d.cloud.projectId) + ")");
+      } else {
+        meta.push("Firebase: включено, первое сохранение ещё не прошло");
+      }
+    }
     return head + stats(d) +
       '<div class="player-grid mt-16">' + inventoryTable(d) +
       '<div class="card"><div class="card-head"><div><div class="card-title">Советы</div><div class="card-sub">Простые правила по твоим данным</div></div></div>' +
