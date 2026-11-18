@@ -46,6 +46,164 @@ const MIME = {
 
 const SERVERS = ["yuma", "vc"];
 
+// --- Игрок (локально): файл, который пишет game/arz_export.lua ---
+// Данные аккаунта отдаются ТОЛЬКО с loopback-адреса (и с Host localhost),
+// без CORS-заголовка: иначе любая открытая вкладка могла бы прочитать
+// инвентарь через fetch("http://localhost:3000/api/player").
+const PLAYER_FILE = process.env.ARZ_EVENTS_FILE ||
+  (process.env.LOCALAPPDATA
+    ? path.join(process.env.LOCALAPPDATA, "Programs", "Arizona Games Launcher", "bin", "arizona", "moonloader", "arz_player_events.log")
+    : "");
+const PLAYER_ALLOW_REMOTE = process.env.ARZ_PLAYER_ALLOW_REMOTE === "1";
+// Как часто сервер сам перечитывает и разбирает файл игрока (по умолчанию 30 с).
+const PLAYER_PARSE_MS = Math.max(5000, Number(process.env.ARZ_PLAYER_PARSE_MS) || 30000);
+const jsonCache = new Map(); // file -> { mtimeMs, doc }
+let playerCache = null;
+let playerCheckedAt = 0; // когда был последний цикл разбора (даже если файл не менялся)
+
+function readJsonCachedSync(file) {
+  const st = fs.statSync(file);
+  const hit = jsonCache.get(file);
+  if (hit && hit.mtimeMs === st.mtimeMs) return hit.doc;
+  const doc = JSON.parse(fs.readFileSync(file, "utf8"));
+  jsonCache.set(file, { mtimeMs: st.mtimeMs, doc });
+  return doc;
+}
+
+function isLocalRequest(req) {
+  if (PLAYER_ALLOW_REMOTE) return true;
+  const ra = (req.socket && req.socket.remoteAddress) || "";
+  const okAddr = ra === "127.0.0.1" || ra === "::1" || ra === "::ffff:127.0.0.1";
+  const host = String(req.headers.host || "").replace(/:\d+$/, "").toLowerCase();
+  const okHost = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
+  return okAddr && okHost;
+}
+
+function marketStamp() {
+  // Ключ кэша включает рыночные файлы: их обновляет snapshot.py каждые 30 минут,
+  // оценка должна пересчитаться и без новых событий из игры.
+  let k = "";
+  for (const s of SERVERS) {
+    try { k += ":" + fs.statSync(path.join(ROOT, "data", "market_" + s + ".json")).mtimeMs; } catch (_) { k += ":-"; }
+  }
+  return k;
+}
+
+function buildPlayer() {
+  const st = fs.statSync(PLAYER_FILE);
+  const key = st.mtimeMs + ":" + st.size + marketStamp();
+  if (playerCache && playerCache.key === key) return playerCache.body;
+  const parser = require("./game/arz_parser");
+  const valuer = require("./game/arz_value");
+  let names = {};
+  try { names = readJsonCachedSync(path.join(ROOT, "data", "items_names.json")); } catch (_) {}
+  const summary = parser.summarize(parser.replay(fs.readFileSync(PLAYER_FILE, "utf8")), names);
+  let market = null;
+  const sk = valuer.serverKey(summary.server);
+  if (sk) { try { market = readJsonCachedSync(path.join(ROOT, "data", "market_" + sk + ".json")); } catch (_) {} }
+  const valuation = valuer.valueInventory(summary, market);
+  const body = {
+    ok: true,
+    fileUpdated: st.mtime.toISOString(),
+    summary,
+    valuation,
+    capital: valuation.ok ? (summary.money || 0) + valuation.estimate : null,
+    tips: valuer.advise(summary, valuation),
+  };
+  playerCache = { key, body };
+  process.stdout.write("[player] разобрано: " + summary.inventory.length + " слотов с предметами, " +
+    (valuation.ok ? "оценка ≈ " + Math.round(valuation.estimate) : "без оценки") + "\n");
+  return body;
+}
+
+/** Что отдаём клиенту: кэш разбора + «возраст», посчитанный на момент отправки. */
+function playerPayload() {
+  if (!playerCache) return null;
+  const body = playerCache.body;
+  const now = Date.now();
+  return Object.assign({}, body, {
+    ageSec: Math.round((now - Date.parse(body.fileUpdated)) / 1000),
+    parsedAgoSec: Math.round((now - playerCheckedAt) / 1000),
+    parseEverySec: Math.round(PLAYER_PARSE_MS / 1000),
+  });
+}
+
+// --- live-поток (Server-Sent Events): сайт получает новое состояние сразу ---
+const sseClients = new Set();
+
+function broadcastPlayer() {
+  const p = playerPayload();
+  const chunk = p ? "data: " + JSON.stringify(p) + "\n\n" : "event: nofile\ndata: {}\n\n";
+  for (const res of sseClients) {
+    try { res.write(chunk); } catch (_) { sseClients.delete(res); }
+  }
+}
+
+/** Перечитать файл игрока. Если разбор изменился — сразу пушим клиентам. */
+function parsePlayerCycle() {
+  const before = playerCache;
+  try {
+    if (PLAYER_FILE && fs.existsSync(PLAYER_FILE)) buildPlayer();
+    else playerCache = null; // файла нет (или удалён) — отдаём 404, а не старые данные
+  } catch (e) {
+    process.stderr.write("[player] ошибка разбора: " + e.message + "\n");
+  }
+  playerCheckedAt = Date.now();
+  if (playerCache !== before) broadcastPlayer();
+}
+
+/** Событие из игры дописало файл -> разбираем почти сразу (не ждём таймера). */
+let playerWatchTimer = null;
+function watchPlayerFile() {
+  const dir = path.dirname(PLAYER_FILE);
+  const base = path.basename(PLAYER_FILE);
+  if (!fs.existsSync(dir)) return false;
+  try {
+    fs.watch(dir, { persistent: false }, (_event, name) => {
+      if (name && name !== base) return;
+      if (playerWatchTimer) return; // всплеск записей (вход на сервер = ~25 событий) -> один разбор на 120 мс
+      playerWatchTimer = setTimeout(() => { playerWatchTimer = null; parsePlayerCycle(); }, 120);
+    });
+    return true;
+  } catch (e) {
+    process.stderr.write("[player] fs.watch недоступен, остаётся разбор по таймеру: " + e.message + "\n");
+    return false;
+  }
+}
+
+function handlePlayerStream(req, res) {
+  const plain = { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" };
+  if (!isLocalRequest(req)) return send(res, 403, "player data is local-only", plain);
+  if (!PLAYER_FILE) return send(res, 404, "no player file configured", plain);
+  res.writeHead(200, {
+    "Content-Type": "text/event-stream; charset=utf-8",
+    "Cache-Control": "no-store",
+    "Connection": "keep-alive",
+  });
+  res.write("retry: 3000\n\n");
+  sseClients.add(res);
+  req.on("close", () => sseClients.delete(res));
+  const p = playerPayload();
+  res.write(p ? "data: " + JSON.stringify(p) + "\n\n" : "event: nofile\ndata: {}\n\n");
+}
+
+function handlePlayer(req, res) {
+  const headers = { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" };
+  const reply = (status, obj) => send(res, status, JSON.stringify(obj), headers);
+  if (!isLocalRequest(req)) return reply(403, { ok: false, error: "player data is local-only" });
+  if (!PLAYER_FILE || !fs.existsSync(PLAYER_FILE)) {
+    return reply(404, { ok: false, local: !!PLAYER_FILE, error: "no player file yet: install game/arz_export.lua and log in", file: PLAYER_FILE || null });
+  }
+  try {
+    // Отдаём результат последнего разбора; если он ещё не готов — разбираем сразу.
+    if (!playerCache) buildPlayer();
+    if (!playerCheckedAt) playerCheckedAt = Date.now();
+    reply(200, playerPayload());
+  } catch (e) {
+    reply(500, { ok: false, error: "player parse failed: " + e.message });
+  }
+}
+
 function log(req, status, ms) {
   const t = new Date().toISOString().slice(11, 19);
   process.stdout.write(`[${t}] ${req.method} ${req.url} -> ${status} (${ms}ms)\n`);
@@ -67,19 +225,25 @@ function sendJson(res, status, obj, cache) {
 }
 
 function safeJoin(root, reqPath) {
-  let p = decodeURIComponent(reqPath.split("?")[0]);
-  // Убираем query-хвосты вида ?v=10 — они уже отрезаны выше.
-  p = p.split("?")[0];
+  let p;
+  try {
+    // Кривой %-код (например /%E0) кидает URIError — без try это валило весь процесс.
+    p = decodeURIComponent(reqPath.split("?")[0]);
+  } catch (_) {
+    return null;
+  }
+  if (p.includes("\0")) return null;
   if (p.endsWith("/")) p += "index.html";
   const full = path.normalize(path.join(root, p));
-  if (!full.startsWith(root)) return null;
+  // root + sep: иначе соседняя папка вида arz-terminal2 проходила бы проверку.
+  if (full !== root && !full.startsWith(root + path.sep)) return null;
   return full;
 }
 
 function serveStatic(req, res, pathname) {
   let file = safeJoin(ROOT, pathname);
   if (!file) {
-    send(res, 403, "Forbidden", { "Content-Type": "text/plain; charset=utf-8" });
+    send(res, 400, "Bad Request", { "Content-Type": "text/plain; charset=utf-8" });
     return;
   }
   fs.stat(file, (err, st) => {
@@ -155,6 +319,15 @@ const server = http.createServer((req, res) => {
     });
     return;
   }
+  if (pathname === "/api/player/stream") {
+    handlePlayerStream(req, res);
+    return;
+  }
+  if (pathname === "/api/player") {
+    handlePlayer(req, res);
+    finish(res.statusCode);
+    return;
+  }
   if (pathname === "/api/history-manifest") {
     readJsonFile("data/history/index.json", (err, doc) => {
       if (err) {
@@ -185,6 +358,15 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, HOST, () => {
   process.stdout.write(`ARZ Terminal on http://${HOST === "0.0.0.0" ? "localhost" : HOST}:${PORT}/\n`);
+  if (PLAYER_FILE) {
+    parsePlayerCycle();
+    const watching = watchPlayerFile();
+    // Страховочный разбор по таймеру: подхватит рыночные цены и случай, когда fs.watch промолчал.
+    setInterval(parsePlayerCycle, PLAYER_PARSE_MS).unref();
+    // Пульс для SSE: без него браузер/прокси могут закрыть «молчащее» соединение.
+    setInterval(() => { for (const r of sseClients) { try { r.write(": ping\n\n"); } catch (_) { sseClients.delete(r); } } }, 15000).unref();
+    process.stdout.write(`[player] live: ${watching ? "слежение за файлом + " : ""}страховочный разбор каждые ${Math.round(PLAYER_PARSE_MS / 1000)} с: ${PLAYER_FILE}\n`);
+  }
 });
 
 process.on("SIGTERM", () => server.close(() => process.exit(0)));

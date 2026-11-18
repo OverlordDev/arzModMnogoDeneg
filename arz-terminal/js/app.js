@@ -35,6 +35,7 @@
     farming: { title: "Farming", sub: "План фарма на сегодня", icon: "farming" },
     jobs: { title: "Jobs", sub: "Калькулятор работ: $/час", icon: "trend" },
     deposit: { title: "Deposit", sub: "Депозит: уровни, % и калькулятор", icon: "wallet" },
+    player: { title: "Player", sub: "Инвентарь и состояние из игры", icon: "users" },
     business: { title: "Business Lab", sub: "Бизнесы и окупаемость", icon: "business" },
     craft: { title: "Craft Lab", sub: "Крафт и expected value", icon: "craft" },
     auctions: { title: "Auctions", sub: "Аукционы и снайпинг", icon: "auctions" },
@@ -47,7 +48,7 @@
   };
 
   const NAV = [
-    { label: "Обзор", items: ["dashboard", "market", "arbitrage", "history"] },
+    { label: "Обзор", items: ["dashboard", "player", "market", "arbitrage", "history"] },
     { label: "Фарм", items: ["farming", "business", "craft", "jobs", "deposit"] },
     { label: "Рынок", items: ["auctions", "portfolio", "deals", "items"] },
     { label: "Система", items: ["alerts", "meta", "settings"] }
@@ -234,6 +235,7 @@
       portfolio: { label: "Добавить актив", action: "add-price", icon: "plus" },
       deals: { label: "Новая сделка", action: "new-deal", icon: "plus" },
       alerts: { label: "Новый алерт", action: "new-alert", icon: "plus" },
+      player: { label: "Обновляется само", action: "toast", icon: "sparkles", msg: "Инвентарь обновляется в реальном времени, по событиям игры" },
       meta: { label: "Гайды", action: "toast", icon: "meta", msg: "Библиотека гайдов — следующий шаг" },
       settings: { label: "Сохранить", action: "toast", icon: "check", msg: "Настройки сохранены локально" }
     };
@@ -279,6 +281,7 @@
     else if (state.view === "farming") root.innerHTML = renderFarming();
     else if (state.view === "jobs") root.innerHTML = window.ARZ.renderJobs ? window.ARZ.renderJobs() : "";
     else if (state.view === "deposit") root.innerHTML = window.ARZ.renderDeposit ? window.ARZ.renderDeposit() : "";
+    else if (state.view === "player") root.innerHTML = window.ARZ.renderPlayer ? window.ARZ.renderPlayer() : "";
     else if (state.view === "business") root.innerHTML = renderBusiness();
     else if (state.view === "craft") root.innerHTML = renderCraft();
     else if (state.view === "auctions") root.innerHTML = renderAuctions();
@@ -364,6 +367,7 @@
     }).join("");
 
     return pageHead("Рынок под контролем", "Сводка капитала, лучшие связки, события и план фарма на сегодня.", pageActions()) +
+      (window.ARZ.renderPlayerCard ? window.ARZ.renderPlayerCard() : "") +
       '<div class="grid-4">' + kpis + "</div>" +
       '<div class="dash-grid mt-16">' +
         '<div class="card table-card">' +
@@ -1292,7 +1296,7 @@
   }, 1000);
 
   // Внешние модули (history.js): helpers для рендера.
-  window.ARZ.ui = { esc, money, pct, lineChart, serverName, icon };
+  window.ARZ.ui = { esc, money, pct, lineChart, serverName, icon, pageHead, refreshView: renderView, view: () => state.view };
 
   render();
 })();
