@@ -1,13 +1,13 @@
 {
   "yuma": {
     "file": "market_yuma.json",
-    "generated_at": "2026-11-18T05:04:00",
+    "generated_at": "2026-11-18T10:13:11",
     "data_date_max": "2026-11-16",
     "items_total": 2376
   },
   "vc": {
     "file": "market_vc.json",
-    "generated_at": "2026-11-18T05:04:01",
+    "generated_at": "2026-11-18T10:13:13",
     "data_date_max": "2026-11-16",
     "items_total": 3396
   }
