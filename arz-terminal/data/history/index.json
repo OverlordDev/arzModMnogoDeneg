@@ -1,7 +1,7 @@
 {
   "servers": {
     "yuma": {
-      "last_hash": "8fa5e3db4fcbe1d5900db1d5a7a0e157d66c9c7e",
+      "last_hash": "fa7ec8672c0e4b1fc71169e993a08da0d57e1514",
       "snapshots": [
         {
           "file": "20261118-0803.json",
@@ -20,12 +20,18 @@
           "ts": "2026-11-20T00:03",
           "data_max": "2026-11-16",
           "items": 2364
+        },
+        {
+          "file": "20261121-0003.json",
+          "ts": "2026-11-21T00:03",
+          "data_max": "2026-11-16",
+          "items": 2353
         }
       ],
-      "last_change": "2026-11-20T00:03"
+      "last_change": "2026-11-21T00:03"
     },
     "vc": {
-      "last_hash": "af8743c9fd537ccb42ff503f5ab4ee570bc8ec9f",
+      "last_hash": "c577f397bda84c1f944d693cf88c9a4aab18b523",
       "snapshots": [
         {
           "file": "20261118-0803.json",
@@ -38,10 +44,16 @@
           "ts": "2026-11-20T00:03",
           "data_max": "2026-11-16",
           "items": 3395
+        },
+        {
+          "file": "20261121-0003.json",
+          "ts": "2026-11-21T00:03",
+          "data_max": "2026-11-16",
+          "items": 3390
         }
       ],
-      "last_change": "2026-11-20T00:03"
+      "last_change": "2026-11-21T00:03"
     }
   },
-  "updated": "2026-11-20T08:03"
+  "updated": "2026-11-21T00:03"
 }
