@@ -1,12 +1,12 @@
-"""Дампы истории цен ArzMarket каждые 30 минут.
+"""Ручные дампы истории цен ArzMarket (автоматика удалена).
 
-Каждые 30 минут (cron / планировщик) скачивает свежие агрегаты
+При ручном запуске скачивает свежие агрегаты
 и, ТОЛЬКО если цены изменились (хеш отличается от последнего дампа), пишет:
   1. data/market_<server>.json — свежие данные для терминала;
   2. data/history/<server>/YYYYMMDD-HHMM.json — компактный снапшот
      [[name, buy, sell, qtyBuy, qtySell, lastDate], ...] — история цен.
-Если цены те же — файлы не трогаются, в manifest обновляется только
-last_check (видно, что скрипт живой, а источник стоит).
+Если цены те же — файлы (в том числе manifest) не трогаются: git не получает
+пустых коммитов. Что скрипт живой, видно по времени запуска задачи планировщика.
 
 Ротация: всё за последние 48 часов хранится, дальше — последний
 снапшот каждых суток до 90 дней (время запуска значения не имеет).
@@ -128,6 +128,7 @@ def main() -> int:
     manifest = load_manifest()
     manifest.setdefault("servers", {})
     now = dt.datetime.now()
+    changed = False  # менялось ли что-то, что стоит писать в git
 
     with tempfile.TemporaryDirectory() as t:
         tmp = pathlib.Path(t)
@@ -148,15 +149,18 @@ def main() -> int:
                 json.dumps(compact_items, ensure_ascii=False).encode("utf-8")
             ).hexdigest()
             ent = manifest["servers"].setdefault(srv, {})
-            ent["last_check"] = now.isoformat(timespec="minutes")
+            ent.pop("last_check", None)  # старое поле: из-за него git получал коммит каждые 30 минут
             # ArzMarket отдаёт дневные агрегаты: между обновлениями источника
             # цены одни и те же. Одинаковые дампы не пишем — они ничего не
             # добавляют к графикам, а только раздувают диск и git.
             if digest == last_snapshot_hash(srv):
                 kept, removed = prune(srv)
+                if removed:
+                    changed = True
                 print(f"[{srv}] цены не изменились (свежайшая {doc['data_date_max']}), "
                       f"дамп пропущен, ротация: {kept} хранится, {removed} удалено")
                 continue
+            changed = True
             (DATA_DIR / f"market_{srv}.json").write_text(
                 json.dumps(doc, ensure_ascii=False), encoding="utf-8")
             compact = {
@@ -178,10 +182,15 @@ def main() -> int:
             print(f"[{srv}] дамп {out.name}: {len(compact['items'])} поз., "
                   f"свежайшая {doc['data_date_max']}, ротация: {kept} хранится, {removed} удалено")
 
-    manifest = rebuild_manifest(manifest)
-    (HIST / "index.json").write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("OK, manifest обновлён")
+    # Манифест переписываем только при реальных изменениях (новый дамп / ротация):
+    # иначе меняется одна отметка времени и планировщик коммитит и пушит её каждые 30 минут.
+    index = HIST / "index.json"
+    if changed or not index.exists():
+        manifest = rebuild_manifest(manifest)
+        index.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+        print("OK, manifest обновлён")
+    else:
+        print("OK, ничего не изменилось — манифест не трогаем")
     return 0
 
 

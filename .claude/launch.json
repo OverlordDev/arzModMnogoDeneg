@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "arz-terminal",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/negrozoido/Desktop/arzModMnogoDeneg/arz-terminal/server.js"],
+      "port": 3000
+    }
+  ]
+}

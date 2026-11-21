@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node game/test_game.js && node game/test_firebase.js",
+    "test": "node game/test_game.js && node game/test_firebase.js && node game/test_cloudclient.js && node game/test_flip.js && node game/test_server.js",
     "snapshot": "python scripts/snapshot.py --server yuma vc --window 14"
   },
   "engines": {

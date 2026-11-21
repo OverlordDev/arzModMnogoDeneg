@@ -326,5 +326,60 @@ const tmpAuth = () => path.join(fs.mkdtempSync(path.join(os.tmpdir(), "arzfb-"))
     assert.strictEqual(f.of(/\/money\//).length, 3, "изменился только документ сегодняшних суток");
   });
 
+  await test("offerDoc: произвольные документы под players/{uid}, дедупликация, пауза, собственная подпись, освежение", async () => {
+    const f = fake(); let t = 1_800_000_000_000;
+    const fb = createFirebase({ config: CFG, fetch: f.fetch, now: () => t });
+    fb.offerDoc("web/latest", { payloadJson: "{\"a\":1}" }, { minIntervalMs: 30_000, refreshMs: 5 * 60_000, sig: "A" });
+    await fb.tick();
+    let docs = f.of(/\/web\/latest/);
+    assert.strictEqual(docs.length, 1);
+    assert.ok(docs[0].url.endsWith("/documents/players/U1/web/latest"), docs[0].url);
+    assert.strictEqual(docs[0].body.fields.payloadJson.stringValue, "{\"a\":1}");
+    assert.ok(docs[0].body.fields.updatedAt.timestampValue);
+    // та же подпись: данные поменялись только в «плавающих» полях — не пишем
+    fb.offerDoc("web/latest", { payloadJson: "{\"a\":1,\"age\":99}" }, { minIntervalMs: 30_000, refreshMs: 5 * 60_000, sig: "A" });
+    t += 10_000; await fb.tick();
+    assert.strictEqual(f.of(/\/web\/latest/).length, 1);
+    // новая подпись, но пауза не вышла (с последней записи прошло всего 15 с)
+    fb.offerDoc("web/latest", { payloadJson: "{\"a\":2}" }, { minIntervalMs: 30_000, refreshMs: 5 * 60_000, sig: "B" });
+    t += 5_000; await fb.tick();
+    assert.strictEqual(f.of(/\/web\/latest/).length, 1, "рано: пауза 30 с");
+    t += 20_000; await fb.tick();
+    docs = f.of(/\/web\/latest/);
+    assert.strictEqual(docs.length, 2);
+    assert.strictEqual(docs[1].body.fields.payloadJson.stringValue, "{\"a\":2}");
+    // ничего не менялось, но прошло 5 минут — освежаем, чтобы зеркало не протухало
+    t += 6 * 60_000; await fb.tick();
+    assert.strictEqual(f.of(/\/web\/latest/).length, 3);
+    // подпись по умолчанию — JSON данных
+    fb.offerDoc("bank/2026-11-18", { points: [{ t: 1, deposit: 5 }] });
+    await fb.tick();
+    await fb.tick();
+    assert.strictEqual(f.of(/\/bank\/2026-11-18/).length, 1, "тот же документ второй раз не пишется");
+  });
+
+  await test("offerDoc: много документов уходят порциями (не больше 25 за проход), остальное на следующем", async () => {
+    const f = fake(); let t = 1_800_000_000_000;
+    const fb = createFirebase({ config: CFG, fetch: f.fetch, now: () => t });
+    for (let i = 0; i < 30; i++) fb.offerDoc("gameprices/" + i, { i, items: [{ n: "x" + i }] });
+    await fb.tick();
+    assert.strictEqual(f.of(/gameprices/).length, 25);
+    await fb.tick();
+    assert.strictEqual(f.of(/gameprices/).length, 30);
+    assert.strictEqual(fb.status().writes, 30);
+  });
+
+  await test("offerDoc: при ошибке документ не считается сохранённым и уходит после восстановления", async () => {
+    const f = fake(); let t = 1_800_000_000_000;
+    const fb = createFirebase({ config: CFG, fetch: f.fetch, now: () => t });
+    f.failFirestore = 403;
+    fb.offerDoc("web/latest", { payloadJson: "x" });
+    await fb.tick();
+    assert.ok(fb.status().lastError);
+    f.failFirestore = 0; t += 31_000; await fb.tick();
+    assert.strictEqual(f.of(/\/web\/latest/).filter((c) => c.method === "PATCH").length, 2, "первая попытка упала, вторая прошла");
+    assert.strictEqual(fb.status().lastError, null);
+  });
+
   console.log(`\n${passed} passed${process.exitCode ? ", есть падения" : ""}`);
 })();

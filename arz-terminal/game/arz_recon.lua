@@ -27,11 +27,14 @@ script_version('0.1')
 --   encoded ~= 0 -> строка закодирована, читаем DecodeString(длина+encoded).
 
 local MAX_LOG_BYTES  = 8 * 1024 * 1024  -- потолок размера лога
-local MAX_PAYLOAD    = 20000            -- символов одного образца
+local MAX_PAYLOAD    = 60000            -- символов одного образца (графики котировок тяжёлые)
 local SAMPLES_DEFAULT = 2               -- образцов на обычное событие
 local SAMPLES_HOT     = 30              -- образцов на «интересное» событие
 local HOT = { 'inventor', 'item', 'money', 'balance', 'wallet', 'bank',
-              'stats', 'player', 'level', 'vip', 'donate', 'slot' }
+              'stats', 'player', 'level', 'vip', 'donate', 'slot',
+              'market', 'trade', 'histor', 'log', 'sale', 'sell', 'buy', 'shop',
+              'auction', 'bid', 'lot', 'torg', 'rynok', 'purchase', 'transaction',
+              'stock', 'invest', 'exchange', 'crypto', 'btc', 'share', 'asset', 'quote', 'chart', 'rate', 'currency' }
 
 local enabled  = true
 local seen     = {}   -- имя события -> { n = сколько раз, logged = сколько записали }
@@ -131,8 +134,84 @@ addEventHandler('onReceivePacket', function(id, bs)
     -- ничего не возвращаем -> пакет НЕ перехватывается
 end)
 
+-- ── Разведка лавок: диалоги и 3D-тексты (SA-MP, не CEF) ─────────────
+-- Только читаем то, что сервер и так прислал клиенту. Возвращаем nil,
+-- поэтому ничего не блокируется. Пишем в arz_recon_stalls.log (UTF-8).
+local STALL_MAX      = 400     -- потолок записей диалогов
+local TEXT3D_MAX     = 20      -- 3D-текстов лавок нужно мало: цен в них нет
+local stall_n        = 0
+local text3d_n       = 0
+local stall_seen     = {}      -- дедуп по тексту
+local STALL_WORDS    = { 'лавк', 'товар', 'продаж', 'скуп', 'цена', 'цену', 'куп', 'прода',
+                         'магазин', 'торгов', 'рынок', 'прилавк' }
+local DIALOG_SECRET  = { 'парол', 'password', 'pin', 'пин', 'смс', 'sms', 'логин', 'login',
+                         'почт', 'mail', 'регистр', 'авториз', 'код', 'token', 'токен',
+                         'статистик', 'паспорт', 'телефон' }  -- личные данные
+
+local function to_utf8(s)
+    local ok, enc = pcall(require, 'encoding')
+    if ok and enc then
+        enc.default = 'CP1251'
+        local ok2, r = pcall(function() return enc.UTF8:encode(s) end)
+        if ok2 and r then return r end
+    end
+    return s
+end
+
+local function has_any(text, words)
+    local l = text:lower()
+    for _, w in ipairs(words) do
+        if l:find(w, 1, true) then return true end
+    end
+    return false
+end
+
+local function stall_log(kind, header, body)
+    if not enabled or stall_n >= STALL_MAX then return end
+    local key = kind .. header .. body
+    if stall_seen[key] then return end
+    stall_seen[key] = true
+    stall_n = stall_n + 1
+    local f = io.open(base_dir() .. 'arz_recon_stalls.log', 'ab')
+    if f then
+        f:write(string.format('[%s] %s %s\n%s\n-----\n', os.date('%H:%M:%S'), kind, header, body))
+        f:close()
+    end
+end
+
+local function install_samp_hooks()
+    local ok, sampev = pcall(require, 'samp.events')
+    if not ok or not sampev then return false end
+
+    function sampev.onShowDialog(dialogId, style, title, button1, button2, text)
+        pcall(function()
+            local t = to_utf8(title or '')
+            local b = to_utf8(text or '')
+            -- авторизация, пароли, коды: не пишем вообще
+            if has_any(t, DIALOG_SECRET) or has_any(b, DIALOG_SECRET) then return end
+            stall_log('DIALOG', string.format('id=%s style=%s title=%s b1=%s b2=%s',
+                tostring(dialogId), tostring(style), t, to_utf8(button1 or ''), to_utf8(button2 or '')),
+                b)
+        end)
+    end
+
+    function sampev.onCreate3DText(id, color, position, distance, testLOS, pId, vId, text)
+        pcall(function()
+            local b = to_utf8(text or '')
+            if not has_any(b, STALL_WORDS) then return end
+            if b:find('Управления товарами', 1, true) then return end  -- шум, сотни штук
+            if text3d_n >= TEXT3D_MAX then return end
+            text3d_n = text3d_n + 1
+            stall_log('3DTEXT', string.format('id=%s dist=%s pos=%.1f,%.1f,%.1f',
+                tostring(id), tostring(distance), position.x, position.y, position.z), b)
+        end)
+    end
+    return true
+end
+
 function main()
     repeat wait(100) until isSampAvailable()
+    local hooked = install_samp_hooks()
     sampRegisterChatCommand('arzrec', function(arg)
         if arg == 'off' then
             enabled = false
@@ -146,6 +225,8 @@ function main()
         end
     end)
     sampAddChatMessage('[ARZ Recon] read-only logger is on. Open inventory, then type /arzrec', 0xFFB4E6A0)
+    sampAddChatMessage(hooked and '[ARZ Recon] stalls: logging dialogs + 3D texts -> arz_recon_stalls.log'
+                              or '[ARZ Recon] stalls: samp.events not found', 0xFFB4E6A0)
     last_dump = os.clock()
     while true do
         wait(1000)

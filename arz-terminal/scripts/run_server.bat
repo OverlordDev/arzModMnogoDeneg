@@ -4,6 +4,7 @@ rem Exit code 98 = port already in use (another instance is running) -> do NOT l
 setlocal
 cd /d "%~dp0.."
 if not exist local mkdir local
+rem listens on all interfaces so the phone can open it (player data needs the access key; set HOST=127.0.0.1 to restrict to this PC)
 rem rotate the log when it grows past ~5 MB
 if exist local\server.log for %%A in (local\server.log) do if %%~zA GTR 5242880 move /y local\server.log local\server.log.old >nul 2>&1
 :loop

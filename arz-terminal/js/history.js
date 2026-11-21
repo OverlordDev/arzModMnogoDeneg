@@ -1,4 +1,4 @@
-/* ARZ Terminal — History: дампы цен каждые 30 минут.
+/* ARZ Terminal — History: дампы цен (автоматика удалена, только ручные).
  *
  * Читает data/history/<server>/index.json (манифест снапшотов),
  * грузит снапшоты пачками и строит график скупка/продажа по предмету.
@@ -20,7 +20,7 @@
 
   function st() {
     var s = server();
-    if (!S[s]) S[s] = { manifest: null, snaps: {}, selected: null, query: "", shown: STEP, loading: false, names: [] };
+    if (!S[s]) S[s] = { manifest: null, snaps: {}, failed: {}, selected: null, query: "", shown: STEP, loading: false, names: [] };
     return S[s];
   }
 
@@ -42,7 +42,17 @@
     if (document.querySelector(".modal-wrap.show")) return;
     if (document.querySelector(".palette-wrap.show")) return;
     var active = document.querySelector(".nav-item.active");
-    if (active && active.getAttribute("data-nav") === "history") active.click();
+    if (!(active && active.getAttribute("data-nav") === "history")) return;
+    // Перерисовываем только раздел и сохраняем прокрутку (раньше имитировался клик по меню,
+    // который каждый раз возвращал страницу наверх).
+    var ui = UI();
+    if (ui && ui.refreshView) {
+      var pos = window.scrollY;
+      ui.refreshView();
+      window.scrollTo(0, pos);
+    } else {
+      active.click();
+    }
   }
 
   function loadManifest(done) {
@@ -61,7 +71,7 @@
     var s = st();
     var all = (s.manifest && s.manifest.snapshots) || [];
     // Новейшие первыми: slice с конца.
-    return all.slice(-s.shown).map(function (x) { return x.file; }).filter(function (f) { return !s.snaps[f]; });
+    return all.slice(-s.shown).map(function (x) { return x.file; }).filter(function (f) { return !s.snaps[f] && !s.failed[f]; });
   }
 
   function loadMore(done) {
@@ -74,8 +84,8 @@
     batch.forEach(function (f) {
       fetch(fileFor(server(), f), { cache: "no-store" })
         .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (doc) { if (doc) s.snaps[f] = doc; })
-        .catch(function () {})
+        .then(function (doc) { if (doc) s.snaps[f] = doc; else s.failed[f] = true; })
+        .catch(function () { s.failed[f] = true; })
         .then(function () {
           if (--pending === 0) {
             s.loading = false;
@@ -147,6 +157,32 @@
       grid + line("sell", "#f5f5f4") + line("buy", "#8fe3b0") + "</svg>";
   }
 
+  /** "2026-11-18T05:12" или "20261118-0512" -> epoch мс (локальное время). */
+  function tsToMs(ts) {
+    var m = /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(ts || "") || /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})/.exec(ts || "");
+    return m ? new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]).getTime() : NaN;
+  }
+
+  /** Интерактивный график скупка/продажа: наведи — увидишь цену и время дампа. */
+  function priceChart(pts) {
+    var cur = server() === "vc" ? "VC$" : "$";
+    var C = window.ARZ.chart;
+    return C({
+      x: pts.map(function (p) { return tsToMs(p.t); }),
+      series: [
+        { label: "Продажа", color: "#f5f5f4", values: pts.map(function (p) { return p.sell > 0 ? p.sell : null; }) },
+        { label: "Скупка", color: "#8fe3b0", fill: false, values: pts.map(function (p) { return p.buy > 0 ? p.buy : null; }) }
+      ],
+      yFormat: function (v) { return C.full(v) + " " + cur; },
+      extra: function (i) {
+        var p = pts[i];
+        return '<span class="dim">объём за день: скупка ' + C.full(p.qb || 0) + " · продажа " + C.full(p.qs || 0) + "</span>";
+      },
+      deltaLabel: "продажа с начала периода",
+      height: 220
+    });
+  }
+
   function fmtTs(ts) {
     // "2026-11-18T05:12" или "20261118-0512" -> "18.11 05:12"
     var m = /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(ts || "");
@@ -199,7 +235,7 @@
     var total = ((s.manifest && s.manifest.snapshots) || []).length;
     return '<div class="card"><div class="card-head"><div><div class="card-title">' + esc(s.selected) + '</div><div class="card-sub">Точек: ' + pts.length + " · загружено снапшотов " + loaded + " из " + total + "</div></div>" +
       '<span class="badge ' + (ch >= 0 ? "badge-low" : "badge-high") + '">' + (ch >= 0 ? "+" : "") + ch.toFixed(1) + '%</span></div>' +
-      dualChart(pts) +
+      (window.ARZ.chart ? priceChart(pts) : dualChart(pts)) +
       '<div class="chart-legend mt-8"><span class="legend-dot"></span><span>Продажа</span><span class="legend-dot" style="background:#8fe3b0"></span><span>Скупка</span>' +
       '<span style="margin-left:auto" class="mono">скупка ' + stat(buys) + " · продажа " + stat(sells) + "</span></div>" +
       '<div class="flex gap-8 mt-12">' +
@@ -231,8 +267,8 @@
     var head = '<div class="page-head"><div class="page-head-left">' +
       '<div class="eyebrow">ARZ Terminal / History</div>' +
       "<h1>История цен · " + esc(srvName) + "</h1>" +
-      '<div class="desc">Дампы каждые 30 минут. Выбери предмет — увидишь, как двигались скупка и продажа.</div>' +
-      '</div><div class="page-actions"><button class="btn btn-ghost" data-action="toast" data-msg="Дампы делает задача ARZTerminalSnapshots каждые 30 минут">' + U.icon("clock", 13) + "<span>Расписание</span></button></div></div>";
+      '<div class="desc">История по сохранённым дампам. Выбери предмет — увидишь, как двигались скупка и продажа.</div>' +
+      '</div><div class="page-actions"><button class="btn btn-ghost" data-action="toast" data-msg="Автодампы отключены и удалены">' + U.icon("clock", 13) + "<span>Расписание</span></button></div></div>";
     var search = '<div class="card"><div class="card-head"><div><div class="card-title">Предмет</div><div class="card-sub">' + (s.selected ? "Сейчас: " + esc(s.selected) : "Начни вводить название") + "</div></div></div>" +
       '<label class="search w-full">' + U.icon("search", 13) + '<input id="history-search" placeholder="Например: Дрова, Материалы, Хлопок..." value="' + esc(s.query) + '" autocomplete="off"></label>' +
       '<div class="mt-8" id="hist-suggest">' + suggestHtml() + "</div></div>";
@@ -240,6 +276,7 @@
   }
 
   function ensureData() {
+    var firstLoad = !st().manifest; // манифест ещё не приходил — после загрузки надо перерисоваться
     loadManifest(function () {
       var s = st();
       refreshNames();
@@ -247,16 +284,18 @@
         // Без выбора — грузим только последний снапшот для списка имён.
         var all = (s.manifest.snapshots || []).slice().sort(function (a, b) { return a.ts < b.ts ? -1 : 1; });
         var last = all[all.length - 1];
-        if (last && !s.snaps[last.file]) {
+        if (last && !s.snaps[last.file] && !s.failed[last.file]) {
           fetch(fileFor(server(), last.file), { cache: "no-store" })
             .then(function (r) { return r.ok ? r.json() : null; })
-            .then(function (doc) { if (doc) { s.snaps[last.file] = doc; refreshNames(); } rerender(); })
-            .catch(function () { rerender(); });
+            .then(function (doc) { if (doc) { s.snaps[last.file] = doc; refreshNames(); } else { s.failed[last.file] = true; } rerender(); })
+            .catch(function () { s.failed[last.file] = true; rerender(); });
           return;
         }
       }
       if (needFiles().length) loadMore();
-      else rerender();
+      // Иначе всё уже загружено и перерисовывать нечего. Раньше тут стоял безусловный rerender():
+      // он запускал ensureData() снова — бесконечный цикл (~130 перерисовок в секунду).
+      else if (firstLoad) rerender();
     });
   }
 

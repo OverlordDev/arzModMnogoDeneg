@@ -25,6 +25,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const bankMod = require("./arz_bank");
 
 const WATCH = new Set([
   "event.inventory.playerInventory",
@@ -34,6 +35,9 @@ const WATCH = new Set([
   "event.arizonahud.playerPower",
   "event.arizonahud.playerPowerType",
   "event.arizonahud.serverInfo",
+  // банк: приходит только когда игрок открывает окно банка (данные «на момент последнего открытия»)
+  "event.bank.updateDepositData",
+  "event.bank.updateMainData",
 ]);
 
 function createState() {
@@ -45,6 +49,8 @@ function createState() {
     power: null,
     powerType: null,
     character: null, // data из action:1 (скин, число страниц аксессуаров)
+    // банк: deposit / accounts + индекс события (по нему сервер берёт время: timeline.times[idx])
+    bank: { deposit: null, depositIdx: null, accounts: null, accountsIdx: null },
     inv: {}, // { [type]: { [slotKey]: {slot, item, amount, text} } }
     avail: {}, // { [type]: { [slotKey]: true } } — слоты, доступные игроку (пустые тоже)
     baseline: false, // видели ли полную загрузку основного инвентаря (action 0, type 1)
@@ -78,7 +84,7 @@ function applyItems(state, type, items) {
   }
 }
 
-function applyEvent(state, name, args, ts) {
+function applyEvent(state, name, args, ts, idx) {
   if (!WATCH.has(name) || !Array.isArray(args)) return;
   state.events++;
   if (ts) state.updatedAt = ts;
@@ -104,6 +110,16 @@ function applyEvent(state, name, args, ts) {
     case "event.arizonahud.serverInfo":
       if (v && typeof v === "object") state.server = { id: v.id, title: v.title, project: v.project };
       return;
+    case "event.bank.updateDepositData": {
+      const dep = bankMod.parseDeposit(v);
+      if (dep) { state.bank.deposit = dep; state.bank.depositIdx = idx == null ? null : idx; }
+      return;
+    }
+    case "event.bank.updateMainData": {
+      const acc = bankMod.parseAccounts(v);
+      if (acc) { state.bank.accounts = acc; state.bank.accountsIdx = idx == null ? null : idx; }
+      return;
+    }
   }
 }
 
@@ -153,6 +169,7 @@ function summarize(state, names) {
     // без полной загрузки общее число слотов неизвестно (видны только изменённые)
     baseline: state.baseline,
     slots: { used: rows.length, total: state.baseline ? Object.keys(state.avail[1] || {}).length : 0 },
+    bank: state.bank,
     inventory: rows,
     totals: [...totals.values()],
     otherTabsWithItems: Object.keys(state.inv).filter((t) => t !== "1" && t !== "22" && Object.keys(state.inv[t]).length),
@@ -164,7 +181,7 @@ function summarize(state, names) {
 
 function replayEvents(events) {
   const state = createState();
-  for (const e of events) applyEvent(state, e.name, e.args, e.ts);
+  events.forEach((e, i) => applyEvent(state, e.name, e.args, e.ts, i));
   return state;
 }
 

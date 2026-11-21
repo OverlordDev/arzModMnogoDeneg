@@ -36,6 +36,7 @@
     jobs: { title: "Jobs", sub: "Калькулятор работ: $/час", icon: "trend" },
     deposit: { title: "Deposit", sub: "Депозит: уровни, % и калькулятор", icon: "wallet" },
     player: { title: "Player", sub: "Инвентарь и состояние из игры", icon: "users" },
+    flip: { title: "Скуп", sub: "Что ставить на скупку в лавке", icon: "arbitrage" },
     business: { title: "Business Lab", sub: "Бизнесы и окупаемость", icon: "business" },
     craft: { title: "Craft Lab", sub: "Крафт и expected value", icon: "craft" },
     auctions: { title: "Auctions", sub: "Аукционы и снайпинг", icon: "auctions" },
@@ -43,12 +44,12 @@
     deals: { title: "Deals", sub: "CRM перекупа", icon: "deals" },
     alerts: { title: "Alerts", sub: "Алерты и Telegram", icon: "alerts" },
     meta: { title: "Meta", sub: "Гайды и патчноуты", icon: "meta" },
-    history: { title: "History", sub: "Дампы цен каждые 30 минут", icon: "clock" },
+    history: { title: "History", sub: "История цен по дампам", icon: "clock" },
     settings: { title: "Settings", sub: "Настройки терминала", icon: "settings" }
   };
 
   const NAV = [
-    { label: "Обзор", items: ["dashboard", "player", "market", "arbitrage", "history"] },
+    { label: "Обзор", items: ["dashboard", "player", "flip", "market", "arbitrage", "history"] },
     { label: "Фарм", items: ["farming", "business", "craft", "jobs", "deposit"] },
     { label: "Рынок", items: ["auctions", "portfolio", "deals", "items"] },
     { label: "Система", items: ["alerts", "meta", "settings"] }
@@ -282,6 +283,7 @@
     else if (state.view === "jobs") root.innerHTML = window.ARZ.renderJobs ? window.ARZ.renderJobs() : "";
     else if (state.view === "deposit") root.innerHTML = window.ARZ.renderDeposit ? window.ARZ.renderDeposit() : "";
     else if (state.view === "player") root.innerHTML = window.ARZ.renderPlayer ? window.ARZ.renderPlayer() : "";
+    else if (state.view === "flip") root.innerHTML = window.ARZ.renderFlip ? window.ARZ.renderFlip() : "";
     else if (state.view === "business") root.innerHTML = renderBusiness();
     else if (state.view === "craft") root.innerHTML = renderCraft();
     else if (state.view === "auctions") root.innerHTML = renderAuctions();
@@ -304,6 +306,12 @@
     closeModal();
     closePalette();
     render();
+    // плавное появление раздела; класс снимаем, чтобы живые перерисовки не мигали анимацией
+    const root = document.getElementById("view-root");
+    root.classList.remove("enter");
+    void root.offsetWidth;
+    root.classList.add("enter");
+    setTimeout(() => root.classList.remove("enter"), 520);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -874,9 +882,30 @@
     const net = hasBoth ? item.sell * 0.95 - item.buy : 0;
     const roi = hasBoth ? (net / item.buy) * 100 : 0;
     const series = (item.history && item.history.length > 3) ? item.history : priceSeries(item.id, item.buy || item.sell || 1, 26);
-    const seriesNote = (item.history && item.history.length > 3)
-      ? series.length + " точек · средние цены продажи, ArzMarket"
+    const realHist = !!(item.history && item.history.length > 3);
+    const dayMs = realHist && item.historyDates && item.historyDates.length === series.length && window.ARZ.chart
+      ? item.historyDates.map(window.ARZ.chart.parseDay) : null;
+    const seriesNote = realHist
+      ? series.length + " точек · средние цены продажи за день, ArzMarket"
       : "26 точек · демо-генерация";
+    const cur = item.server === "vc" ? "VC$" : "$";
+    let chartHtml;
+    if (window.ARZ.chart) {
+      const lo = Math.min.apply(null, series), hi = Math.max.apply(null, series);
+      const fmtDay = (ms) => new Date(ms).toLocaleDateString("ru-RU", { day: "numeric", month: "short" });
+      chartHtml = window.ARZ.chart({
+        x: dayMs || series.map((_, i) => "Точка " + (i + 1) + (realHist ? "" : " (демо)")),
+        xKind: "day",
+        series: [{ label: realHist ? "Продажа (средняя за день)" : "Цена (демо)", color: "#f5f5f4", values: series }],
+        yFormat: (v) => window.ARZ.chart.full(v) + " " + cur,
+        deltaLabel: dayMs ? "с " + fmtDay(dayMs[0]) : "с начала периода",
+        height: 170
+      }) +
+        '<div class="chart-legend mt-8"><span class="legend-dot"></span><span>' + (dayMs ? fmtDay(dayMs[0]) + " — " + fmtDay(dayMs[dayMs.length - 1]) : "период") + '</span>' +
+        '<span style="margin-left:auto" class="mono">сейчас ' + window.ARZ.chart.full(series[series.length - 1]) + " · мин " + window.ARZ.chart.full(lo) + " · макс " + window.ARZ.chart.full(hi) + " " + cur + "</span></div>";
+    } else {
+      chartHtml = lineChart(series, 0.05);
+    }
     const listings = [
       { side: "продажа (средняя)", server: serverName(state.server), price: item.sell, qty: 1 },
       { side: "скупка (средняя)", server: serverName(state.server), price: item.buy, qty: 2 },
@@ -896,7 +925,7 @@
           '<div class="drawer-stat"><small>Ликвидность</small><strong>' + esc(item.liq) + "</strong></div>" +
           '<div class="drawer-stat"><small>Уверенность</small><strong>' + item.conf + "%</strong></div>" +
         "</div>" +
-        '<div class="drawer-section"><h4>История цены</h4>' + lineChart(series, 0.05) + '<div class="flex between tiny dim mt-4"><span>' + seriesNote + "</span><span>обновлено " + esc(item.upd) + " назад</span></div></div>" +
+        '<div class="drawer-section"><h4>История цены</h4>' + chartHtml + '<div class="flex between tiny dim mt-4"><span>' + seriesNote + "</span><span>обновлено " + esc(item.upd) + " назад</span></div></div>" +
         '<div class="drawer-section"><h4>Активные объявления</h4>' + listingRows + "</div>" +
         '<div class="drawer-section"><h4>Маржа лавки</h4><div class="opp-route-box"><div class="opp-route-side"><small>Скупка</small><strong>' + (item.buy > 0 ? money(item.buy) : "—") + '</strong><em>' + esc(serverName(state.server)) + '</em></div><div class="opp-route-mid">' + icon("arrow", 14) + '</div><div class="opp-route-side"><small>Продажа</small><strong>' + (item.sell > 0 ? money(item.sell) : "—") + '</strong><em>' + esc(serverName(state.server)) + "</em></div></div>" +
           '<div class="calc-out" style="grid-template-columns:1fr 1fr;margin-top:10px"><div class="calc-box"><small>Маржа</small><strong class="' + (hasBoth && net >= 0 ? "pos" : hasBoth ? "neg" : "") + '">' + (hasBoth ? (net >= 0 ? "+" : "") + money(net) : "—") + '</strong></div><div class="calc-box"><small>ROI</small><strong class="' + (hasBoth && roi >= 0 ? "pos" : hasBoth ? "neg" : "") + '">' + (hasBoth ? (roi >= 0 ? "+" : "") + roi.toFixed(1) + "%" : "—") + "</strong></div></div>" +

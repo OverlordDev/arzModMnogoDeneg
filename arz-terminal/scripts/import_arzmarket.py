@@ -171,9 +171,12 @@ def build_server(server: str, window: int, tmp: pathlib.Path) -> dict:
             dropped += 1
             continue
         # История продажи для графика (до 30 точек, новые первые -> развернуть).
-        hist = [round(r[4]) for r in sorted(sgood, key=lambda r: r[0])][-30:]
-        if len(hist) < 2 and brows:
-            hist = [round(r[4]) for r in sorted(brows, key=lambda r: r[0])][-30:]
+        hist_rows = sorted(sgood, key=lambda r: r[0])[-30:]
+        if len(hist_rows) < 2 and brows:
+            hist_rows = sorted(brows, key=lambda r: r[0])[-30:]
+        hist = [round(r[4]) for r in hist_rows]
+        # Даты точек (ГГГГ-ММ-ДД) — график показывает, КОГДА предмет столько стоил.
+        hist_dates = [r[0] for r in hist_rows]
         # Изменение: последняя цена продажи vs цена 7 дней назад (или начало окна).
         change = 0.0
         if len(hist) >= 2:
@@ -225,6 +228,7 @@ def build_server(server: str, window: int, tmp: pathlib.Path) -> dict:
             "dealsSell": sqty,
             "lastDate": last,
             "history": hist,
+            "historyDates": hist_dates,
         })
     # Сортировка по умолчанию в терминале — по спреду; здесь сохраняем по объёму.
     items.sort(key=lambda i: i["dealsBuy"] + i["dealsSell"], reverse=True)

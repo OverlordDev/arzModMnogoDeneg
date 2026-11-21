@@ -30,6 +30,7 @@ const path = require("path");
 const SNAPSHOT_MIN_MS = 30 * 1000;
 const HISTORY_FLUSH_MS = 5 * 60 * 1000;
 const TICK_MS = 10 * 1000;
+const EXTRA_MAX_PER_TICK = 25; // дополнительных документов за один проход (каталог цен = десятки документов)
 const BACKOFF_START_MS = 30 * 1000;
 const BACKOFF_MAX_MS = 15 * 60 * 1000;
 const LINK_RETRY_MS = 10 * 60 * 1000;
@@ -150,6 +151,8 @@ function createFirebase(opts) {
   const moneySig = new Map();
   const moneyDirty = new Set();
   let lastHistoryFlush = 0;
+  // Произвольные документы под players/{uid}/...: зеркало для сайта на телефоне, каталог цен, банк.
+  const extra = new Map(); // относительный путь -> { data, sig, savedSig, lastWriteAt, minMs, refreshMs }
 
   const st = {
     enabled: true, projectId, uid: auth.uid, mode: auth.mode, email: wantEmail ? config.email : null,
@@ -307,12 +310,25 @@ function createFirebase(opts) {
     }
   }
 
+  /** Какие дополнительные документы пора записать: изменились (или давно не обновлялись) и прошла пауза minMs. */
+  function extraDue() {
+    const t = now();
+    const out = [];
+    for (const [rel, e] of extra) {
+      const changed = e.sig !== e.savedSig;
+      const stale = e.refreshMs > 0 && e.savedSig !== null && t - e.lastWriteAt >= e.refreshMs;
+      if ((changed || stale) && t - e.lastWriteAt >= e.minMs) out.push(rel);
+    }
+    return out;
+  }
+
   /** Один проход: что накопилось — то и отправляем. Вызывается таймером, доступен для тестов. */
   async function tick() {
     if (busy || now() < nextTryAt) return;
     const needSnapshot = snapshot && snapshotSig !== lastSavedSig && now() - lastSnapshotAt >= SNAPSHOT_MIN_MS;
     const needHistory = (dirty.size > 0 || moneyDirty.size > 0) && now() - lastHistoryFlush >= HISTORY_FLUSH_MS;
-    if (!needSnapshot && !needHistory) return;
+    const dueExtra = extraDue();
+    if (!needSnapshot && !needHistory && !dueExtra.length) return;
     busy = true;
     try {
       await getToken();
@@ -337,6 +353,14 @@ function createFirebase(opts) {
         lastHistoryFlush = now();
         wrote = true;
       }
+      for (const rel of dueExtra.slice(0, EXTRA_MAX_PER_TICK)) {
+        const e = extra.get(rel);
+        const sig = e.sig;
+        await setDoc("players/" + uid + "/" + rel, Object.assign({}, e.data, { updatedAt: new Date(now()) }));
+        e.savedSig = sig;
+        e.lastWriteAt = now();
+        wrote = true;
+      }
       if (wrote) {
         st.lastOkAt = now();
         if (st.lastError) log("снова работает");
@@ -358,6 +382,22 @@ function createFirebase(opts) {
     const { earnings, ...core } = obj;
     snapshot = obj;
     snapshotSig = JSON.stringify(core);
+  }
+
+  /**
+   * Дополнительный документ players/{uid}/<rel> (например "web/latest", "gameprices/0", "bank/2026-11-18").
+   * Пишется, если изменилась подпись (по умолчанию — JSON данных; можно передать свою opts.sig, чтобы
+   * не учитывать «плавающие» поля), не чаще opts.minIntervalMs; opts.refreshMs — перезаписать, даже если
+   * ничего не менялось, раз в столько мс (чтобы зеркало не «протухало»).
+   */
+  function offerDoc(rel, data, opts) {
+    opts = opts || {};
+    const e = extra.get(rel) || { savedSig: null, lastWriteAt: 0 };
+    e.data = data;
+    e.sig = opts.sig != null ? String(opts.sig) : JSON.stringify(data);
+    e.minMs = opts.minIntervalMs || 0;
+    e.refreshMs = opts.refreshMs || 0;
+    extra.set(rel, e);
   }
 
   function bucketKey(t) { return new Date(t).toISOString().slice(0, 13); }
@@ -430,7 +470,7 @@ function createFirebase(opts) {
     };
   }
 
-  return { offerSnapshot, queuePoint, seedPoints, offerMoney, tick, start, status, setDoc, getDoc, deleteDoc, getToken };
+  return { offerSnapshot, offerDoc, queuePoint, seedPoints, offerMoney, tick, start, status, setDoc, getDoc, deleteDoc, getToken };
 }
 
 module.exports = { createFirebase, toValue, toFields, hintFor };

@@ -32,15 +32,7 @@ systemctl enable --now "$SERVICE"
 sleep 2
 systemctl --no-pager --lines=5 status "$SERVICE" || true
 
-echo "[5/5] cron дампов каждые 30 минут..."
-CRON="*/30 * * * * cd $APP_DIR && /usr/bin/python3 scripts/snapshot.py --server yuma vc --window 14 >> /var/log/arz-snapshot.log 2>&1"
-( crontab -l 2>/dev/null | grep -v "scripts/snapshot.py" ; echo "$CRON" ) | crontab -
-crontab -l | grep snapshot || true
-
-echo "--- первый дамп (может занять 1-3 мин, качает агрегаты GitHub) ---"
-cd "$APP_DIR" && /usr/bin/python3 scripts/snapshot.py --server yuma vc --window 14 | tail -5 || true
-
-echo "--- фаервол: открываем 3000 ---"
+echo "[5/5] фаервол: открываем 3000 ---"
 ufw allow 3000/tcp >/dev/null 2>&1 || true
 ufw --force enable >/dev/null 2>&1 || true
 
@@ -49,4 +41,4 @@ echo ""
 echo "ГОТОВО. Проверка:"
 echo "  curl http://127.0.0.1:3000/api/health"
 echo "  открой в браузере:  http://$IP:3000/"
-echo "Логи: journalctl -u $SERVICE -f   и   tail -f /var/log/arz-snapshot.log"
+echo "Логи: journalctl -u $SERVICE -f"

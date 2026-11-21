@@ -34,15 +34,12 @@ python scripts/import_arzmarket.py --server phoenix tucson --window 14
 строго изолированы: связки считаются внутри сервера,
 межсерверного арбитража нет (у Yuma — вирты $, у Vice City — VC$).
 
-## История цен (дампы каждые 30 минут)
+## История цен (только ручные дампы, автоматика удалена)
 
-Дампы делает **планировщик Windows** (задача `ARZTerminalSnapshots`,
-каждые 30 минут, `scripts/run_snapshot.bat`): свежие агрегаты →
-очередной дамп (каждые 30 минут, даже если цифры не изменились) →
-обновлённый `data/market_<server>.json` → автокоммит и пуш в main →
-Render сам передеплоит сайт. ПК должен быть включён.
-(GitHub Actions не используется: аккаунт заблокирован GitHub
-из-за проблемы с оплатой, workflow-запуски отклоняются.)
+Автобекап каждые 30 минут отключён и удалён (задача планировщика
+`ARZTerminalSnapshots`, `scripts/run_snapshot.bat` и workflow
+`snapshot.yml` снесены). Существующие файлы в `data/history/` остаются
+как есть, новые не копятся.
 
 - обновляет `data/market_<server>.json` для терминала;
 - пишет компактный снапшот в `data/history/<server>/YYYYMMDD-HHMM.json`

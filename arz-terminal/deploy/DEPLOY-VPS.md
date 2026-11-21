@@ -25,15 +25,14 @@
 3. На VPS запусти:
    `bash /opt/arz-terminal/deploy/vps-setup.sh`
    Скрипт ставит Node 22 + python3, включает systemd-сервис `arz-terminal`
-   (порт 3000), добавляет cron дампов каждые 30 минут, делает первый дамп,
-   открывает порт 3000 в ufw.
+   (порт 3000) и открывает порт 3000 в ufw.
+   Данные обновляются вручную через `scripts/snapshot.py`.
 4. Открой в браузере: `http://IP:3000/`
    Проверка API: `http://IP:3000/api/health` → `{"ok":true,...}`
 
 ## Что дальше
 
 - Логи сервера: `journalctl -u arz-terminal -f`
-- Логи дампов: `tail -f /var/log/arz-snapshot.log`
 - Перезапуск после обновления кода:
   `cd /opt/arz-terminal && git pull` (или повтори scp) `&& systemctl restart arz-terminal`
 - Обновление кода без потери истории: история лежит в `data/history/` —
